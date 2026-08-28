@@ -46,17 +46,31 @@
     <h3>Kurzfassung</h3>
     <p>
       Tactics Arena zeigt keine Werbung, nutzt keine Tracking- oder Analyse-Dienste und
-      legt keine Benutzerkonten an. Der Spielstand liegt ausschließlich lokal auf deinem
-      Gerät. Nur der PvP-Modus überträgt pseudonyme Spieldaten an unseren Server; Käufe
-      wickelt vollständig Google Play ab.
+      verlangt keine Registrierung. Der Spielstand liegt auf deinem Gerät und wird
+      zusätzlich pseudonym auf unserem Spielserver gesichert — unter einer zufälligen
+      technischen Konto-ID, ohne Namen, E-Mail-Adresse oder Passwort. Käufe wickelt
+      Google Play ab; die Kaufbestätigung prüft unser Server gegen Google, bevor
+      Edelsteine gutgeschrieben werden.
     </p>
 
-    <h3>Lokale Daten</h3>
+    <h3>Spielstand (Gerät und Cloud)</h3>
     <p>
-      Dein gesamter Spielfortschritt (Feldzug, Helden, Einheiten, Edelsteine,
-      Einstellungen) wird nur im lokalen App-Speicher deines Geräts gespeichert. Er
-      verlässt dein Gerät nicht und wird beim Löschen der App-Daten bzw. bei der
-      Deinstallation entfernt.
+      Dein Spielfortschritt (Feldzug, Helden, Einheiten, Edelsteine) und deine
+      Einstellungen werden im lokalen App-Speicher deines Geräts gespeichert;
+      Einstellungen verbleiben ausschließlich dort.
+    </p>
+    <p>
+      Zusätzlich speichert die App den Spielstand (Feldzug-Fortschritt, Helden,
+      Einheitenstufen und -perks, Edelstein-Stand, PvP-Kennungen) auf unserem
+      Spielserver, gehostet bei Supabase in der EU (Region Irland). Dazu legt die App
+      beim ersten Start ein anonymes technisches Konto an — eine zufällig erzeugte
+      Konto-ID ohne Namen, E-Mail-Adresse, Passwort oder sonstigen Bezug zu deiner
+      Person. Zweck der Server-Kopie sind der Spielbetrieb und der Schutz vor
+      Manipulation und Betrug, insbesondere faire PvP-Duelle und die Absicherung von
+      Käufen (Rechtsgrundlage Art. 6 Abs. 1 lit. b und f DSGVO). Beim Löschen der
+      App-Daten oder bei der Deinstallation geht der Zugang zu diesem anonymen Konto
+      verloren; die Server-Kopie ist dann nicht mehr abrufbar und wird auf Anfrage
+      gelöscht (siehe „Deine Rechte").
     </p>
 
     <h3>PvP-Arena (online)</h3>
@@ -74,32 +88,38 @@
     <p>
       Zweck ist ausschließlich der Spielbetrieb: Matchmaking, das Austragen der Partie
       und aufgezeichnete „Geistergegner“ für andere Spieler (Rechtsgrundlage Art. 6
-      Abs. 1 lit. b DSGVO). Die Daten enthalten weder Klarnamen noch Kontaktdaten und
+      Abs. 1 lit. b DSGVO). Die PvP-Daten sind mit dem oben beschriebenen anonymen
+      technischen Konto verknüpft. Sie enthalten weder Klarnamen noch Kontaktdaten,
       werden nicht mit deiner Identität verknüpft, nicht zu Werbezwecken verwendet und
       nicht an Dritte verkauft.
     </p>
 
     <h3>Käufe</h3>
     <p>
-      Käufe von Edelstein-Paketen werden vollständig durch Google Play abgewickelt. Wir
-      erhalten keine Zahlungsdaten (keine Kontonummern, keine Rechnungsadresse). Die App
-      verarbeitet lediglich die von Google Play gelieferte Kaufbestätigung (Kauf-Token)
-      lokal auf dem Gerät, um die gekauften Edelsteine gutzuschreiben. Es gilt zusätzlich
-      die Datenschutzerklärung von Google Play.
+      Käufe von Edelstein-Paketen werden durch Google Play abgewickelt. Wir erhalten
+      keine Zahlungsdaten (keine Kontonummern, keine Rechnungsadresse). Zum Schutz vor
+      Betrug prüft unser Server jede von Google Play gelieferte Kaufbestätigung
+      (Kauf-Token) über die Google Play Developer API und speichert den bestätigten
+      Kauf (Kauf-Token, Produkt, Bestellnummer, Zeitpunkt) zum anonymen Konto
+      (Rechtsgrundlage Art. 6 Abs. 1 lit. b und f DSGVO). Erst nach dieser Prüfung
+      werden die gekauften Edelsteine gutgeschrieben. Es gilt zusätzlich die
+      Datenschutzerklärung von Google Play.
     </p>
 
     <h3>Berechtigungen</h3>
     <p>
-      Die App nutzt die Internet-Berechtigung (PvP-Modus und Google Play Billing).
-      Weitere Berechtigungen werden nicht angefordert.
+      Die App nutzt die Internet-Berechtigung (Spielstand-Sicherung, PvP-Modus,
+      Kaufprüfung und Google Play Billing). Weitere Berechtigungen werden nicht
+      angefordert.
     </p>
 
     <h3>Deine Rechte</h3>
     <p>
       Du hast nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung,
       Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das
-      Recht auf Beschwerde bei einer Aufsichtsbehörde. Für die Löschung deiner PvP-Daten
-      genügt eine formlose E-Mail mit deinem Anzeigenamen an die oben genannte Adresse.
+      Recht auf Beschwerde bei einer Aufsichtsbehörde. Für die Löschung deiner
+      Server-Daten (Cloud-Spielstand, PvP-Daten, Kaufbelege) genügt eine formlose
+      E-Mail mit deinem PvP-Anzeigenamen an die oben genannte Adresse.
     </p>
 
     <h3>Änderungen</h3>
@@ -121,17 +141,30 @@
 
       <h3>Summary</h3>
       <p>
-        Tactics Arena shows no ads, uses no tracking or analytics services and has no
-        user accounts. Your save game lives only on your device. Only the PvP mode
-        transfers pseudonymous game data to our server; purchases are handled entirely
-        by Google Play.
+        Tactics Arena shows no ads, uses no tracking or analytics services and requires
+        no registration. Your save game lives on your device and is additionally backed
+        up pseudonymously on our game server — under a random technical account id,
+        with no name, email address or password. Purchases are handled by Google Play;
+        our server verifies each purchase confirmation with Google before gems are
+        credited.
       </p>
 
-      <h3>Local data</h3>
+      <h3>Save game (device and cloud)</h3>
       <p>
-        All game progress (campaign, heroes, units, gems, settings) is stored in the
-        app's local storage only. It never leaves your device and is removed when you
-        clear the app's data or uninstall it.
+        Your game progress (campaign, heroes, units, gems) and your settings are stored
+        in the app's local storage; settings stay there exclusively.
+      </p>
+      <p>
+        In addition, the app stores the save game (campaign progress, heroes, unit
+        levels and perks, gem balance, PvP identifiers) on our game server, hosted on
+        Supabase in the EU (Ireland region). For this the app creates an anonymous
+        technical account on first launch — a randomly generated account id with no
+        name, email address, password or any other link to your identity. The server
+        copy exists to run the game and to protect it against manipulation and fraud,
+        in particular fair PvP duels and purchase protection (Art. 6 (1)(b) and (f)
+        GDPR). Clearing the app's data or uninstalling loses access to this anonymous
+        account; the server copy is then no longer reachable and is deleted on request
+        (see "Your rights").
       </p>
 
       <h3>PvP Arena (online)</h3>
@@ -142,30 +175,34 @@
         wins and losses, your loadout (hero, unit levels, perks), your PvP match moves,
         and a last-seen timestamp. This data is used solely to run the game:
         matchmaking, playing out the match, and recorded "ghost" opponents for other
-        players (Art. 6 (1)(b) GDPR). It contains no real names or contact data, is
-        never linked to your identity, never used for advertising, and never sold.
+        players (Art. 6 (1)(b) GDPR). It is tied to the anonymous technical account
+        described above. It contains no real names or contact data, is never linked to
+        your identity, never used for advertising, and never sold.
       </p>
 
       <h3>Purchases</h3>
       <p>
-        Gem pack purchases are processed entirely by Google Play. We receive no payment
-        data. The app only processes the purchase confirmation (purchase token) provided
-        by Google Play, locally on the device, to credit the purchased gems. Google
-        Play's own privacy policy additionally applies.
+        Gem pack purchases are processed by Google Play. We receive no payment data. To
+        protect against fraud, our server verifies each purchase confirmation (purchase
+        token) provided by Google Play against the Google Play Developer API and stores
+        the confirmed purchase (purchase token, product, order number, timestamp) with
+        the anonymous account (Art. 6 (1)(b) and (f) GDPR). Gems are credited only
+        after this check. Google Play's own privacy policy additionally applies.
       </p>
 
       <h3>Permissions</h3>
       <p>
-        The app uses the Internet permission (PvP mode and Google Play Billing). No other
-        permissions are requested.
+        The app uses the Internet permission (save-game sync, PvP mode, purchase
+        verification and Google Play Billing). No other permissions are requested.
       </p>
 
       <h3>Your rights</h3>
       <p>
         Under the GDPR you have the right to access, rectification, erasure, restriction
         of processing, data portability and objection, and the right to lodge a complaint
-        with a supervisory authority. To delete your PvP data, send an informal email
-        with your display name to the address above.
+        with a supervisory authority. To delete your server data (cloud save, PvP data,
+        purchase records), send an informal email with your PvP display name to the
+        address above.
       </p>
     </div>
 

@@ -33,7 +33,10 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img { max-width: 100%; display: block; }
+/* height:auto keeps the aspect ratio when CSS narrows an image below its
+   width/height attributes (the hero logo on phones, the hero portraits).
+   The topbar brand sets its own explicit height and wins on specificity. */
+img { max-width: 100%; height: auto; display: block; }
 
 a { color: var(--gold-soft); }
 a:hover { color: var(--gold); }
