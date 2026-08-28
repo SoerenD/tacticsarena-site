@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tactics Arena - Draft. Counter. Conquer.</title>
+<meta name="description" content="A tactical 1v1 auto-battler for Android. Draft three units a round, counter what the enemy fields, then watch the battle resolve itself. No ads, no accounts, free to play.">
+<link rel="icon" href="assets/icon-180.png" sizes="180x180">
+<link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tactics Arena - Draft. Counter. Conquer.">
+<meta property="og:description" content="A tactical 1v1 auto-battler for Android. Draft, counter, conquer.">
+<!-- Some scrapers insist on an absolute og:image - make this the full URL
+     once the site has its final domain. -->
+<meta property="og:image" content="assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="assets/logo.webp" alt="Tactics Arena"></a>
+    <nav>
+      <a href="#how">How it plays</a>
+      <a href="#units">Units</a>
+      <a href="#heroes">Heroes</a>
+      <a href="#campaign">Campaign</a>
+      <a href="#testers">Testers</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<div class="hero">
+  <div class="wrap">
+    <img class="mark" src="assets/logo.webp" alt="Tactics Arena - Draft, Counter, Conquer" width="394" height="356">
+    <p class="pitch">
+      A tactical 1v1 auto-battler. Draft three units a round, counter what the enemy
+      fields, then put your army down and watch it fight without you.
+    </p>
+    <div class="cta-row">
+      <!-- TODO: once the app is live on Play, point this at the store listing:
+           https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena
+           and swap the label to "Get it on Google Play" using the official badge
+           from https://play.google.com/intl/en_us/badges/ -->
+      <a class="btn btn-primary" href="#testers">Join the closed test</a>
+      <a class="btn btn-ghost" href="#how">See how it plays</a>
+    </div>
+    <p class="note">Android &middot; Free to play &middot; In closed testing</p>
+    <div class="badges">
+      <span>No ads</span>
+      <span>No account needed</span>
+      <span>Campaign plays offline</span>
+      <span>No energy timers</span>
+    </div>
+  </div>
+</div>
+
+<section id="how">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">How it plays</p>
+      <h2>Three picks. Two options. One winner.</h2>
+      <p class="lede">
+        Every round is the same short loop, and every round the armies get bigger.
+        You never move a unit - the whole game is in what you draft.
+      </p>
+    </div>
+    <div class="grid grid-4">
+      <article class="card step">
+        <span class="n">1</span>
+        <h3>Draft</h3>
+        <p>Three picks per round. Each pick offers two units - take one. Reroll a pair for 20 coins, rising by 10 each time you do it again in the same round.</p>
+      </article>
+      <article class="card step">
+        <span class="n">2</span>
+        <h3>Counter</h3>
+        <p>Counters are explicit, not guesswork. Assassins tear through ranged lines, Crossbowmen punch through Guardians, Knights hold off Assassins.</p>
+      </article>
+      <article class="card step">
+        <span class="n">3</span>
+        <h3>Battle</h3>
+        <p>Both armies reveal, then fight on their own. No controls, no speed toggle - if the draft was right, you already won.</p>
+      </article>
+      <article class="card step">
+        <span class="n">4</span>
+        <h3>Conquer</h3>
+        <p>The loser drops a life. Armies carry over in full and grow every round, so a bad early read follows you all match. First to zero lives loses.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="units">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">The roster</p>
+      <h2>Six units, one counter table</h2>
+      <p class="lede">
+        A small roster on purpose: every unit is worth drafting in the right matchup,
+        and the counters are printed, not hidden.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card unit">
+        <img src="assets/unit-knight.webp" alt="" width="108" height="108">
+        <span class="tag tag-melee">Melee</span>
+        <h3>Knight</h3>
+        <p>The balanced line-holder. Nothing spectacular, never a wasted pick, and hard on Assassins.</p>
+      </article>
+      <article class="card unit">
+        <img src="assets/unit-guardian.webp" alt="" width="108" height="108">
+        <span class="tag tag-melee">Melee</span>
+        <h3>Guardian <span class="elite">Elite</span></h3>
+        <p>A slow wall with little damage of its own. Buys the time your ranged units need - until a Crossbowman shows up.</p>
+      </article>
+      <article class="card unit">
+        <img src="assets/unit-assassin.webp" alt="" width="108" height="108">
+        <span class="tag tag-melee">Melee</span>
+        <h3>Assassin</h3>
+        <p>Fast and fragile. Holds a flank, then blinks behind the enemy line and deletes the archers.</p>
+      </article>
+      <article class="card unit">
+        <img src="assets/unit-archer.webp" alt="" width="108" height="108">
+        <span class="tag tag-ranged">Ranged</span>
+        <h3>Archer</h3>
+        <p>Long reach, steady damage, almost no health. Devastating behind a wall, useless in front of one.</p>
+      </article>
+      <article class="card unit">
+        <img src="assets/unit-spearthrower.webp" alt="" width="108" height="108">
+        <span class="tag tag-ranged">Ranged</span>
+        <h3>Spear Thrower</h3>
+        <p>Shorter range than an Archer, heavier hits, slower throws. The mid-line compromise.</p>
+      </article>
+      <article class="card unit">
+        <img src="assets/unit-crossbowman.webp" alt="" width="108" height="108">
+        <span class="tag tag-ranged">Ranged</span>
+        <h3>Crossbowman <span class="elite">Elite</span></h3>
+        <p>Long range, brutal single-target damage, slow reload. The designated answer to anything armoured.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="heroes">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow">Commanders</p>
+      <h2>Pick a Hero before you pick a unit</h2>
+      <p class="lede">
+        Heroes never step onto the battlefield. They bend the draft instead - a passive
+        that suits one army style, a tactical trick you can spend, and one ultimate a
+        match. They get stronger by rarity, never by raw level.
+      </p>
+    </div>
+    <div class="grid grid-3">
+      <article class="card hero-card">
+        <img src="assets/hero-sir_aldric.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Sir Aldric</h3>
+          <p>Knight Commander &middot; Melee</p>
+          <dl>
+            <dt>Tactical</dt><dd>Shield one unit</dd>
+            <dt>Ultimate</dt><dd>Divine Barrier - shields the whole army</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="card hero-card">
+        <img src="assets/hero-elara.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Elara</h3>
+          <p>Forest Ranger &middot; Ranged</p>
+          <dl>
+            <dt>Tactical</dt><dd>Scout - reveal enemy draft info</dd>
+            <dt>Ultimate</dt><dd>Arrow Storm - an opening volley</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="card hero-card">
+        <img src="assets/hero-vex.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Vex</h3>
+          <p>Shadow Master &middot; Assassins</p>
+          <dl>
+            <dt>Tactical</dt><dd>Mark Target</dd>
+            <dt>Ultimate</dt><dd>Shadow Assault - a stealth burst</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="card hero-card">
+        <img src="assets/hero-borin.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Borin</h3>
+          <p>Iron Guardian &middot; Defence</p>
+          <dl>
+            <dt>Tactical</dt><dd>Taunt to a defender</dd>
+            <dt>Ultimate</dt><dd>Last Stand - prevents the first death</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="card hero-card">
+        <img src="assets/hero-lyra.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Lyra</h3>
+          <p>Tactician-Merchant &middot; Economy</p>
+          <dl>
+            <dt>Tactical</dt><dd>Discounted rerolls</dd>
+            <dt>Ultimate</dt><dd>Foresight - pick from three, with extra info</dd>
+          </dl>
+        </div>
+      </article>
+      <article class="card hero-card">
+        <img src="assets/hero-kael.webp" alt="" width="84" height="84">
+        <div>
+          <h3>Kael</h3>
+          <p>Ash Commander &middot; Aggression</p>
+          <dl>
+            <dt>Tactical</dt><dd>Empower one unit</dd>
+            <dt>Ultimate</dt><dd>Frenzy - an army-wide attack-speed burst</dd>
+          </dl>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="campaign">
+  <div class="wrap">
+    <div class="split">
+      <img src="assets/world-map.webp" alt="The Tactics Arena world map, showing the conquerable territories" loading="lazy">
+      <div>
+        <p class="eyebrow">Campaign</p>
+        <h2>Seven territories, seven ways to be wrong</h2>
+        <p class="lede">
+          Each territory rewrites one rule before you draft, and every one ends with a
+          boss and a Hero. The terrain is shown before you commit - adapting to it is
+          the whole point.
+        </p>
+        <ul class="territories">
+          <li><b>Kingdom</b><span>No modifier. Where you learn the loop.</span></li>
+          <li><b>Greenwood Forest</b><span>Ranged and fast units are 10% more effective.</span></li>
+          <li><b>Iron Mountains</b><span>Heavy melee gains 15% defence.</span></li>
+          <li><b>Ashen Volcano</b><span>All damage up 20%. Battles end fast.</span></li>
+          <li><b>Frozen Lands</b><span>Everything moves 15% slower.</span></li>
+          <li><b>Shadowlands</b><span>One enemy draft pick stays hidden from you.</span></li>
+          <li><b>Crystal Realm</b><span>Rerolls cost half. Coins flow faster.</span></li>
+        </ul>
+        <p class="note">
+          Clear the Crystal Realm to open the Sky Spire - an endless climb where every
+          floor is generated from its own number.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testers">
+  <div class="wrap">
+    <div class="callout">
+      <p class="eyebrow">Closed test</p>
+      <h2>Help get Tactics Arena onto Google Play</h2>
+      <p class="lede" style="margin-inline: auto;">
+        Google requires a closed test with at least 12 testers before a new app can go
+        to production. If you have an Android phone and a Google account, that is the
+        whole commitment.
+      </p>
+      <ol>
+        <li>Send your Google account e-mail address to the address below.</li>
+        <li>You get an opt-in link back - open it on your phone and accept.</li>
+        <li>Install Tactics Arena from the Play Store as normal.</li>
+        <li>Play it a few times over the next two weeks. Tell me what broke.</li>
+      </ol>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="mailto:memoryfyapp@gmail.com?subject=Tactics%20Arena%20closed%20test">Sign me up</a>
+        <!-- Once the closed track has a tester list, the Play Console gives you a
+             web opt-in URL (Test > Closed testing > Testers > "Copy link"). Add it
+             as a second button here so testers can join without mailing first:
+             <a class="btn btn-ghost" href="PASTE_OPT_IN_URL">Opt in directly</a> -->
+        <a class="btn btn-ghost" href="privacy.html">What data is collected</a>
+      </div>
+      <p class="note">Staying opted in for the full 14 days is what counts - please do not uninstall early.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Tactics Arena</span>
+    <nav>
+      <a href="privacy.html">Privacy</a>
+      <a href="support.html">Support</a>
+      <a href="mailto:memoryfyapp@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
