@@ -1,19 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tactics Arena - Draft. Counter. Conquer.</title>
-<meta name="description" content="A tactical 1v1 auto-battler for Android. Draft three units a round, counter what the enemy fields, then watch the battle resolve itself. No ads, no accounts, free to play.">
+<meta name="description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Drafte drei Einheiten pro Runde, kontere die Armee des Gegners und sieh dem Kampf zu. Keine Werbung, kein Konto, kostenlos.">
 <link rel="canonical" href="https://tactics-arena.xyz/">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tactics Arena - Draft. Counter. Conquer.">
-<meta property="og:description" content="A tactical 1v1 auto-battler for Android. Draft, counter, conquer.">
+<meta property="og:description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Draft, Counter, Conquer.">
 <meta property="og:url" content="https://tactics-arena.xyz/">
 <meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -21,17 +20,18 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<a class="skip-link" href="#main" data-en="Skip to content">Zum Inhalt springen</a>
 
 <header class="topbar">
   <div class="wrap">
     <a class="brand" href="./"><img src="assets/logo.webp" alt="Tactics Arena"></a>
     <nav>
-      <a href="#how">How it plays</a>
-      <a href="#units">Units</a>
-      <a href="#heroes">Heroes</a>
-      <a href="#campaign">Campaign</a>
-      <a href="#testers">Testers</a>
+      <a href="#how" data-en="How it plays">So spielt es sich</a>
+      <a href="#units" data-en="Units">Einheiten</a>
+      <a href="#heroes" data-en="Heroes">Helden</a>
+      <a href="#campaign" data-en="Campaign">Feldzug</a>
+      <a href="#testers" data-en="Testers">Tester</a>
+      <button class="lang-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
     </nav>
   </div>
 </header>
@@ -41,24 +41,25 @@
 <div class="hero">
   <div class="wrap">
     <img class="mark" src="assets/logo.webp" alt="Tactics Arena - Draft, Counter, Conquer" width="394" height="356">
-    <p class="pitch">
-      A tactical 1v1 auto-battler. Draft three units a round, counter what the enemy
-      fields, then put your army down and watch it fight without you.
+    <p class="pitch" data-en="A tactical 1v1 auto-battler. Draft three units a round, counter what the enemy fields, then put your army down and watch it fight without you.">
+      Ein taktischer 1-gegen-1-Auto-Battler. Drafte drei Einheiten pro Runde,
+      kontere die Armee des Gegners – und dann sieh deiner Armee zu, wie sie
+      ohne dich kämpft.
     </p>
     <div class="cta-row">
       <!-- TODO: once the app is live on Play, point this at the store listing:
            https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena
-           and swap the label to "Get it on Google Play" using the official badge
-           from https://play.google.com/intl/en_us/badges/ -->
-      <a class="btn btn-primary" href="#testers">Join the closed test</a>
-      <a class="btn btn-ghost" href="#how">See how it plays</a>
+           and swap the label to the official Google Play badge from
+           https://play.google.com/intl/en_us/badges/ -->
+      <a class="btn btn-primary" href="#testers" data-en="Join the closed test">Zum geschlossenen Test</a>
+      <a class="btn btn-ghost" href="#how" data-en="See how it plays">So spielt es sich</a>
     </div>
-    <p class="note">Android &middot; Free to play &middot; In closed testing</p>
+    <p class="note" data-en="Android &middot; Free to play &middot; In closed testing">Android · Kostenlos · Im geschlossenen Test</p>
     <div class="badges">
-      <span>No ads</span>
-      <span>No account needed</span>
-      <span>Campaign plays offline</span>
-      <span>No energy timers</span>
+      <span data-en="No ads">Keine Werbung</span>
+      <span data-en="No account needed">Kein Konto nötig</span>
+      <span data-en="Campaign plays offline">Feldzug offline spielbar</span>
+      <span data-en="No energy timers">Keine Energie-Timer</span>
     </div>
   </div>
 </div>
@@ -66,33 +67,50 @@
 <section id="how">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">How it plays</p>
-      <h2>Three picks. Two options. One winner.</h2>
-      <p class="lede">
-        Every round is the same short loop, and every round the armies get bigger.
-        You never move a unit - the whole game is in what you draft.
+      <p class="eyebrow" data-en="How it plays">So spielt es sich</p>
+      <h2 data-en="Three picks. Two options. One winner.">Drei Picks. Zwei Optionen. Ein Sieger.</h2>
+      <p class="lede" data-en="Every round is the same short loop, and every round the armies get bigger. You never move a unit - the whole game is in what you draft.">
+        Jede Runde ist derselbe kurze Loop, und jede Runde werden die Armeen
+        größer. Du bewegst keine einzige Einheit – das ganze Spiel steckt in
+        deinen Picks.
       </p>
     </div>
     <div class="grid grid-4">
       <article class="card step">
         <span class="n">1</span>
-        <h3>Draft</h3>
-        <p>Three picks per round. Each pick offers two units - take one. Reroll a pair for 20 coins, rising by 10 each time you do it again in the same round.</p>
+        <h3 data-en="Draft">Draften</h3>
+        <p data-en="Three picks per round. Each pick offers two units - take one. Reroll a pair for 20 coins, rising by 10 each time you do it again in the same round.">
+          Drei Picks pro Runde. Jeder Pick bietet zwei Einheiten – nimm genau
+          eine. Ein Neuwurf kostet 20 Münzen, +10 für jeden weiteren in
+          derselben Runde.
+        </p>
       </article>
       <article class="card step">
         <span class="n">2</span>
-        <h3>Counter</h3>
-        <p>Counters are explicit, not guesswork. Assassins tear through ranged lines, Crossbowmen punch through Guardians, Knights hold off Assassins.</p>
+        <h3 data-en="Counter">Kontern</h3>
+        <p data-en="Counters are explicit, not guesswork. Assassins tear through ranged lines, Crossbowmen punch through Guardians, Knights hold off Assassins.">
+          Konter sind explizit, kein Rätselraten. Assassinen zerlegen
+          Fernkämpfer, Armbrustschützen knacken Wächter, Ritter stoppen
+          Assassinen.
+        </p>
       </article>
       <article class="card step">
         <span class="n">3</span>
-        <h3>Battle</h3>
-        <p>Both armies reveal, then fight on their own. No controls, no speed toggle - if the draft was right, you already won.</p>
+        <h3 data-en="Battle">Schlacht</h3>
+        <p data-en="Both armies reveal, then fight on their own. No controls, no speed toggle - if the draft was right, you already won.">
+          Beide Armeen decken auf, dann kämpfen sie von allein. Keine
+          Steuerung, kein Vorspulen – war der Draft richtig, hast du längst
+          gewonnen.
+        </p>
       </article>
       <article class="card step">
         <span class="n">4</span>
-        <h3>Conquer</h3>
-        <p>The loser drops a life. Armies carry over in full and grow every round, so a bad early read follows you all match. First to zero lives loses.</p>
+        <h3 data-en="Conquer">Erobern</h3>
+        <p data-en="The loser drops a life. Armies carry over in full and grow every round, so a bad early read follows you all match. First to zero lives loses.">
+          Der Verlierer verliert ein Leben. Armeen bleiben vollständig
+          erhalten und wachsen jede Runde – ein früher Fehlgriff verfolgt dich
+          das ganze Match. Wer zuerst null Leben hat, verliert.
+        </p>
       </article>
     </div>
   </div>
@@ -101,49 +119,68 @@
 <section id="units">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">The roster</p>
-      <h2>Six units, one counter table</h2>
-      <p class="lede">
-        A small roster on purpose: every unit is worth drafting in the right matchup,
-        and the counters are printed, not hidden.
+      <p class="eyebrow" data-en="The roster">Die Einheiten</p>
+      <h2 data-en="Six units, one counter table">Sechs Einheiten, eine Konter-Tabelle</h2>
+      <p class="lede" data-en="A small roster on purpose: every unit is worth drafting in the right matchup, and the counters are printed, not hidden.">
+        Ein kleiner Kader mit Absicht: Jede Einheit ist im richtigen Matchup
+        ein guter Pick, und die Konter-Tabelle ist offen einsehbar – nichts
+        ist versteckt.
       </p>
     </div>
     <div class="grid grid-3">
       <article class="card unit">
         <img src="assets/unit-knight.webp" alt="" width="108" height="108">
-        <span class="tag tag-melee">Melee</span>
-        <h3>Knight</h3>
-        <p>The balanced line-holder. Nothing spectacular, never a wasted pick, and hard on Assassins.</p>
+        <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
+        <h3><span data-en="Knight">Ritter</span></h3>
+        <p data-en="The balanced line-holder. Nothing spectacular, never a wasted pick, and hard on Assassins.">
+          Der ausgewogene Linienhalter. Nichts Spektakuläres, nie ein
+          verschenkter Pick – und hart zu Assassinen.
+        </p>
       </article>
       <article class="card unit">
         <img src="assets/unit-guardian.webp" alt="" width="108" height="108">
-        <span class="tag tag-melee">Melee</span>
-        <h3>Guardian <span class="elite">Elite</span></h3>
-        <p>A slow wall with little damage of its own. Buys the time your ranged units need - until a Crossbowman shows up.</p>
+        <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
+        <h3><span data-en="Guardian">Wächter</span> <span class="elite">Elite</span></h3>
+        <p data-en="A slow wall with little damage of its own. Buys the time your ranged units need - until a Crossbowman shows up.">
+          Eine langsame Mauer mit wenig eigenem Schaden. Erkauft deinen
+          Fernkämpfern Zeit – bis ein Armbrustschütze auftaucht.
+        </p>
       </article>
       <article class="card unit">
         <img src="assets/unit-assassin.webp" alt="" width="108" height="108">
-        <span class="tag tag-melee">Melee</span>
-        <h3>Assassin</h3>
-        <p>Fast and fragile. Holds a flank, then blinks behind the enemy line and deletes the archers.</p>
+        <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
+        <h3><span data-en="Assassin">Assassine</span></h3>
+        <p data-en="Fast and fragile. Holds a flank, then blinks behind the enemy line and deletes the archers.">
+          Schnell und zerbrechlich. Hält kurz die Flanke, teleportiert sich
+          dann hinter die feindliche Linie und löscht die Bogenschützen aus.
+        </p>
       </article>
       <article class="card unit">
         <img src="assets/unit-archer.webp" alt="" width="108" height="108">
-        <span class="tag tag-ranged">Ranged</span>
-        <h3>Archer</h3>
-        <p>Long reach, steady damage, almost no health. Devastating behind a wall, useless in front of one.</p>
+        <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
+        <h3><span data-en="Archer">Bogenschütze</span></h3>
+        <p data-en="Long reach, steady damage, almost no health. Devastating behind a wall, useless in front of one.">
+          Große Reichweite, steter Schaden, kaum Leben. Verheerend hinter
+          einer Mauer, nutzlos davor.
+        </p>
       </article>
       <article class="card unit">
         <img src="assets/unit-spearthrower.webp" alt="" width="108" height="108">
-        <span class="tag tag-ranged">Ranged</span>
-        <h3>Spear Thrower</h3>
-        <p>Shorter range than an Archer, heavier hits, slower throws. The mid-line compromise.</p>
+        <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
+        <h3><span data-en="Spear Thrower">Speerwerfer</span></h3>
+        <p data-en="Shorter range than an Archer, heavier hits, slower throws. The mid-line compromise.">
+          Weniger Reichweite als der Bogenschütze, härtere Treffer, langsamere
+          Würfe. Der Kompromiss für die Mitte.
+        </p>
       </article>
       <article class="card unit">
         <img src="assets/unit-crossbowman.webp" alt="" width="108" height="108">
-        <span class="tag tag-ranged">Ranged</span>
-        <h3>Crossbowman <span class="elite">Elite</span></h3>
-        <p>Long range, brutal single-target damage, slow reload. The designated answer to anything armoured.</p>
+        <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
+        <h3><span data-en="Crossbowman">Armbrustschütze</span> <span class="elite">Elite</span></h3>
+        <p data-en="Long range, brutal single-target damage, slow reload. The designated answer to anything armoured.">
+          Große Reichweite, brutaler Einzelziel-Schaden, langsames Nachladen.
+          Die Antwort auf alles Gepanzerte.
+        </p>
       </article>
     </div>
   </div>
@@ -152,12 +189,13 @@
 <section id="heroes">
   <div class="wrap">
     <div class="section-head">
-      <p class="eyebrow">Commanders</p>
-      <h2>Pick a Hero before you pick a unit</h2>
-      <p class="lede">
-        Heroes never step onto the battlefield. They bend the draft instead - a passive
-        that suits one army style, a tactical trick you can spend, and one ultimate a
-        match. They get stronger by rarity, never by raw level.
+      <p class="eyebrow" data-en="Commanders">Kommandanten</p>
+      <h2 data-en="Pick a Hero before you pick a unit">Erst der Held, dann der Draft</h2>
+      <p class="lede" data-en="Heroes never step onto the battlefield. They bend the draft instead - a passive that suits one army style, a tactical trick you can spend, and one ultimate a match. They get stronger by rarity, never by raw level.">
+        Helden betreten das Schlachtfeld nie. Sie verbiegen stattdessen den
+        Draft – ein Passiv, das zu einem Armeestil passt, ein taktischer
+        Trick zum Einsetzen und ein Ultimate pro Match. Stärker werden sie
+        über Seltenheit, nie über Level.
       </p>
     </div>
     <div class="grid grid-3">
@@ -165,10 +203,12 @@
         <img src="assets/hero-sir_aldric.webp" alt="" width="84" height="84">
         <div>
           <h3>Sir Aldric</h3>
-          <p>Knight Commander &middot; Melee</p>
+          <p data-en="Knight Commander &middot; Melee">Ritterkommandant · Nahkampf</p>
           <dl>
-            <dt>Tactical</dt><dd>Shield one unit</dd>
-            <dt>Ultimate</dt><dd>Divine Barrier - shields the whole army</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Shield Wall - melee units start shielded">Schildwall – Nahkämpfer starten mit Schild</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Divine Barrier - the whole army starts shielded">Göttliche Barriere – die ganze Armee startet mit Schild</dd>
           </dl>
         </div>
       </article>
@@ -176,10 +216,12 @@
         <img src="assets/hero-elara.webp" alt="" width="84" height="84">
         <div>
           <h3>Elara</h3>
-          <p>Forest Ranger &middot; Ranged</p>
+          <p data-en="Forest Ranger &middot; Ranged">Waldläuferin · Fernkampf</p>
           <dl>
-            <dt>Tactical</dt><dd>Scout - reveal enemy draft info</dd>
-            <dt>Ultimate</dt><dd>Arrow Storm - an opening volley</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Scout - reveals the CPU's draft pair">Spähen – zeigt das Draft-Paar des Gegners</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Arrow Storm - first ranged shots hit twice as hard">Pfeilsturm – erste Schüsse treffen doppelt so hart</dd>
           </dl>
         </div>
       </article>
@@ -187,10 +229,12 @@
         <img src="assets/hero-vex.webp" alt="" width="84" height="84">
         <div>
           <h3>Vex</h3>
-          <p>Shadow Master &middot; Assassins</p>
+          <p data-en="Shadow Master &middot; Assassins">Schattenmeister · Assassinen</p>
           <dl>
-            <dt>Tactical</dt><dd>Mark Target</dd>
-            <dt>Ultimate</dt><dd>Shadow Assault - a stealth burst</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Shadow Step - Assassins move faster">Schattenschritt – Assassinen sind schneller unterwegs</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Shadow Assault - +30% damage and speed for Assassins">Schattenangriff – +30 % Schaden und Tempo für Assassinen</dd>
           </dl>
         </div>
       </article>
@@ -198,10 +242,12 @@
         <img src="assets/hero-borin.webp" alt="" width="84" height="84">
         <div>
           <h3>Borin</h3>
-          <p>Iron Guardian &middot; Defence</p>
+          <p data-en="Iron Guardian &middot; Defense">Eiserner Wächter · Verteidigung</p>
           <dl>
-            <dt>Tactical</dt><dd>Taunt to a defender</dd>
-            <dt>Ultimate</dt><dd>Last Stand - prevents the first death</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Bulwark - Knights and Guardians take less damage">Bollwerk – Ritter und Wächter erleiden weniger Schaden</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Last Stand - the whole army takes 25% less damage">Letztes Gefecht – die ganze Armee erleidet 25 % weniger Schaden</dd>
           </dl>
         </div>
       </article>
@@ -209,10 +255,12 @@
         <img src="assets/hero-lyra.webp" alt="" width="84" height="84">
         <div>
           <h3>Lyra</h3>
-          <p>Tactician-Merchant &middot; Economy</p>
+          <p data-en="Tactician &amp; Merchant &middot; Economy">Taktikerin &amp; Händlerin · Wirtschaft</p>
           <dl>
-            <dt>Tactical</dt><dd>Discounted rerolls</dd>
-            <dt>Ultimate</dt><dd>Foresight - pick from three, with extra info</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Recruiter - your next reroll is free">Anwerberin – dein nächster Neuwurf ist gratis</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Golden Age - an instant pile of coins">Goldenes Zeitalter – sofort ein Schwung Münzen</dd>
           </dl>
         </div>
       </article>
@@ -220,10 +268,12 @@
         <img src="assets/hero-kael.webp" alt="" width="84" height="84">
         <div>
           <h3>Kael</h3>
-          <p>Ash Commander &middot; Aggression</p>
+          <p data-en="Ash Commander &middot; Aggression">Aschekommandant · Aggression</p>
           <dl>
-            <dt>Tactical</dt><dd>Empower one unit</dd>
-            <dt>Ultimate</dt><dd>Frenzy - an army-wide attack-speed burst</dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd data-en="Ignite - opening attacks hit harder">Entzünden – Eröffnungsangriffe treffen härter</dd>
+            <dt>Ultimate</dt>
+            <dd data-en="Onslaught - the whole army attacks 25% faster">Ansturm – die ganze Armee greift 25 % schneller an</dd>
           </dl>
         </div>
       </article>
@@ -234,27 +284,28 @@
 <section id="campaign">
   <div class="wrap">
     <div class="split">
-      <img src="assets/world-map.webp" alt="The Tactics Arena world map, showing the conquerable territories" loading="lazy">
+      <img src="assets/world-map.webp" alt="Die Weltkarte von Tactics Arena mit den eroberbaren Territorien" loading="lazy">
       <div>
-        <p class="eyebrow">Campaign</p>
-        <h2>Seven territories, seven ways to be wrong</h2>
-        <p class="lede">
-          Each territory rewrites one rule before you draft, and every one ends with a
-          boss and a Hero. The terrain is shown before you commit - adapting to it is
-          the whole point.
+        <p class="eyebrow" data-en="Campaign">Feldzug</p>
+        <h2 data-en="Seven territories, seven ways to be wrong">Sieben Territorien, sieben Wege, falsch zu liegen</h2>
+        <p class="lede" data-en="Each territory rewrites one rule before you draft, and every one ends with a boss and a Hero. The terrain is shown before you commit - adapting to it is the whole point.">
+          Jedes Territorium ändert eine Regel, bevor du draftest, und jedes
+          endet mit einem Boss und einem Helden. Die Regel steht vor dem Kampf
+          fest – sich anzupassen ist der ganze Punkt.
         </p>
         <ul class="territories">
-          <li><b>Kingdom</b><span>No modifier. Where you learn the loop.</span></li>
-          <li><b>Greenwood Forest</b><span>Ranged and fast units are 10% more effective.</span></li>
-          <li><b>Iron Mountains</b><span>Heavy melee gains 15% defence.</span></li>
-          <li><b>Ashen Volcano</b><span>All damage up 20%. Battles end fast.</span></li>
-          <li><b>Frozen Lands</b><span>Everything moves 15% slower.</span></li>
-          <li><b>Shadowlands</b><span>One enemy draft pick stays hidden from you.</span></li>
-          <li><b>Crystal Realm</b><span>Rerolls cost half. Coins flow faster.</span></li>
+          <li><b data-en="Kingdom">Königreich</b><span data-en="No modifier. Where you learn the loop.">Kein Modifikator. Hier lernst du den Loop.</span></li>
+          <li><b data-en="Greenwood Forest">Grünwald</b><span data-en="Ranged and fast units are 10% more effective.">Fernkämpfer und schnelle Einheiten sind 10 % effektiver.</span></li>
+          <li><b data-en="Iron Mountains">Eisenberge</b><span data-en="Heavy melee gains 15% defence.">Schwerer Nahkampf bekommt 15 % Verteidigung.</span></li>
+          <li><b data-en="Ashen Volcano">Aschevulkan</b><span data-en="All damage up 20%. Battles end fast.">Alle verursachen 20 % mehr Schaden. Kämpfe enden schnell.</span></li>
+          <li><b data-en="Frozen Lands">Frostlande</b><span data-en="Everything moves 15% slower.">Alles bewegt sich 15 % langsamer.</span></li>
+          <li><b data-en="Shadowlands">Schattenlande</b><span data-en="One enemy draft pick stays hidden from you.">Ein gegnerischer Draft-Pick bleibt für dich verborgen.</span></li>
+          <li><b data-en="Crystal Realm">Kristallreich</b><span data-en="Rerolls cost half. Coins flow faster.">Neuwürfe kosten die Hälfte. Münzen fließen schneller.</span></li>
         </ul>
-        <p class="note">
-          Clear the Crystal Realm to open the Sky Spire - an endless climb where every
-          floor is generated from its own number.
+        <p class="note" data-en="Clear the Crystal Realm to open the Sky Spire - an endless climb where every floor is generated from its own number.">
+          Erobere das Kristallreich und der Sky Spire öffnet sich – ein
+          endloser Aufstieg, bei dem jede Etage aus ihrer eigenen Nummer
+          generiert wird.
         </p>
       </div>
     </div>
@@ -264,28 +315,31 @@
 <section id="testers">
   <div class="wrap">
     <div class="callout">
-      <p class="eyebrow">Closed test</p>
-      <h2>Help get Tactics Arena onto Google Play</h2>
-      <p class="lede" style="margin-inline: auto;">
-        Google requires a closed test with at least 12 testers before a new app can go
-        to production. If you have an Android phone and a Google account, that is the
-        whole commitment.
+      <p class="eyebrow" data-en="Closed test">Geschlossener Test</p>
+      <h2 data-en="Help get Tactics Arena onto Google Play">Hilf Tactics Arena in den Play Store</h2>
+      <p class="lede" style="margin-inline: auto;" data-en="Google requires a closed test with at least 12 testers before a new app can go to production. If you have an Android phone and a Google account, that is the whole commitment.">
+        Google verlangt vor dem Release einen geschlossenen Test mit
+        mindestens 12 Testern. Wenn du ein Android-Handy und ein Google-Konto
+        hast, ist das schon das ganze Commitment.
       </p>
       <ol>
-        <li>Send your Google account e-mail address to the address below.</li>
-        <li>You get an opt-in link back - open it on your phone and accept.</li>
-        <li>Install Tactics Arena from the Play Store as normal.</li>
-        <li>Play it a few times over the next two weeks. Tell me what broke.</li>
+        <li data-en="Send your Google account e-mail address to the address below.">Schick die E-Mail-Adresse deines Google-Kontos an die Adresse unten.</li>
+        <li data-en="You get an opt-in link back - open it on your phone and accept.">Du bekommst einen Opt-in-Link zurück – öffne ihn am Handy und nimm an.</li>
+        <li data-en="Install Tactics Arena from the Play Store as normal.">Installiere Tactics Arena ganz normal aus dem Play Store.</li>
+        <li data-en="Play it a few times over the next two weeks. Tell me what broke.">Spiel es in den nächsten zwei Wochen ein paar Mal. Sag mir, was kaputt ist.</li>
       </ol>
       <div class="cta-row">
-        <a class="btn btn-primary" href="mailto:memoryfyapp@gmail.com?subject=Tactics%20Arena%20closed%20test">Sign me up</a>
+        <a class="btn btn-primary" href="mailto:memoryfyapp@gmail.com?subject=Tactics%20Arena%20closed%20test" data-en="Sign me up">Ich bin dabei</a>
         <!-- Once the closed track has a tester list, the Play Console gives you a
              web opt-in URL (Test > Closed testing > Testers > "Copy link"). Add it
              as a second button here so testers can join without mailing first:
              <a class="btn btn-ghost" href="PASTE_OPT_IN_URL">Opt in directly</a> -->
-        <a class="btn btn-ghost" href="privacy.html">What data is collected</a>
+        <a class="btn btn-ghost" href="privacy.html" data-en="What data is collected">Welche Daten anfallen</a>
       </div>
-      <p class="note">Staying opted in for the full 14 days is what counts - please do not uninstall early.</p>
+      <p class="note" data-en="Staying opted in for the full 14 days is what counts - please do not uninstall early.">
+        Was zählt: die vollen 14 Tage angemeldet bleiben – bitte nicht früher
+        deinstallieren.
+      </p>
     </div>
   </div>
 </section>
@@ -296,13 +350,47 @@
   <div class="wrap">
     <span>&copy; 2026 Tactics Arena</span>
     <nav>
-      <a href="privacy.html">Privacy</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
       <a href="support.html">Support</a>
       <a href="impressum.html">Impressum</a>
-      <a href="mailto:memoryfyapp@gmail.com">Contact</a>
+      <a href="mailto:memoryfyapp@gmail.com" data-en="Contact">Kontakt</a>
     </nav>
   </div>
 </footer>
+
+<script>
+// Language toggle. German is authored in the markup (and what no-JS visitors
+// get); English lives in data-en attributes. The German original is stashed
+// into data-de on first switch, so toggling is lossless in both directions.
+(function () {
+  var KEY = 'ta-lang';
+  var btn = document.getElementById('lang-toggle');
+  function apply(lang) {
+    document.documentElement.setAttribute('lang', lang);
+    var nodes = document.querySelectorAll('[data-en]');
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      if (el.getAttribute('data-de') === null) {
+        el.setAttribute('data-de', el.textContent);
+      }
+      el.textContent = lang === 'en'
+        ? el.getAttribute('data-en')
+        : el.getAttribute('data-de');
+    }
+    btn.textContent = lang === 'en' ? 'DE' : 'EN';
+    btn.setAttribute('aria-label', lang === 'en'
+      ? 'Auf Deutsch umschalten'
+      : 'Switch to English');
+    try { localStorage.setItem(KEY, lang); } catch (e) { /* private mode */ }
+  }
+  var saved = 'de';
+  try { saved = localStorage.getItem(KEY) === 'en' ? 'en' : 'de'; } catch (e) { /* ignore */ }
+  if (saved === 'en') { apply('en'); }
+  btn.addEventListener('click', function () {
+    apply(document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de');
+  });
+})();
+</script>
 
 </body>
 </html>
