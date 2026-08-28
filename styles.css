@@ -104,7 +104,7 @@ h3 { font-size: 1.15rem; letter-spacing: 0.02em; }
   }
   .topbar nav { margin-left: 0; justify-content: center; gap: 1rem; }
   .topbar nav a { font-size: 0.78rem; }
-  section[id] { scroll-margin-top: 110px; }
+  section[id], #units { scroll-margin-top: 110px; }
 }
 
 /* ---------- buttons ---------- */
@@ -168,7 +168,7 @@ h3 { font-size: 1.15rem; letter-spacing: 0.02em; }
 section { padding: clamp(3.5rem, 8vw, 6rem) 0; }
 section + section { border-top: 1px solid var(--line-soft); }
 /* Keep headings clear of the sticky header when jumping to an anchor. */
-section[id] { scroll-margin-top: 76px; }
+section[id], #units { scroll-margin-top: 76px; }
 .section-head { margin-bottom: 2.6rem; }
 
 .grid { display: grid; gap: 1.1rem; }
@@ -201,17 +201,24 @@ section[id] { scroll-margin-top: 76px; }
 .tag-melee { background: rgba(39, 108, 169, 0.22); color: #7db6e8; border: 1px solid rgba(39, 108, 169, 0.5); }
 .tag-ranged { background: rgba(50, 150, 108, 0.2); color: #6fd0a4; border: 1px solid rgba(50, 150, 108, 0.5); }
 
-/* heroes */
-.hero-card { display: flex; gap: 1rem; align-items: flex-start; }
-.hero-card img { width: 84px; border-radius: 10px; flex: none; border: 1px solid var(--line); }
-.hero-card dl { margin: 0.5rem 0 0; font-size: 0.88rem; }
+/* heroes: header row with the portrait, then the ability list across
+   the full card width so nothing wraps into a ragged column. */
+#heroes .grid-3 { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); }
+.hero-card { display: flex; flex-direction: column; gap: 0.9rem; }
+.hero-head { display: flex; gap: 1rem; align-items: center; }
+.hero-head img { width: 72px; border-radius: 10px; flex: none; border: 1px solid var(--line); }
+.hero-head p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.9rem; }
+.hero-card dl {
+  margin: 0; font-size: 0.9rem;
+  display: grid; grid-template-columns: auto 1fr;
+  column-gap: 0.9rem; row-gap: 0.4rem; align-items: baseline;
+}
 .hero-card dt {
   color: var(--gold); font-size: 0.68rem; letter-spacing: 0.14em;
-  text-transform: uppercase; margin-top: 0.5rem;
+  text-transform: uppercase;
 }
-.hero-card dd { margin: 0 0 0.15rem; color: var(--muted); }
-/* Ability name on its own line above the plain-language effect. */
-.hero-card .ability { display: block; color: var(--text); font-weight: 600; }
+.hero-card dd { margin: 0; color: var(--muted); }
+.hero-card .ability { color: var(--text); font-weight: 600; }
 
 /* campaign */
 .split { display: grid; gap: 2.5rem; grid-template-columns: 1fr; align-items: center; }

@@ -75,53 +75,7 @@
         deinen Picks.
       </p>
     </div>
-    <div class="grid grid-4">
-      <article class="card step">
-        <span class="n">1</span>
-        <h3 data-en="Draft">Draften</h3>
-        <p data-en="Three picks per round. Each pick offers two units and you take exactly one. A reroll costs 20 coins and gets 10 pricier each time in the same round.">
-          Drei Picks pro Runde. Jeder Pick bietet zwei Einheiten, du nimmst
-          genau eine. Ein Neuwurf kostet 20 Münzen und wird in derselben
-          Runde jedes Mal 10 Münzen teurer.
-        </p>
-      </article>
-      <article class="card step">
-        <span class="n">2</span>
-        <h3 data-en="Counter">Kontern</h3>
-        <p data-en="Counters are explicit, not guesswork. Assassins tear through ranged lines, Crossbowmen crack Guardians, Knights stop Assassins.">
-          Konter sind explizit, kein Rätselraten. Assassinen zerlegen
-          Fernkämpfer, Armbrustschützen knacken Wächter, Ritter stoppen
-          Assassinen.
-        </p>
-      </article>
-      <article class="card step">
-        <span class="n">3</span>
-        <h3 data-en="Battle">Schlacht</h3>
-        <p data-en="Both armies reveal, then fight on their own. No controls, no speed toggle. If the draft was right, you already won.">
-          Beide Armeen decken auf, dann kämpfen sie von allein. Keine
-          Steuerung, kein Vorspulen. War der Draft richtig, hast du längst
-          gewonnen.
-        </p>
-      </article>
-      <article class="card step">
-        <span class="n">4</span>
-        <h3 data-en="Conquer">Erobern</h3>
-        <p data-en="The loser drops a life. Armies carry over in full and grow every round, so a bad early read follows you all match. First to zero lives loses.">
-          Der Verlierer verliert ein Leben. Armeen bleiben vollständig
-          erhalten und wachsen jede Runde, ein früher Fehlgriff verfolgt
-          dich also das ganze Match. Wer zuerst null Leben hat, verliert.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="units">
-  <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow" data-en="The units">Die Einheiten</p>
-    </div>
-    <div class="grid grid-3">
+    <div class="grid grid-3" id="units">
       <article class="card unit">
         <img src="assets/unit-knight.webp" alt="" width="108" height="108">
         <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
@@ -194,94 +148,106 @@
     </div>
     <div class="grid grid-3">
       <article class="card hero-card">
-        <img src="assets/hero-sir_aldric.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Sir Aldric</h3>
-          <p data-en="Knight Commander &middot; Melee">Ritterkommandant · Nahkampf</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Hold the Line">Haltet die Linie</span><span data-en="Melee units take less damage.">Nahkämpfer erleiden weniger Schaden.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Shield Wall">Schildwall</span><span data-en="Melee units start this battle shielded.">Nahkämpfer starten diese Schlacht mit Schild.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Divine Barrier">Göttliche Barriere</span><span data-en="The whole army starts shielded.">Die ganze Armee startet mit Schild.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-sir_aldric.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Sir Aldric</h3>
+            <p data-en="Knight Commander &middot; Melee">Ritterkommandant · Nahkampf</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="Hold the Line">Haltet die Linie</span>: <span data-en="Melee units take less damage.">Nahkämpfer erleiden weniger Schaden.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Shield Wall">Schildwall</span>: <span data-en="Melee units start this battle shielded.">Nahkämpfer starten diese Schlacht mit Schild.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Divine Barrier">Göttliche Barriere</span>: <span data-en="The whole army starts shielded.">Die ganze Armee startet mit Schild.</span></dd>
+          </dl>
       </article>
       <article class="card hero-card">
-        <img src="assets/hero-elara.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Elara</h3>
-          <p data-en="Forest Ranger &middot; Ranged">Waldläuferin · Fernkampf</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Ranger Training">Waldläufer-Training</span><span data-en="Ranged units attack faster.">Fernkämpfer greifen schneller an.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Scout">Spähen</span><span data-en="Reveals the enemy's draft pair.">Zeigt dir das Draft-Paar des Gegners.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Arrow Storm">Pfeilsturm</span><span data-en="Every ranged unit's first shot hits twice as hard.">Der erste Schuss jedes Fernkämpfers trifft doppelt so hart.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-elara.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Elara</h3>
+            <p data-en="Forest Ranger &middot; Ranged">Waldläuferin · Fernkampf</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="Ranger Training">Waldläufer-Training</span>: <span data-en="Ranged units attack faster.">Fernkämpfer greifen schneller an.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Scout">Spähen</span>: <span data-en="Reveals the enemy's draft pair.">Zeigt dir das Draft-Paar des Gegners.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Arrow Storm">Pfeilsturm</span>: <span data-en="Every ranged unit's first shot hits twice as hard.">Der erste Schuss jedes Fernkämpfers trifft doppelt so hart.</span></dd>
+          </dl>
       </article>
       <article class="card hero-card">
-        <img src="assets/hero-vex.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Vex</h3>
-          <p data-en="Shadow Master &middot; Assassins">Schattenmeister · Assassinen</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Night Steps">Nachtschritte</span><span data-en="Assassins move faster.">Assassinen sind schneller unterwegs.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span><span data-en="Assassins move faster still for one battle.">Assassinen sind eine Schlacht lang noch schneller.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span><span data-en="Assassins deal 30% more damage and gain 30% speed.">Assassinen machen 30 % mehr Schaden und sind 30 % schneller.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-vex.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Vex</h3>
+            <p data-en="Shadow Master &middot; Assassins">Schattenmeister · Assassinen</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="Night Steps">Nachtschritte</span>: <span data-en="Assassins move faster.">Assassinen sind schneller unterwegs.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span>: <span data-en="Assassins move faster still for one battle.">Assassinen sind eine Schlacht lang noch schneller.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span>: <span data-en="Assassins deal 30% more damage and gain 30% speed.">Assassinen machen 30 % mehr Schaden und sind 30 % schneller.</span></dd>
+          </dl>
       </article>
       <article class="card hero-card">
-        <img src="assets/hero-borin.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Borin</h3>
-          <p data-en="Iron Guardian &middot; Defense">Eiserner Wächter · Verteidigung</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Iron Skin">Eisenhaut</span><span data-en="Guardians take less damage.">Wächter erleiden weniger Schaden.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Bulwark">Bollwerk</span><span data-en="Knights and Guardians take less damage this battle.">Ritter und Wächter erleiden diese Schlacht weniger Schaden.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Last Stand">Letztes Gefecht</span><span data-en="Your whole army takes 25% less damage.">Die ganze Armee erleidet 25 % weniger Schaden.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-borin.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Borin</h3>
+            <p data-en="Iron Guardian &middot; Defense">Eiserner Wächter · Verteidigung</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="Iron Skin">Eisenhaut</span>: <span data-en="Guardians take less damage.">Wächter erleiden weniger Schaden.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Bulwark">Bollwerk</span>: <span data-en="Knights and Guardians take less damage this battle.">Ritter und Wächter erleiden diese Schlacht weniger Schaden.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Last Stand">Letztes Gefecht</span>: <span data-en="Your whole army takes 25% less damage.">Die ganze Armee erleidet 25 % weniger Schaden.</span></dd>
+          </dl>
       </article>
       <article class="card hero-card">
-        <img src="assets/hero-lyra.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Lyra</h3>
-          <p data-en="Tactician &amp; Merchant &middot; Economy">Taktikerin &amp; Händlerin · Wirtschaft</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Sharp Ledger">Scharfe Bücher</span><span data-en="Extra coins after every battle.">Extra Münzen nach jeder Schlacht.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Recruiter">Anwerberin</span><span data-en="Your next reroll is free.">Dein nächster Neuwurf ist gratis.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Golden Age">Goldenes Zeitalter</span><span data-en="An instant pile of coins.">Sofort ein Schwung Münzen.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-lyra.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Lyra</h3>
+            <p data-en="Tactician &amp; Merchant &middot; Economy">Taktikerin &amp; Händlerin · Wirtschaft</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="Sharp Ledger">Scharfe Bücher</span>: <span data-en="Extra coins after every battle.">Extra Münzen nach jeder Schlacht.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Recruiter">Anwerberin</span>: <span data-en="Your next reroll is free.">Dein nächster Neuwurf ist gratis.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Golden Age">Goldenes Zeitalter</span>: <span data-en="An instant pile of coins.">Sofort ein Schwung Münzen.</span></dd>
+          </dl>
       </article>
       <article class="card hero-card">
-        <img src="assets/hero-kael.webp" alt="" width="84" height="84">
-        <div>
-          <h3>Kael</h3>
-          <p data-en="Ash Commander &middot; Aggression">Aschekommandant · Aggression</p>
-          <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="First Strike">Erstschlag</span><span data-en="Opening attacks hit harder.">Eröffnungsangriffe treffen härter.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Ignite">Entzünden</span><span data-en="The opening hits harder still for one battle.">Eine Schlacht lang trifft die Eröffnung noch härter.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Onslaught">Ansturm</span><span data-en="Your whole army attacks 25% faster.">Die ganze Armee greift 25 % schneller an.</span></dd>
-          </dl>
+        <div class="hero-head">
+          <img src="assets/hero-kael.webp" alt="" width="84" height="84">
+          <div>
+            <h3>Kael</h3>
+            <p data-en="Ash Commander &middot; Aggression">Aschekommandant · Aggression</p>
+          </div>
         </div>
+        <dl>
+            <dt data-en="Passive">Passiv</dt>
+            <dd><span class="ability" data-en="First Strike">Erstschlag</span>: <span data-en="Opening attacks hit harder.">Eröffnungsangriffe treffen härter.</span></dd>
+            <dt data-en="Tactical">Taktik</dt>
+            <dd><span class="ability" data-en="Ignite">Entzünden</span>: <span data-en="The opening hits harder still for one battle.">Eine Schlacht lang trifft die Eröffnung noch härter.</span></dd>
+            <dt>Ultimate</dt>
+            <dd><span class="ability" data-en="Onslaught">Ansturm</span>: <span data-en="Your whole army attacks 25% faster.">Die ganze Armee greift 25 % schneller an.</span></dd>
+          </dl>
       </article>
     </div>
   </div>
