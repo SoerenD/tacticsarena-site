@@ -47,10 +47,14 @@
       ohne dich kämpft.
     </p>
     <div class="cta-row">
-      <!-- TODO: once the app is live on Play, point this at the store listing:
-           https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena
-           and swap the label to the official Google Play badge from
-           https://play.google.com/intl/en_us/badges/ -->
+      <!-- The store listing https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena
+           deliberately is NOT the hero button yet: while the app is in closed
+           testing that URL answers HTTP 404 for everyone who is not a signed-in
+           tester (verified 2026-08-29), so a visitor would land on "not found".
+           It is linked inside the testers section, where the steps explain the
+           opt-in first. Swap this button to the store link plus the official
+           badge (https://play.google.com/intl/en_us/badges/) once the app is in
+           production. -->
       <a class="btn btn-primary" href="#testers" data-en="Join the closed test">Zum geschlossenen Test</a>
       <a class="btn btn-ghost" href="#how" data-en="See how it plays">So spielt es sich</a>
     </div>
@@ -290,17 +294,18 @@
       <p class="eyebrow" data-en="Closed test">Geschlossener Test</p>
       <h2 data-en="Help get Tactics Arena onto Google Play">Hilf Tactics Arena in den Play Store</h2>
       <ol>
-        <li data-en="Send your Google account e-mail address to the address below.">Schick die E-Mail-Adresse deines Google-Kontos an die Adresse unten.</li>
-        <li data-en="You get an opt-in link back. Open it on your phone and accept.">Du bekommst einen Opt-in-Link zurück. Öffne ihn am Handy und nimm an.</li>
-        <li data-en="Install Tactics Arena from the Play Store as normal.">Installiere Tactics Arena ganz normal aus dem Play Store.</li>
-        <li data-en="Play it a few times over the next two weeks. Tell me what broke.">Spiel es in den nächsten zwei Wochen ein paar Mal. Sag mir, was kaputt ist.</li>
+        <li><span data-en="Send the e-mail address of your Google account to the address below.">Schick die E-Mail-Adresse deines Google-Kontos an die Adresse unten.</span></li>
+        <li><span data-en="I add you to the tester list and reply. This step is required — the two links below stay empty until then.">Ich trage dich in die Testerliste ein und melde mich zurück. Der Schritt ist nötig — vorher laufen die beiden Links unten ins Leere.</span></li>
+        <li><span data-en="Open the opt-in link on your phone and join the test:">Öffne den Opt-in-Link am Handy und tritt dem Test bei:</span>
+          <a href="https://play.google.com/apps/testing/com.nrgstash.tacticsarena">play.google.com/apps/testing/com.nrgstash.tacticsarena</a></li>
+        <li><span data-en="Then install Tactics Arena from the Play Store:">Danach installierst du Tactics Arena aus dem Play Store:</span>
+          <a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena" data-en="Open the store listing">Zum Store-Eintrag</a></li>
+        <li><span data-en="Play it a few times over the next two weeks. Tell me what broke.">Spiel es in den nächsten zwei Wochen ein paar Mal. Sag mir, was kaputt ist.</span></li>
       </ol>
+      <p class="note" data-en="Both links only work once your address is on the tester list, and Google can take a few hours to let a new tester through. Before that the Play Store answers &laquo;not found&raquo; &ndash; that is normal, not a broken link.">Beide Links funktionieren erst, wenn deine Adresse auf der Testerliste steht — und Google kann danach ein paar Stunden brauchen. Vorher meldet der Play Store &bdquo;Nicht gefunden&ldquo;; das ist normal und kein kaputter Link.</p>
       <div class="cta-row">
         <a class="btn btn-primary" href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20closed%20test" data-en="Sign me up">Ich bin dabei</a>
-        <!-- Once the closed track has a tester list, the Play Console gives you a
-             web opt-in URL (Test > Closed testing > Testers > "Copy link"). Add it
-             as a second button here so testers can join without mailing first:
-             <a class="btn btn-ghost" href="PASTE_OPT_IN_URL">Opt in directly</a> -->
+        <a class="btn btn-ghost" href="https://play.google.com/apps/testing/com.nrgstash.tacticsarena" data-en="Opt in (once unlocked)">Opt-in (nach Freischaltung)</a>
         <a class="btn btn-ghost" href="privacy.html" data-en="What data is collected">Welche Daten anfallen</a>
       </div>
     </div>
