@@ -236,17 +236,6 @@ section[id], #units { scroll-margin-top: 76px; }
 .territories b { color: var(--text); font-weight: 600; min-width: 9.5rem; }
 .territories span { color: var(--muted); flex: 1; }
 
-/* tester call-out */
-.callout {
-  background: linear-gradient(150deg, var(--panel-2), var(--ink-2) 70%);
-  border: 1px solid var(--line);
-  border-radius: 16px;
-  padding: clamp(1.8rem, 4vw, 3rem);
-  text-align: center;
-}
-.callout ol { text-align: left; max-width: 48ch; margin: 1.6rem auto; color: var(--muted); padding-left: 1.2rem; }
-.callout ol li { margin-bottom: 0.5rem; }
-
 /* footer */
 footer { border-top: 1px solid var(--line-soft); padding: 2.5rem 0 3.5rem; color: var(--muted); font-size: 0.9rem; }
 footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }
