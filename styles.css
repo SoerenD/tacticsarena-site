@@ -236,6 +236,35 @@ section[id], #units { scroll-margin-top: 76px; }
 .territories b { color: var(--text); font-weight: 600; min-width: 9.5rem; }
 .territories span { color: var(--muted); flex: 1; }
 
+/* beta signup */
+.signup { max-width: 560px; }
+.signup-row { display: flex; gap: 0.7rem; flex-wrap: wrap; }
+.signup-row input[type="email"] {
+  flex: 1 1 240px;
+  background: var(--ink-2);
+  border: 1px solid var(--line-soft);
+  border-radius: 6px;
+  color: var(--text);
+  font-family: var(--body); font-size: 1rem;
+  padding: 0.85rem 1rem;
+}
+.signup-row input[type="email"]::placeholder { color: var(--muted); opacity: 0.65; }
+.signup-row input[type="email"]:focus-visible { border-color: var(--gold); }
+.signup .btn { cursor: pointer; }
+.signup-trap { position: absolute; left: -9999px; height: 0; overflow: hidden; }
+.signup-status { margin: 0.9rem 0 0; font-size: 0.95rem; min-height: 1.5em; }
+.signup-status.ok { color: #6fd0a4; }
+.signup-status.err { color: #ffb4ad; }
+.signup-status a { color: inherit; }
+.signup-note { margin-top: 0.4rem; max-width: 60ch; }
+.signup-note a { color: var(--gold-soft); }
+
+.visually-hidden {
+  position: absolute; width: 1px; height: 1px;
+  margin: -1px; padding: 0; border: 0;
+  clip: rect(0 0 0 0); overflow: hidden; white-space: nowrap;
+}
+
 /* footer */
 footer { border-top: 1px solid var(--line-soft); padding: 2.5rem 0 3.5rem; color: var(--muted); font-size: 0.9rem; }
 footer .wrap { display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center; }

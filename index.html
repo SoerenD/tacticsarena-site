@@ -30,6 +30,7 @@
       <a href="#units" data-en="Units">Einheiten</a>
       <a href="#heroes" data-en="Heroes">Helden</a>
       <a href="#campaign" data-en="Campaign">Feldzug</a>
+      <a href="#beta">Beta</a>
       <button class="lang-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
     </nav>
   </div>
@@ -52,7 +53,8 @@
            2026-08-29), so a visitor would land on "not found". Add the store link
            plus the official badge (https://play.google.com/intl/en_us/badges/)
            once the app is in production. -->
-      <a class="btn btn-primary" href="#how" data-en="See how it plays">So spielt es sich</a>
+      <a class="btn btn-primary" href="#beta" data-en="Join the beta list">Zur Beta anmelden</a>
+      <a class="btn btn-ghost" href="#how" data-en="See how it plays">So spielt es sich</a>
     </div>
     <p class="note" data-en="Android &middot; Free to play &middot; In closed testing">Android · Kostenlos · Im geschlossenen Test</p>
     <div class="badges">
@@ -284,6 +286,42 @@
   </div>
 </section>
 
+<section id="beta">
+  <div class="wrap">
+    <div class="section-head">
+      <p class="eyebrow" data-en="Closed beta">Geschlossene Beta</p>
+      <h2 data-en="Play it before everyone else">Spiel es vor allen anderen</h2>
+      <p class="lede" data-en="Tactics Arena is in closed testing on Google Play. Leave your email address and we will write to you once, as soon as the test opens up for you. Nothing else.">
+        Tactics Arena ist im geschlossenen Test auf Google Play. Trag deine
+        E-Mail-Adresse ein und wir schreiben dir einmal, sobald der Test für
+        dich offen ist. Sonst nichts.
+      </p>
+    </div>
+    <form id="signup-form" class="signup" novalidate>
+      <label class="visually-hidden" for="signup-email" data-en="Email address">E-Mail-Adresse</label>
+      <div class="signup-row">
+        <input id="signup-email" name="email" type="email" required
+               autocomplete="email" placeholder="name@example.com">
+        <button class="btn btn-primary" type="submit" id="signup-submit">
+          <span data-en="Sign up">Anmelden</span>
+        </button>
+      </div>
+      <!-- Honeypot: invisible to people, tempting to bots. A filled value
+           gets a fake success and no request. -->
+      <div class="signup-trap" aria-hidden="true">
+        <input tabindex="-1" autocomplete="off" name="website" id="signup-website">
+      </div>
+      <p class="signup-status" id="signup-status" role="status" aria-live="polite"></p>
+      <p class="note signup-note">
+        <span data-en="By signing up you agree that we store your address and message you once about the test. Deleted on request at any time.">Mit
+        der Anmeldung willigst du ein, dass wir deine Adresse speichern und
+        dir einmal zum Test schreiben. Löschung jederzeit auf Wunsch.</span>
+        <a href="privacy.html" data-en="Privacy policy">Datenschutzerklärung</a>
+      </p>
+    </form>
+  </div>
+</section>
+
 </main>
 
 <footer>
@@ -328,6 +366,79 @@
   if (saved === 'en') { apply('en'); }
   btn.addEventListener('click', function () {
     apply(document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de');
+  });
+})();
+
+// Beta signup. Posts the address straight to the game backend (PostgREST,
+// publishable key - a public client-side value, same one the app ships
+// with). The anon role may insert into site_signups and nothing else; see
+// supabase/migrations/20260902150000_site_signups.sql. If the backend is
+// unreachable the form falls back to a plain mail link so no visitor is
+// ever stuck.
+(function () {
+  var URL = 'https://akotuejhvfalbjoieafk.supabase.co/rest/v1/site_signups';
+  var KEY = 'sb_publishable_EWYpxCsXFYoySC2cMe-Gqw_57wPpSw5';
+  var form = document.getElementById('signup-form');
+  var email = document.getElementById('signup-email');
+  var trap = document.getElementById('signup-website');
+  var submit = document.getElementById('signup-submit');
+  var status = document.getElementById('signup-status');
+  var MSG = {
+    ok: { de: 'Danke! Du stehst auf der Liste.',
+          en: 'Thanks! You are on the list.' },
+    dupe: { de: 'Diese Adresse steht schon auf der Liste.',
+            en: 'That address is already on the list.' },
+    invalid: { de: 'Das sieht nicht nach einer E-Mail-Adresse aus.',
+               en: 'That does not look like an email address.' },
+    fail: { de: 'Die Anmeldung klappt gerade nicht. Schreib uns direkt: ',
+            en: 'Signup is not working right now. Mail us directly: ' }
+  };
+  function lang() {
+    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'de';
+  }
+  function say(key, cls) {
+    status.className = 'signup-status ' + cls;
+    status.textContent = MSG[key][lang()];
+    if (key === 'fail') {
+      var a = document.createElement('a');
+      a.href = 'mailto:contact@tactics-arena.xyz?subject=Beta';
+      a.textContent = 'contact@tactics-arena.xyz';
+      status.appendChild(a);
+    }
+  }
+  form.addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    var value = (email.value || '').trim();
+    if (trap.value) { say('ok', 'ok'); return; }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(value) || value.length > 254) {
+      say('invalid', 'err');
+      return;
+    }
+    submit.disabled = true;
+    fetch(URL, {
+      method: 'POST',
+      headers: {
+        apikey: KEY,
+        authorization: 'Bearer ' + KEY,
+        'content-type': 'application/json',
+        prefer: 'return=minimal'
+      },
+      // location.search carries the ad campaign's UTM parameters; storing
+      // them per signup counts conversions per channel with no pixel.
+      body: JSON.stringify({
+        email: value,
+        lang: lang(),
+        source: window.location.search.slice(1, 200) || null
+      })
+    }).then(function (res) {
+      if (res.status === 201) { say('ok', 'ok'); email.value = ''; }
+      else if (res.status === 409) { say('dupe', 'ok'); }
+      else { say('fail', 'err'); }
+    }).catch(function () {
+      say('fail', 'err');
+    }).then(function () {
+      submit.disabled = false;
+    });
   });
 })();
 </script>
