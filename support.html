@@ -16,7 +16,10 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/logo.webp" alt="Tactics Arena"></a>
+    <a class="brand" href="./">
+      <span class="gem" aria-hidden="true"></span>
+      Tactics Arena
+    </a>
     <nav>
       <a href="./">Home</a>
       <a href="privacy.html">Privacy</a>
@@ -29,7 +32,13 @@
 
     <h1>Support</h1>
     <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>)</p>
-    <p>
+    <div class="lang-switch">
+      <a class="btn btn-slate" href="#deutsch" id="lang-switch">Auf Deutsch lesen</a>
+    </div>
+
+    <div id="lang-en" lang="en">
+
+    <p id="english">
       One address for everything: bugs, purchase problems, balance complaints and data
       deletion at <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>.
       It is a one-person project, so expect a human but not an instant reply.
@@ -78,6 +87,68 @@
       publicly listed yet. If you want in, or want out, mail the same address.
     </p>
 
+    </div>
+
+    <div id="lang-de" lang="de">
+
+    <p id="deutsch">
+      Eine Adresse für alles: Bugs, Kaufprobleme, Balance-Beschwerden und
+      Löschanfragen gehen an
+      <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>.
+      Dahinter steckt ein Ein-Personen-Projekt; es antwortet ein Mensch, aber
+      nicht unbedingt sofort.
+    </p>
+
+    <h2>Einen Bug melden</h2>
+    <p>Je mehr davon du mitschickst, desto schneller ist der Bug behoben:</p>
+    <ul>
+      <li>Dein Handymodell und deine Android-Version.</li>
+      <li>Die App-Version, sie steht unten im Hauptmenü.</li>
+      <li>Was du gerade getan hast: welcher Bildschirm, welches Territorium, welcher Held.</li>
+      <li>Ein Screenshot oder eine Bildschirmaufnahme, wenn das Problem sichtbar ist.</li>
+    </ul>
+
+    <h2>Käufe</h2>
+    <p>
+      Edelstein-Pakete verkauft und verarbeitet Google Play, wir sehen deine
+      Zahlungsdaten also nie. Wurde ein Kauf abgebucht, aber die Edelsteine
+      sind nicht angekommen, öffne die App einmal mit Internetverbindung:
+      Offene Käufe werden beim Start nachgeliefert. Fehlen sie danach immer
+      noch, schick uns die Google-Play-Bestellnummer (sie steht in deiner
+      Bestätigungs-E-Mail) und die Edelsteine werden gutgeschrieben.
+    </p>
+    <p>
+      Erstattungen innerhalb von 48 Stunden nach dem Kauf laufen über
+      <a href="https://support.google.com/googleplay/answer/2479637">die
+      Erstattung bei Google Play selbst</a>. Danach schreib an die Adresse
+      oben.
+    </p>
+
+    <h2>Deine Daten löschen</h2>
+    <p>
+      Kampagnen-Fortschritt, Helden und Edelsteine liegen auf deinem Gerät, mit
+      einer pseudonymen Sicherung auf dem Spielserver unter einem anonymen
+      technischen Konto (kein Name, keine E-Mail-Adresse). Löschst du die
+      App-Daten oder deinstallierst du die App, sind die lokale Kopie und der
+      Zugang zu diesem anonymen Konto weg. Danach lässt sich nichts
+      wiederherstellen.
+    </p>
+    <p>
+      Damit deine Server-Daten (Cloud-Spielstand, PvP-Bilanz, Kaufbelege)
+      gelöscht werden, schick deinen PvP-Anzeigenamen an
+      <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20Datenl%C3%B6schung">contact@tactics-arena.xyz</a>.
+      Details stehen in der <a href="privacy.html">Datenschutzerklärung</a>.
+    </p>
+
+    <h2>Geschlossener Test</h2>
+    <p>
+      Tactics Arena ist derzeit im geschlossenen Test auf Google Play und
+      darum noch nicht öffentlich gelistet. Wenn du mitmachen willst, oder
+      wieder raus, schreib an dieselbe Adresse.
+    </p>
+
+    </div>
+
   </div>
 </main>
 
@@ -92,6 +163,37 @@
     </nav>
   </div>
 </footer>
+
+<script>
+(function () {
+  var KEY = 'ta-lang';
+  var de = document.getElementById('lang-de');
+  var en = document.getElementById('lang-en');
+  var link = document.getElementById('lang-switch');
+  function apply(lang) {
+    var showEn = lang === 'en';
+    de.hidden = showEn;
+    en.hidden = !showEn;
+    document.documentElement.setAttribute('lang', lang);
+    link.textContent = showEn ? 'Auf Deutsch lesen' : 'Read in English';
+    link.setAttribute('href', showEn ? '#deutsch' : '#english');
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { }
+  var lang;
+  if (window.location.hash === '#english') { lang = 'en'; }
+  else if (window.location.hash === '#deutsch') { lang = 'de'; }
+  else if (saved === 'en' || saved === 'de') { lang = saved; }
+  else { lang = (navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en'; }
+  apply(lang);
+  link.addEventListener('click', function (ev) {
+    ev.preventDefault();
+    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
+    apply(next);
+    try { localStorage.setItem(KEY, next); } catch (e) { }
+  });
+})();
+</script>
 
 </body>
 </html>

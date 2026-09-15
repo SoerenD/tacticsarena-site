@@ -4,18 +4,21 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tactics Arena - Draft. Counter. Conquer.</title>
-<meta name="description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Drafte drei Einheiten pro Runde, kontere die Armee des Gegners und sieh dem Kampf zu. Keine Werbung, kein Konto, kostenlos.">
+<meta name="description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Drafte drei Einheiten pro Runde und kontere die Armee des Gegners. Kampagne, Arena, keine Werbung, kein Konto.">
 <link rel="canonical" href="https://tactics-arena.xyz/">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
+<meta name="theme-color" content="#070d18">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tactics Arena - Draft. Counter. Conquer.">
 <meta property="og:description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Draft, Counter, Conquer.">
 <meta property="og:url" content="https://tactics-arena.xyz/">
 <meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="assets/logo.webp">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -24,14 +27,20 @@
 
 <header class="topbar">
   <div class="wrap">
-    <a class="brand" href="./"><img src="assets/logo.webp" alt="Tactics Arena"></a>
+    <a class="brand" href="./">
+      <span class="gem" aria-hidden="true"></span>
+      Tactics Arena
+    </a>
     <nav>
       <a href="#how" data-en="How it plays">So spielt es sich</a>
       <a href="#units" data-en="Units">Einheiten</a>
-      <a href="#heroes" data-en="Heroes">Helden</a>
-      <a href="#campaign" data-en="Campaign">Feldzug</a>
-      <a href="#beta">Beta</a>
+      <a href="#heroes" data-secondary data-en="Heroes">Helden</a>
+      <a href="#campaign" data-secondary data-en="Campaign">Kampagne</a>
+      <a href="#arena" data-en="Arena">Arena</a>
       <button class="lang-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+      <a class="badge-play" id="badge-top" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250">
+      </a>
     </nav>
   </div>
 </header>
@@ -40,106 +49,166 @@
 
 <div class="hero">
   <div class="wrap">
-    <img class="mark" src="assets/logo.webp" alt="Tactics Arena - Draft, Counter, Conquer" width="394" height="356">
-    <p class="pitch" data-en="A tactical 1v1 auto-battler. Draft three units a round, counter what the enemy fields, then watch your army fight without you.">
-      Ein taktischer 1-gegen-1-Auto-Battler. Drafte drei Einheiten pro Runde,
-      kontere die Armee des Gegners und sieh dann deiner Armee zu, wie sie
-      ohne dich kämpft.
+    <img class="mark" src="assets/logo.webp" alt="Tactics Arena" width="533" height="560" fetchpriority="high">
+    <h1 data-en="You win before the fight starts.">Gewonnen wird vor der Schlacht.</h1>
+    <p class="pitch" data-en="A tactical 1v1 auto battler. Draft three units a round and counter the army the enemy is building.">
+      Ein taktischer 1-gegen-1-Auto-Battler. Drafte drei Einheiten pro Runde
+      und kontere die Armee, die der Gegner aufbaut.
     </p>
     <div class="cta-row">
-      <!-- No store button while the app is in closed testing: the listing
-           https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena
-           answers HTTP 404 for everyone who is not a signed-in tester (verified
-           2026-08-29), so a visitor would land on "not found". Add the store link
-           plus the official badge (https://play.google.com/intl/en_us/badges/)
-           once the app is in production. -->
-      <a class="btn btn-primary" href="#beta" data-en="Join the beta list">Zur Beta anmelden</a>
-      <a class="btn btn-ghost" href="#how" data-en="See how it plays">So spielt es sich</a>
+      <a class="badge-play" id="badge-hero" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250">
+      </a>
+      <a class="btn btn-slate" href="#how" data-en="See how it plays">So spielt es sich</a>
     </div>
-    <p class="note" data-en="Android &middot; Free to play &middot; In closed testing">Android · Kostenlos · Im geschlossenen Test</p>
-    <div class="badges">
-      <span data-en="No ads">Keine Werbung</span>
-      <span data-en="No account needed">Kein Konto nötig</span>
-      <span data-en="Campaign plays offline">Feldzug offline spielbar</span>
-      <span data-en="No energy timers">Keine Energie-Timer</span>
-    </div>
+    <ul class="promises">
+      <li><span class="gem" aria-hidden="true"></span><span data-en="No ads">Keine Werbung</span></li>
+      <li><span class="gem" aria-hidden="true"></span><span data-en="No account">Kein Konto</span></li>
+      <li><span class="gem" aria-hidden="true"></span><span data-en="Campaign plays offline">Kampagne offline</span></li>
+      <li><span class="gem" aria-hidden="true"></span><span data-en="No energy timers">Keine Energie-Timer</span></li>
+    </ul>
   </div>
 </div>
 
 <section id="how">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow" data-en="How it plays">So spielt es sich</p>
+    <div class="section-head reveal">
+      <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="How it plays">So spielt es sich</span><span class="gem" aria-hidden="true"></span></p>
       <h2 data-en="Three picks. Two options. One winner.">Drei Picks. Zwei Optionen. Ein Sieger.</h2>
-      <p class="lede" data-en="Every round is the same short loop, and every round the armies get bigger. You never move a unit. The whole game is in what you draft.">
-        Jede Runde ist derselbe kurze Loop, und jede Runde werden die Armeen
-        größer. Du bewegst keine einzige Einheit. Das ganze Spiel steckt in
-        deinen Picks.
+      <p class="lede" data-en="Every round is the same sequence: pick three times, then fight. The armies get bigger with every round.">
+        Jede Runde ist derselbe Ablauf: dreimal picken, dann kämpfen. Die
+        Armeen werden mit jeder Runde größer.
       </p>
     </div>
-    <div class="grid grid-3" id="units">
+
+    <div class="loop">
+      <ol class="steps reveal">
+        <li>
+          <span class="n" aria-hidden="true"><span>1</span></span>
+          <h3 data-en="Two units, you take one">Zwei Einheiten, du nimmst eine</h3>
+          <p data-en="Three times a round the game puts a pair in front of you. A fresh pair costs 20 coins, each one after that ten more.">
+            Dreimal pro Runde legt dir das Spiel ein Paar vor. Ein neues Paar
+            kostet 20 Münzen, jedes weitere zehn mehr.
+          </p>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true"><span>2</span></span>
+          <h3 data-en="The army stacks up">Die Armee wächst mit</h3>
+          <p data-en="Last round's units come back healed, the three new ones join them. In round five that is fifteen.">
+            Die Einheiten der letzten Runde kommen geheilt zurück, die drei
+            neuen kommen dazu. In Runde fünf sind es fünfzehn.
+          </p>
+        </li>
+        <li>
+          <span class="n" aria-hidden="true"><span>3</span></span>
+          <h3 data-en="Then it runs without you">Dann läuft es ohne dich</h3>
+          <p data-en="Both armies walk at each other. Whoever loses the round loses a life. At zero the match is over.">
+            Beide Armeen laufen aufeinander zu. Wer die Runde verliert,
+            verliert ein Leben. Bei null ist das Match vorbei.
+          </p>
+        </li>
+      </ol>
+
+      <div class="draft reveal" aria-hidden="true">
+        <p class="draft-head">
+          <span data-en="Round 2">Runde 2</span>
+          <b data-en="Pick 1 of 3">Wahl 1 von 3</b>
+        </p>
+        <div class="draft-pair">
+          <div class="draft-card taken">
+            <img src="assets/unit-assassin.webp" alt="" width="211" height="211" loading="lazy">
+            <h4 data-en="Assassin">Assassine</h4>
+            <p class="draft-stat melee"><span data-en="HP">Leben</span><span class="bar"><i style="width:20%"></i></span></p>
+            <p class="draft-stat melee"><span>DPS</span><span class="bar"><i style="width:100%"></i></span></p>
+          </div>
+          <div class="draft-card">
+            <img src="assets/unit-archer.webp" alt="" width="211" height="211" loading="lazy">
+            <h4 data-en="Archer">Bogenschütze</h4>
+            <p class="draft-stat"><span data-en="HP">Leben</span><span class="bar"><i style="width:20%"></i></span></p>
+            <p class="draft-stat"><span>DPS</span><span class="bar"><i style="width:60%"></i></span></p>
+          </div>
+        </div>
+        <p class="draft-foot" data-en="A fresh pair costs 20 coins">Ein neues Paar kostet 20 Münzen</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="units">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="Units">Einheiten</span><span class="gem" aria-hidden="true"></span></p>
+      <h2 data-en="Six units that counter each other">Sechs Einheiten, die sich gegenseitig kontern</h2>
+      <p class="lede" data-en="From round two on you have watched the enemy army fight once. All of it comes back.">
+        Ab Runde zwei hast du die gegnerische Armee einmal kämpfen sehen. Sie
+        kommt komplett wieder.
+      </p>
+    </div>
+
+    <div class="grid grid-3 reveal">
       <article class="card unit">
-        <img src="assets/unit-knight.webp" alt="" width="108" height="108">
+        <img src="assets/unit-knight.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
-        <h3><span data-en="Knight">Ritter</span></h3>
+        <h3 data-en="Knight">Ritter</h3>
         <p data-en="The balanced line-holder. Nothing spectacular, never a wasted pick, and hard on Assassins.">
           Der ausgewogene Linienhalter. Nichts Spektakuläres, nie ein
           verschenkter Pick, und hart zu Assassinen.
         </p>
       </article>
       <article class="card unit">
-        <img src="assets/unit-guardian.webp" alt="" width="108" height="108">
+        <img src="assets/unit-guardian.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
-        <h3><span data-en="Guardian">Wächter</span></h3>
+        <h3 data-en="Guardian">Wächter</h3>
         <p data-en="A slow wall with little damage of its own. Buys your ranged units the time they need.">
           Eine langsame Mauer mit wenig eigenem Schaden. Erkauft deinen
           Fernkämpfern die Zeit, die sie brauchen.
         </p>
       </article>
       <article class="card unit">
-        <img src="assets/unit-assassin.webp" alt="" width="108" height="108">
+        <img src="assets/unit-assassin.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-melee" data-en="Melee">Nahkampf</span>
-        <h3><span data-en="Assassin">Assassine</span></h3>
+        <h3 data-en="Assassin">Assassine</h3>
         <p data-en="Fast and fragile. Holds a flank, then blinks behind the enemy line and deletes the archers.">
           Schnell und zerbrechlich. Hält kurz die Flanke, teleportiert sich
           dann hinter die feindliche Linie und löscht die Bogenschützen aus.
         </p>
       </article>
       <article class="card unit">
-        <img src="assets/unit-archer.webp" alt="" width="108" height="108">
+        <img src="assets/unit-archer.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
-        <h3><span data-en="Archer">Bogenschütze</span></h3>
+        <h3 data-en="Archer">Bogenschütze</h3>
         <p data-en="Long reach, steady damage, almost no health. Devastating behind a wall, useless in front of one.">
           Große Reichweite, steter Schaden, kaum Leben. Verheerend hinter
           einer Mauer, nutzlos davor.
         </p>
       </article>
       <article class="card unit">
-        <img src="assets/unit-spearthrower.webp" alt="" width="108" height="108">
+        <img src="assets/unit-spearthrower.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
-        <h3><span data-en="Spear Thrower">Speerwerfer</span></h3>
+        <h3 data-en="Spear Thrower">Speerwerfer</h3>
         <p data-en="Shorter range than an Archer but heavier hits. The mid-line compromise.">
           Weniger Reichweite als der Bogenschütze, dafür härtere Treffer.
           Der Kompromiss für die Mitte.
         </p>
       </article>
       <article class="card unit">
-        <img src="assets/unit-crossbowman.webp" alt="" width="108" height="108">
+        <img src="assets/unit-crossbowman.webp" alt="" width="211" height="211" loading="lazy">
         <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
-        <h3><span data-en="Crossbowman">Armbrustschütze</span></h3>
+        <h3 data-en="Crossbowman">Armbrustschütze</h3>
         <p data-en="Long range, brutal single-target damage, slow reload. The answer to anything armoured.">
           Große Reichweite, brutaler Einzelziel-Schaden, langsames
           Nachladen. Die Antwort auf alles Gepanzerte.
         </p>
       </article>
     </div>
+
   </div>
 </section>
 
 <section id="heroes">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow" data-en="Commanders">Kommandanten</p>
+    <div class="section-head reveal">
+      <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="Commanders">Kommandanten</span><span class="gem" aria-hidden="true"></span></p>
       <h2 data-en="Pick a Hero before you pick a unit">Erst der Held, dann der Draft</h2>
       <p class="lede" data-en="Heroes never step onto the battlefield. They bend the draft instead, with a passive that is always on, a tactical trick you can spend, and one ultimate per match. They get stronger by rarity, never by raw level.">
         Helden betreten das Schlachtfeld nie. Sie verbiegen stattdessen den
@@ -148,108 +217,108 @@
         Seltenheit, nie über Level.
       </p>
     </div>
-    <div class="grid grid-3">
+    <div class="grid grid-3 reveal">
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-sir_aldric.webp" alt="" width="84" height="84">
+          <img src="assets/hero-sir_aldric.webp" alt="" width="152" height="156" loading="lazy">
           <div>
             <h3>Sir Aldric</h3>
             <p data-en="Knight Commander &middot; Melee">Ritterkommandant · Nahkampf</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Hold the Line">Haltet die Linie</span>: <span data-en="Melee units take less damage.">Nahkämpfer erleiden weniger Schaden.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Shield Wall">Schildwall</span>: <span data-en="Melee units start this battle shielded.">Nahkämpfer starten diese Schlacht mit Schild.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Divine Barrier">Göttliche Barriere</span>: <span data-en="The whole army starts shielded.">Die ganze Armee startet mit Schild.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Hold the Line">Haltet die Linie</span>: <span data-en="Melee units take less damage.">Nahkämpfer erleiden weniger Schaden.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Shield Wall">Schildwall</span>: <span data-en="Melee units start this battle shielded.">Nahkämpfer starten diese Schlacht mit Schild.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Divine Barrier">Göttliche Barriere</span>: <span data-en="The whole army starts shielded.">Die ganze Armee startet mit Schild.</span></dd>
+        </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-elara.webp" alt="" width="84" height="84">
+          <img src="assets/hero-elara.webp" alt="" width="122" height="156" loading="lazy">
           <div>
             <h3>Elara</h3>
             <p data-en="Forest Ranger &middot; Ranged">Waldläuferin · Fernkampf</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Ranger Training">Waldläufer-Training</span>: <span data-en="Ranged units attack faster.">Fernkämpfer greifen schneller an.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Scout">Spähen</span>: <span data-en="Reveals the enemy's draft pair.">Zeigt dir das Draft-Paar des Gegners.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Arrow Storm">Pfeilsturm</span>: <span data-en="Every ranged unit's first shot hits twice as hard.">Der erste Schuss jedes Fernkämpfers trifft doppelt so hart.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Ranger Training">Waldläufer-Training</span>: <span data-en="Ranged units attack faster.">Fernkämpfer greifen schneller an.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Scout">Spähen</span>: <span data-en="Reveals the enemy's draft pair.">Zeigt dir das Draft-Paar des Gegners.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Arrow Storm">Pfeilsturm</span>: <span data-en="Every ranged unit's first shot hits twice as hard.">Der erste Schuss jedes Fernkämpfers trifft doppelt so hart.</span></dd>
+        </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-vex.webp" alt="" width="84" height="84">
+          <img src="assets/hero-vex.webp" alt="" width="147" height="156" loading="lazy">
           <div>
             <h3>Vex</h3>
             <p data-en="Shadow Master &middot; Assassins">Schattenmeister · Assassinen</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Night Steps">Nachtschritte</span>: <span data-en="Assassins move faster.">Assassinen sind schneller unterwegs.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span>: <span data-en="Assassins move faster still for one battle.">Assassinen sind eine Schlacht lang noch schneller.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span>: <span data-en="Assassins deal 30% more damage and gain 30% speed.">Assassinen machen 30 % mehr Schaden und sind 30 % schneller.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Night Steps">Nachtschritte</span>: <span data-en="Assassins move faster.">Assassinen sind schneller unterwegs.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span>: <span data-en="Assassins move faster still for one battle.">Assassinen sind eine Schlacht lang noch schneller.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span>: <span data-en="Assassins deal 30% more damage and gain 30% speed.">Assassinen machen 30 % mehr Schaden und sind 30 % schneller.</span></dd>
+        </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-borin.webp" alt="" width="84" height="84">
+          <img src="assets/hero-borin.webp" alt="" width="148" height="156" loading="lazy">
           <div>
             <h3>Borin</h3>
             <p data-en="Iron Guardian &middot; Defense">Eiserner Wächter · Verteidigung</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Iron Skin">Eisenhaut</span>: <span data-en="Guardians take less damage.">Wächter erleiden weniger Schaden.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Bulwark">Bollwerk</span>: <span data-en="Knights and Guardians take less damage this battle.">Ritter und Wächter erleiden diese Schlacht weniger Schaden.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Last Stand">Letztes Gefecht</span>: <span data-en="Your whole army takes 25% less damage.">Die ganze Armee erleidet 25 % weniger Schaden.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Iron Skin">Eisenhaut</span>: <span data-en="Guardians take less damage.">Wächter erleiden weniger Schaden.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Bulwark">Bollwerk</span>: <span data-en="Knights and Guardians take less damage this battle.">Ritter und Wächter erleiden diese Schlacht weniger Schaden.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Last Stand">Letztes Gefecht</span>: <span data-en="Your whole army takes 25% less damage.">Die ganze Armee erleidet 25 % weniger Schaden.</span></dd>
+        </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-lyra.webp" alt="" width="84" height="84">
+          <img src="assets/hero-lyra.webp" alt="" width="148" height="156" loading="lazy">
           <div>
             <h3>Lyra</h3>
             <p data-en="Tactician &amp; Merchant &middot; Economy">Taktikerin &amp; Händlerin · Wirtschaft</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="Sharp Ledger">Scharfe Bücher</span>: <span data-en="Extra coins after every battle.">Extra Münzen nach jeder Schlacht.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Recruiter">Anwerberin</span>: <span data-en="Your next reroll is free.">Dein nächster Neuwurf ist gratis.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Golden Age">Goldenes Zeitalter</span>: <span data-en="An instant pile of coins.">Sofort ein Schwung Münzen.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Sharp Ledger">Scharfe Bücher</span>: <span data-en="Extra coins after every battle.">Extra Münzen nach jeder Schlacht.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Recruiter">Anwerberin</span>: <span data-en="Your next reroll is free.">Dein nächster Neuwurf ist gratis.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Golden Age">Goldenes Zeitalter</span>: <span data-en="An instant pile of coins.">Sofort ein Schwung Münzen.</span></dd>
+        </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-kael.webp" alt="" width="84" height="84">
+          <img src="assets/hero-kael.webp" alt="" width="148" height="156" loading="lazy">
           <div>
             <h3>Kael</h3>
             <p data-en="Ash Commander &middot; Aggression">Aschekommandant · Aggression</p>
           </div>
         </div>
         <dl>
-            <dt data-en="Passive">Passiv</dt>
-            <dd><span class="ability" data-en="First Strike">Erstschlag</span>: <span data-en="Opening attacks hit harder.">Eröffnungsangriffe treffen härter.</span></dd>
-            <dt data-en="Tactical">Taktik</dt>
-            <dd><span class="ability" data-en="Ignite">Entzünden</span>: <span data-en="The opening hits harder still for one battle.">Eine Schlacht lang trifft die Eröffnung noch härter.</span></dd>
-            <dt>Ultimate</dt>
-            <dd><span class="ability" data-en="Onslaught">Ansturm</span>: <span data-en="Your whole army attacks 25% faster.">Die ganze Armee greift 25 % schneller an.</span></dd>
-          </dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="First Strike">Erstschlag</span>: <span data-en="Opening attacks hit harder.">Eröffnungsangriffe treffen härter.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Ignite">Entzünden</span>: <span data-en="The opening hits harder still for one battle.">Eine Schlacht lang trifft die Eröffnung noch härter.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Onslaught">Ansturm</span>: <span data-en="Your whole army attacks 25% faster.">Die ganze Armee greift 25 % schneller an.</span></dd>
+        </dl>
       </article>
     </div>
   </div>
@@ -257,68 +326,131 @@
 
 <section id="campaign">
   <div class="wrap">
-    <div class="split">
-      <img src="assets/world-map.webp" alt="Die Weltkarte von Tactics Arena mit den eroberbaren Territorien" loading="lazy">
+    <div class="section-head reveal">
+      <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="Campaign">Kampagne</span><span class="gem" aria-hidden="true"></span></p>
+      <h2 data-en="Seven territories, seven ways to be wrong">Sieben Territorien, sieben Wege, falsch zu liegen</h2>
+      <p class="lede" data-en="Each territory rewrites one rule before you draft, and every one ends with a boss and a Hero. The rule is shown before you commit. Adapting to it is the whole point.">
+        Jedes Territorium ändert eine Regel, bevor du draftest, und jedes
+        endet mit einem Boss und einem Helden. Die Regel steht vor dem
+        Kampf fest. Sich anzupassen ist der ganze Punkt.
+      </p>
+    </div>
+    <div class="split reveal">
+      <img class="map" src="assets/world-map.webp" alt="Die Weltkarte von Tactics Arena mit den eroberbaren Territorien" width="512" height="900" loading="lazy">
+      <ul class="territories">
+        <li>
+          <img src="assets/shield-kingdom.webp" alt="" width="120" height="157" loading="lazy">
+          <b data-en="Kingdom">Königreich</b>
+          <span data-en="No modifier. Where you learn the loop.">Kein Modifikator. Hier lernst du den Loop.</span>
+        </li>
+        <li>
+          <img src="assets/shield-greenwood.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Greenwood Forest">Grünwald</b>
+          <span data-en="Ranged and fast units are 10% more effective.">Fernkämpfer und schnelle Einheiten sind 10 % effektiver.</span>
+        </li>
+        <li>
+          <img src="assets/shield-iron-mountains.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Iron Mountains">Eisenberge</b>
+          <span data-en="Heavy melee gains 15% defence.">Schwerer Nahkampf bekommt 15 % Verteidigung.</span>
+        </li>
+        <li>
+          <img src="assets/shield-volcano.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Ashen Volcano">Aschevulkan</b>
+          <span data-en="All damage up 20%. Battles end fast.">Alle verursachen 20 % mehr Schaden. Kämpfe enden schnell.</span>
+        </li>
+        <li>
+          <img src="assets/shield-frozen-lands.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Frozen Lands">Frostlande</b>
+          <span data-en="Everything moves 15% slower.">Alles bewegt sich 15 % langsamer.</span>
+        </li>
+        <li>
+          <img src="assets/shield-shadowlands.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Shadowlands">Schattenlande</b>
+          <span data-en="One enemy draft pick stays hidden from you.">Ein gegnerischer Draft-Pick bleibt für dich verborgen.</span>
+        </li>
+        <li>
+          <img src="assets/shield-crystal-realm.webp" alt="" width="120" height="158" loading="lazy">
+          <b data-en="Crystal Realm">Kristallreich</b>
+          <span data-en="Rerolls cost half. Coins flow faster.">Neuwürfe kosten die Hälfte. Münzen fließen schneller.</span>
+        </li>
+      </ul>
+    </div>
+    <div class="spire reveal">
       <div>
-        <p class="eyebrow" data-en="Campaign">Feldzug</p>
-        <h2 data-en="Seven territories, seven ways to be wrong">Sieben Territorien, sieben Wege, falsch zu liegen</h2>
-        <p class="lede" data-en="Each territory rewrites one rule before you draft, and every one ends with a boss and a Hero. The rule is shown before you commit. Adapting to it is the whole point.">
-          Jedes Territorium ändert eine Regel, bevor du draftest, und jedes
-          endet mit einem Boss und einem Helden. Die Regel steht vor dem
-          Kampf fest. Sich anzupassen ist der ganze Punkt.
-        </p>
-        <ul class="territories">
-          <li><b data-en="Kingdom">Königreich</b><span data-en="No modifier. Where you learn the loop.">Kein Modifikator. Hier lernst du den Loop.</span></li>
-          <li><b data-en="Greenwood Forest">Grünwald</b><span data-en="Ranged and fast units are 10% more effective.">Fernkämpfer und schnelle Einheiten sind 10 % effektiver.</span></li>
-          <li><b data-en="Iron Mountains">Eisenberge</b><span data-en="Heavy melee gains 15% defence.">Schwerer Nahkampf bekommt 15 % Verteidigung.</span></li>
-          <li><b data-en="Ashen Volcano">Aschevulkan</b><span data-en="All damage up 20%. Battles end fast.">Alle verursachen 20 % mehr Schaden. Kämpfe enden schnell.</span></li>
-          <li><b data-en="Frozen Lands">Frostlande</b><span data-en="Everything moves 15% slower.">Alles bewegt sich 15 % langsamer.</span></li>
-          <li><b data-en="Shadowlands">Schattenlande</b><span data-en="One enemy draft pick stays hidden from you.">Ein gegnerischer Draft-Pick bleibt für dich verborgen.</span></li>
-          <li><b data-en="Crystal Realm">Kristallreich</b><span data-en="Rerolls cost half. Coins flow faster.">Neuwürfe kosten die Hälfte. Münzen fließen schneller.</span></li>
-        </ul>
-        <p class="note" data-en="Clear the Crystal Realm to open the Sky Spire: an endless climb where every floor is generated from its own number.">
-          Erobere das Kristallreich und der Sky Spire öffnet sich: ein
-          endloser Aufstieg, bei dem jede Etage aus ihrer eigenen Nummer
-          generiert wird.
+        <h3 data-en="And then the Sky Spire">Und danach der Sky Spire</h3>
+        <p data-en="After the Crystal Realm the Spire opens. Every floor is generated from its number, so floor 40 is the same fight for everybody. Every tenth floor is a boss, and the enemy gains a level every three floors.">
+          Nach dem Kristallreich öffnet sich der Spire. Jede Etage wird aus
+          ihrer Nummer generiert, Etage 40 ist also für alle derselbe Kampf.
+          Jede zehnte Etage ist ein Boss, alle drei Etagen steigt der Gegner
+          ein Level.
         </p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="beta">
+<section id="arena">
   <div class="wrap">
-    <div class="section-head">
-      <p class="eyebrow" data-en="Closed beta">Geschlossene Beta</p>
-      <h2 data-en="Play it before everyone else">Spiel es vor allen anderen</h2>
-      <p class="lede" data-en="Tactics Arena is in closed testing on Google Play. Leave your email address and we will write to you once, as soon as the test opens up for you. Nothing else.">
-        Tactics Arena ist im geschlossenen Test auf Google Play. Trag deine
-        E-Mail-Adresse ein und wir schreiben dir einmal, sobald der Test für
-        dich offen ist. Sonst nichts.
-      </p>
+    <div class="section-head reveal">
+      <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="The Arena">Die Arena</span><span class="gem" aria-hidden="true"></span></p>
+      <h2 data-en="The Arena is one list of a hundred places">Die Arena ist eine Liste mit hundert Plätzen</h2>
     </div>
-    <form id="signup-form" class="signup" novalidate>
-      <label class="visually-hidden" for="signup-email" data-en="Email address">E-Mail-Adresse</label>
-      <div class="signup-row">
-        <input id="signup-email" name="email" type="email" required
-               autocomplete="email" placeholder="name@example.com">
-        <button class="btn btn-primary" type="submit" id="signup-submit">
-          <span data-en="Sign up">Anmelden</span>
-        </button>
-      </div>
-      <!-- Honeypot: invisible to people, tempting to bots. A filled value
-           gets a fake success and no request. -->
-      <div class="signup-trap" aria-hidden="true">
-        <input tabindex="-1" autocomplete="off" name="website" id="signup-website">
-      </div>
-      <p class="signup-status" id="signup-status" role="status" aria-live="polite"></p>
-      <p class="note signup-note">
-        <span data-en="By signing up you agree that we store your address and message you once about the test. Deleted on request at any time.">Mit
-        der Anmeldung willigst du ein, dass wir deine Adresse speichern und
-        dir einmal zum Test schreiben. Löschung jederzeit auf Wunsch.</span>
-        <a href="privacy.html" data-en="Privacy policy">Datenschutzerklärung</a>
-      </p>
-    </form>
+
+    <ul class="ladder reveal">
+      <li class="card">
+        <span class="big">3</span>
+        <h3 data-en="Attacks a day">Angriffe am Tag</h3>
+      </li>
+      <li class="card">
+        <span class="big">15</span>
+        <h3 data-en="Units in your defense">Einheiten in deiner Verteidigung</h3>
+      </li>
+      <li class="card">
+        <span class="big">100</span>
+        <h3 data-en="Opponents">Gegner</h3>
+      </li>
+    </ul>
+
+    <ul class="arena-notes reveal">
+      <li>
+        <span class="gem" aria-hidden="true"></span>
+        <div>
+          <b data-en="Asynchronous arena">Asynchrone Arena</b>
+          <span data-en="You play whenever you want. No queue to wait in, no time to agree on with anybody.">Du spielst, wann du willst. Keine Warteschlange, keine Verabredung mit irgendwem.</span>
+        </div>
+      </li>
+      <li>
+        <span class="gem" aria-hidden="true"></span>
+        <div>
+          <b data-en="Every week runs on one terrain">Jede Woche läuft auf einem Terrain</b>
+          <span data-en="One of the seven terrains applies to every attack that week.">Eines der sieben Terrains gilt eine Woche lang für jeden Angriff.</span>
+        </div>
+      </li>
+      <li>
+        <span class="gem" aria-hidden="true"></span>
+        <div>
+          <b data-en="Sunday at 18:00 UTC pays out">Sonntag 18:00 UTC wird ausgezahlt</b>
+          <span data-en="Wins and held defenses pay Valor Marks; your place at the end of the week pays most. The ladder is not reset.">Siege und gehaltene Verteidigungen zahlen Ehrenmarken, am meisten zahlt dein Platz zum Wochenende. Die Rangliste wird nicht zurückgesetzt.</span>
+        </div>
+      </li>
+      <li>
+        <span class="gem" aria-hidden="true"></span>
+        <div>
+          <b data-en="Design your own banner">Gestalte dein eigenes Banner</b>
+          <span data-en="You pick the field, the trim, the emblem and its colour.">Feld, Borte, Emblem und Emblemfarbe wählst du selbst.</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="get">
+  <div class="wrap">
+    <div class="cta-row reveal">
+      <a class="badge-play" id="badge-foot" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250" loading="lazy">
+      </a>
+    </div>
   </div>
 </section>
 
@@ -337,12 +469,13 @@
 </footer>
 
 <script>
-// Language toggle. German is authored in the markup (and what no-JS visitors
-// get); English lives in data-en attributes. The German original is stashed
-// into data-de on first switch, so toggling is lossless in both directions.
 (function () {
   var KEY = 'ta-lang';
   var btn = document.getElementById('lang-toggle');
+  var BADGE = {
+    de: { src: 'assets/play-badge-de.png', alt: 'Jetzt bei Google Play' },
+    en: { src: 'assets/play-badge-en.png', alt: 'Get it on Google Play' }
+  };
   function apply(lang) {
     document.documentElement.setAttribute('lang', lang);
     var nodes = document.querySelectorAll('[data-en]');
@@ -355,91 +488,45 @@
         ? el.getAttribute('data-en')
         : el.getAttribute('data-de');
     }
+    var badges = document.querySelectorAll('.badge-play img');
+    for (var j = 0; j < badges.length; j++) {
+      badges[j].src = BADGE[lang].src;
+      badges[j].alt = BADGE[lang].alt;
+    }
     btn.textContent = lang === 'en' ? 'DE' : 'EN';
     btn.setAttribute('aria-label', lang === 'en'
       ? 'Auf Deutsch umschalten'
       : 'Switch to English');
-    try { localStorage.setItem(KEY, lang); } catch (e) { /* private mode */ }
   }
-  var saved = 'de';
-  try { saved = localStorage.getItem(KEY) === 'en' ? 'en' : 'de'; } catch (e) { /* ignore */ }
-  if (saved === 'en') { apply('en'); }
+  var saved = null;
+  try { saved = localStorage.getItem(KEY); } catch (e) { }
+  var lang = saved === 'en' || saved === 'de'
+    ? saved
+    : ((navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en');
+  if (lang === 'en') { apply('en'); }
   btn.addEventListener('click', function () {
-    apply(document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de');
+    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
+    apply(next);
+    try { localStorage.setItem(KEY, next); } catch (e) { }
   });
 })();
 
-// Beta signup. Posts the address straight to the game backend (PostgREST,
-// publishable key - a public client-side value, same one the app ships
-// with). The anon role may insert into site_signups and nothing else; see
-// supabase/migrations/20260902150000_site_signups.sql. If the backend is
-// unreachable the form falls back to a plain mail link so no visitor is
-// ever stuck.
 (function () {
-  var URL = 'https://akotuejhvfalbjoieafk.supabase.co/rest/v1/site_signups';
-  var KEY = 'sb_publishable_EWYpxCsXFYoySC2cMe-Gqw_57wPpSw5';
-  var form = document.getElementById('signup-form');
-  var email = document.getElementById('signup-email');
-  var trap = document.getElementById('signup-website');
-  var submit = document.getElementById('signup-submit');
-  var status = document.getElementById('signup-status');
-  var MSG = {
-    ok: { de: 'Danke! Du stehst auf der Liste.',
-          en: 'Thanks! You are on the list.' },
-    dupe: { de: 'Diese Adresse steht schon auf der Liste.',
-            en: 'That address is already on the list.' },
-    invalid: { de: 'Das sieht nicht nach einer E-Mail-Adresse aus.',
-               en: 'That does not look like an email address.' },
-    fail: { de: 'Die Anmeldung klappt gerade nicht. Schreib uns direkt: ',
-            en: 'Signup is not working right now. Mail us directly: ' }
-  };
-  function lang() {
-    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'de';
+  var targets = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) ||
+      window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    for (var i = 0; i < targets.length; i++) { targets[i].classList.add('shown'); }
+    return;
   }
-  function say(key, cls) {
-    status.className = 'signup-status ' + cls;
-    status.textContent = MSG[key][lang()];
-    if (key === 'fail') {
-      var a = document.createElement('a');
-      a.href = 'mailto:contact@tactics-arena.xyz?subject=Beta';
-      a.textContent = 'contact@tactics-arena.xyz';
-      status.appendChild(a);
+  var seen = new IntersectionObserver(function (entries) {
+    for (var j = 0; j < entries.length; j++) {
+      if (entries[j].isIntersecting) {
+        entries[j].target.classList.add('shown');
+        seen.unobserve(entries[j].target);
+      }
     }
-  }
-  form.addEventListener('submit', function (ev) {
-    ev.preventDefault();
-    var value = (email.value || '').trim();
-    if (trap.value) { say('ok', 'ok'); return; }
-    if (!/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(value) || value.length > 254) {
-      say('invalid', 'err');
-      return;
-    }
-    submit.disabled = true;
-    fetch(URL, {
-      method: 'POST',
-      headers: {
-        apikey: KEY,
-        authorization: 'Bearer ' + KEY,
-        'content-type': 'application/json',
-        prefer: 'return=minimal'
-      },
-      // location.search carries the ad campaign's UTM parameters; storing
-      // them per signup counts conversions per channel with no pixel.
-      body: JSON.stringify({
-        email: value,
-        lang: lang(),
-        source: window.location.search.slice(1, 200) || null
-      })
-    }).then(function (res) {
-      if (res.status === 201) { say('ok', 'ok'); email.value = ''; }
-      else if (res.status === 409) { say('dupe', 'ok'); }
-      else { say('fail', 'err'); }
-    }).catch(function () {
-      say('fail', 'err');
-    }).then(function () {
-      submit.disabled = false;
-    });
-  });
+  }, { rootMargin: '0px 0px -60px 0px' });
+  for (var k = 0; k < targets.length; k++) { seen.observe(targets[k]); }
 })();
 </script>
 
