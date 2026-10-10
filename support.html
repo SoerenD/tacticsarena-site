@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -7,9 +7,8 @@
 <meta name="description" content="Support, bug reports, purchase help and data deletion requests for the Android game Tactics Arena.">
 <link rel="canonical" href="https://tactics-arena.xyz/support.html">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -56,10 +55,9 @@
     <h2>Purchases</h2>
     <p>
       Gem packs are sold and processed by Google Play, so we never see your payment
-      details. If a purchase was charged but the gems did not arrive, reopen the app
-      once while online: pending purchases are re-delivered on startup. If they still
-      do not appear, mail the Google Play order number (it is in your confirmation
-      e-mail) and the gems will be credited.
+      details. If a purchase was charged but the gems did not arrive, mail the Google
+      Play order number (it is in your confirmation e-mail) and the gems will be
+      credited.
     </p>
     <p>
       Refunds within 48 hours of purchase run through
@@ -67,18 +65,19 @@
       refund process</a>. After that, write to the address above.
     </p>
 
-    <h2>Deleting your data</h2>
+    <h2 id="delete">Deleting your data</h2>
     <p>
-      Campaign progress, Heroes and gems live on your device, with a pseudonymous
-      backup on the game server under an anonymous technical account (no name, no
-      email). Clearing the app's data or uninstalling removes the local copy and the
-      access to that anonymous account. Nothing is recoverable afterwards.
+      From the version with Play Games sign-in, open the settings in the app and
+      choose "Delete account". This removes your
+      save, the ledger, your Arena entry (the seat goes to a bot and your chosen name
+      is replaced), your Hollow runs, the Google Play Games link and the anonymous
+      technical account from the server. It cannot be undone. Purchase records stay
+      without the account id; the <a href="privacy.html">privacy policy</a> says why.
     </p>
     <p>
-      To have your server data (cloud save, PvP record, purchase records) deleted, send
-      your PvP display name to
+      You can also ask by email: send your Arena name with its number or, from the
+      version with Play Games sign-in, your account id (shown in the settings) to
       <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20data%20deletion">contact@tactics-arena.xyz</a>.
-      Details are in the <a href="privacy.html">privacy policy</a>.
     </p>
 
     <h2>Closed test</h2>
@@ -112,10 +111,9 @@
     <p>
       Edelstein-Pakete verkauft und verarbeitet Google Play, wir sehen deine
       Zahlungsdaten also nie. Wurde ein Kauf abgebucht, aber die Edelsteine
-      sind nicht angekommen, öffne die App einmal mit Internetverbindung:
-      Offene Käufe werden beim Start nachgeliefert. Fehlen sie danach immer
-      noch, schick uns die Google-Play-Bestellnummer (sie steht in deiner
-      Bestätigungs-E-Mail) und die Edelsteine werden gutgeschrieben.
+      sind nicht angekommen, schick uns die Google-Play-Bestellnummer (sie
+      steht in deiner Bestätigungs-E-Mail) und die Edelsteine werden
+      gutgeschrieben.
     </p>
     <p>
       Erstattungen innerhalb von 48 Stunden nach dem Kauf laufen über
@@ -124,20 +122,21 @@
       oben.
     </p>
 
-    <h2>Deine Daten löschen</h2>
+    <h2 id="delete-de">Deine Daten löschen</h2>
     <p>
-      Kampagnen-Fortschritt, Helden und Edelsteine liegen auf deinem Gerät, mit
-      einer pseudonymen Sicherung auf dem Spielserver unter einem anonymen
-      technischen Konto (kein Name, keine E-Mail-Adresse). Löschst du die
-      App-Daten oder deinstallierst du die App, sind die lokale Kopie und der
-      Zugang zu diesem anonymen Konto weg. Danach lässt sich nichts
-      wiederherstellen.
+      Ab der Version mit Play-Spiele-Anmeldung: öffne in der App die Einstellungen
+      und wähle „Konto löschen". Das entfernt
+      deinen Spielstand, das Buch, deinen Arena-Eintrag (dein Platz geht an einen
+      Bot, dein gewählter Name wird ersetzt), deine Höhlenläufe, die Verknüpfung
+      mit Google Play Spiele und das anonyme technische Konto vom Server. Das
+      lässt sich nicht rückgängig machen. Kaufbelege bleiben ohne Konto-ID
+      stehen; warum, steht in der <a href="privacy.html">Datenschutzerklärung</a>.
     </p>
     <p>
-      Damit deine Server-Daten (Cloud-Spielstand, PvP-Bilanz, Kaufbelege)
-      gelöscht werden, schick deinen PvP-Anzeigenamen an
+      Du kannst die Löschung auch per E-Mail verlangen: schick deinen Arena-Namen
+      samt Nummer oder, ab der Version mit Play-Spiele-Anmeldung, deine Konto-ID
+      (sie steht in den Einstellungen) an
       <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20Datenl%C3%B6schung">contact@tactics-arena.xyz</a>.
-      Details stehen in der <a href="privacy.html">Datenschutzerklärung</a>.
     </p>
 
     <h2>Geschlossener Test</h2>
@@ -186,6 +185,12 @@
   else if (saved === 'en' || saved === 'de') { lang = saved; }
   else { lang = (navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en'; }
   apply(lang);
+  // The Play Console's deletion link ends in #delete. The section exists in
+  // both languages and only one is shown, so scroll to the visible one.
+  if (window.location.hash === '#delete') {
+    var target = document.getElementById(lang === 'en' ? 'delete' : 'delete-de');
+    if (target) target.scrollIntoView();
+  }
   link.addEventListener('click', function (ev) {
     ev.preventDefault();
     var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';

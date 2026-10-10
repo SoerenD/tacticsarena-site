@@ -7,9 +7,8 @@
 <meta name="description" content="Datenschutzerklärung und Privacy Policy für die Android-App Tactics Arena.">
 <link rel="canonical" href="https://tactics-arena.xyz/privacy.html">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -31,7 +30,7 @@
   <div class="wrap">
 
     <h1 data-en="Privacy Policy">Datenschutzerklärung</h1>
-    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 15 September 2026">Stand: 15. September 2026</span></p>
+    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 27 September 2026">Stand: 27. September 2026</span></p>
     <div class="lang-switch">
       <a class="btn btn-slate" href="#english" id="lang-switch">Read in English</a>
     </div>
@@ -51,31 +50,62 @@
     <h3>Kurzfassung</h3>
     <p>
       Tactics Arena zeigt keine Werbung, nutzt keine Tracking- oder Analyse-Dienste und
-      verlangt keine Registrierung. Der Spielstand liegt auf deinem Gerät und wird
-      zusätzlich pseudonym auf unserem Spielserver gesichert, unter einer zufälligen
-      technischen Konto-ID ohne Namen, E-Mail-Adresse oder Passwort. Käufe wickelt
-      Google Play ab; die Kaufbestätigung prüft unser Server gegen Google, bevor
-      Edelsteine gutgeschrieben werden.
+      verlangt keine Registrierung. Beim ersten Start legt die App auf unserem
+      Spielserver ein anonymes technisches Konto an, mit einer zufälligen Konto-ID
+      ohne Namen, E-Mail-Adresse oder Passwort. Dein Spielstand liegt auf diesem
+      Server; die App hält davon eine Anzeigekopie. Kämpfe werden vom Server
+      eröffnet und nachgespielt. Wenn du dich bei Google Play Spiele anmeldest,
+      speichert der Server deine Play-Spiele-Spieler-ID, damit du dein Konto auf
+      einem neuen Gerät wiederfindest. Käufe wickelt Google Play ab; unser Server
+      prüft jeden Kauf gegen Google und schreibt die Edelsteine gut.
+      Die Website selbst setzt keine Cookies und zählt keine Besuche; was beim
+      Aufruf trotzdem an Dritte geht, steht unter „Diese Website“.
     </p>
 
-    <h3>Spielstand (Gerät und Cloud)</h3>
+    <h3>Spielstand</h3>
     <p>
-      Dein Spielfortschritt (Kampagne, Helden, Einheiten, Edelsteine) und deine
-      Einstellungen werden im lokalen App-Speicher deines Geräts gespeichert;
-      Einstellungen verbleiben ausschließlich dort.
+      Beim ersten Start legt die App auf unserem Spielserver, gehostet bei Supabase
+      in der EU (Region Irland), ein anonymes technisches Konto an: eine zufällig
+      erzeugte Konto-ID ohne Namen, E-Mail-Adresse, Passwort oder sonstigen Bezug
+      zu deiner Person. Dein Spielstand liegt auf diesem Server und nur dort:
+      Kampagne, Sterne, Heldenprüfungen, Helden und Karten, Einheitenstufen und
+      Perks, Edelsteine, EP, Jokerkarten, Himmelsturm-Etage, Kartenteile,
+      Ehrenmarken, Höhlen-Serie und Erfolge. Die App hält davon nur eine
+      Anzeigekopie, die sie vom Server ersetzt. Deine Einstellungen bleiben nur
+      auf dem Gerät.
     </p>
     <p>
-      Zusätzlich speichert die App den Spielstand (Kampagnen-Fortschritt, Helden,
-      Einheitenstufen und -perks, Edelstein-Stand, PvP-Kennungen) auf unserem
-      Spielserver, gehostet bei Supabase in der EU (Region Irland). Dazu legt die App
-      beim ersten Start ein anonymes technisches Konto an: eine zufällig erzeugte
-      Konto-ID ohne Namen, E-Mail-Adresse, Passwort oder sonstigen Bezug zu deiner
-      Person. Zweck der Server-Kopie sind der Spielbetrieb und der Schutz vor
-      Manipulation und Betrug, insbesondere faire PvP-Duelle und die Absicherung von
-      Käufen (Rechtsgrundlage Art. 6 Abs. 1 lit. b und f DSGVO). Beim Löschen der
-      App-Daten oder bei der Deinstallation geht der Zugang zu diesem anonymen Konto
-      verloren; die Server-Kopie ist dann nicht mehr abrufbar und wird auf Anfrage
-      gelöscht (siehe „Deine Rechte").
+      Jede Änderung an Edelsteinen, EP, Karten und Ehrenmarken wird mit Zeitpunkt
+      und Grund in einem Buch festgehalten, und einmal am Tag hält der Server eine
+      Kopie des Spielstands fest. So erkennen wir Manipulation und sichern Käufe
+      ab (Rechtsgrundlage Art. 6 Abs. 1 lit. b und f DSGVO). Löschst du die
+      App-Daten oder deinstallierst du die App, ohne bei Google Play Spiele
+      angemeldet zu sein, ist der Zugang zu diesem Konto weg. Auf Anfrage löschen
+      wir es (siehe „Konto löschen").
+    </p>
+
+    <h3>Kämpfe</h3>
+    <p>
+      Jeder Kampf in Kampagne, Himmelsturm, Arena und Höhle wird vom Server
+      eröffnet und am Ende von deinem Gerät an den Server gemeldet. Gemeldet
+      werden deine Züge, nicht ein Ergebnis: welche Einheiten du gewählt hast,
+      wann du neu gewürfelt hast, wann du die Fähigkeiten deines Helden
+      eingesetzt hast und welches Relikt du in der Höhle genommen hast. Der
+      Server spielt den Kampf mit denselben Regeln nach und schreibt die
+      Belohnung gut. Diese vier Spielarten brauchen deshalb eine
+      Internetverbindung; das schnelle Match läuft ohne Server.
+    </p>
+    <p>
+      Für Kampagne, Himmelsturm und Arena werden die Züge nicht gespeichert.
+      Gespeichert wird der Kampf selbst: welcher Kampf, Held, Einheitenstufen und
+      Perks, Ausgang, Belohnung, App-Version und Zeitpunkte. Für Kampagne und
+      Himmelsturm löschen wir diesen Eintrag nach 90 Tagen. Ein Arena-Angriff
+      bleibt wie bisher als Eintrag stehen (siehe „Arena (online)"), jetzt mit
+      der Aufstellung des Angreifers und der Abrechnung. Ein Höhlenlauf wird mit
+      Tag, Held, Aufstellung mit Einheitenstufen und Perks, erreichter Grotte,
+      Relikten, Ausgang, Belohnung, App-Version und Zeitpunkten gespeichert;
+      seine Züge stehen beim Lauf und werden nach 90 Tagen gelöscht.
+      Die Buchungen im Buch (siehe „Spielstand") bleiben.
     </p>
 
     <h3>Arena (online)</h3>
@@ -96,16 +126,16 @@
       <li>wie viele Angriffe und Neuauslosungen du heute verbraucht hast und
         welche zwei Gegner dir gerade angeboten werden,</li>
       <li>ein Eintrag je Angriff: wer wen auf welchem Platz angegriffen hat, der
-        Zufallswert des Kampfes, die Woche, der Ausgang und der Zeitpunkt,</li>
+        Zufallswert des Kampfes, die Woche, die Aufstellung des Angreifers (Held,
+        Einheitenstufen und Perks), die Abrechnung, der Ausgang, die App-Version
+        und der Zeitpunkt,</li>
       <li>am Ende jeder Woche (sonntags 18:00 UTC) dein Name, dein Platz und die
         Ehrenmarken, die er dir eingebracht hat,</li>
       <li>wann dein Eintrag angelegt und wann deine Verteidigung zuletzt
         geändert wurde.</li>
     </ul>
     <p>
-      Die Kämpfe laufen auf deinem Gerät. Spielzüge werden weder übertragen noch
-      gespeichert. Der Server erfährt nur, ob ein Angriff gewonnen oder verloren
-      wurde.
+      Wie ein Angriff gemeldet und nachgespielt wird, steht unter „Kämpfe".
     </p>
     <p>
       Andere Spieler sehen deinen Namen, dein Banner und deinen Platz in der
@@ -123,26 +153,50 @@
       dort deinen echten Namen einträgst, sehen ihn andere Spieler. Kontaktdaten
       werden nicht erhoben, eine Verknüpfung mit deiner Identität findet nicht
       statt, und die Daten werden weder zu Werbezwecken verwendet noch an Dritte
-      verkauft. Auf Anfrage löschen wir sie (siehe „Deine Rechte").
+      verkauft. Auf Anfrage löschen wir sie (siehe „Konto löschen").
+    </p>
+
+    <h3>Google Play Spiele</h3>
+    <p>
+      Wenn du dich auf deinem Gerät bei Google Play Spiele anmeldest (das ist
+      Googles Anmeldung, nicht unsere), schickt die App einen einmaligen Code an
+      unseren Server. Der Server holt damit bei Google deine
+      Play-Spiele-Spieler-ID und speichert sie bei deinem Konto. Zweck: dein
+      Konto auf einem neuen Gerät wiederzufinden. Meldest du dich dort mit
+      demselben Google-Konto an, findet der Server über die ID dein Konto und
+      holt es auf das neue Gerät. Das bisherige Gerät verliert damit den Zugang;
+      ein Spielstand ist immer nur von einem Gerät aus erreichbar. Hat das neue
+      Gerät schon eigenen Fortschritt, fragt die App vorher, welcher Stand
+      bleiben soll. Auf unserem Server wird
+      nur die ID gespeichert, nicht dein Play-Name und nicht dein Bild (Art. 6
+      Abs. 1 lit. b DSGVO). Bist du angemeldet, meldet die App außerdem deine
+      Erfolge an Google Play Spiele: welche du erreicht hast und den Stand der
+      Zähler. Dafür gilt die Datenschutzerklärung von Google. Ohne diese
+      Anmeldung gibt es keine Wiederherstellung.
     </p>
 
     <h3>Käufe</h3>
     <p>
-      Käufe von Edelstein-Paketen werden durch Google Play abgewickelt. Wir erhalten
-      keine Zahlungsdaten (keine Kontonummern, keine Rechnungsadresse). Zum Schutz vor
-      Betrug prüft unser Server jede von Google Play gelieferte Kaufbestätigung
-      (Kauf-Token) über die Google Play Developer API und speichert den bestätigten
-      Kauf (Kauf-Token, Produkt, Bestellnummer, Zeitpunkt) zum anonymen Konto
-      (Rechtsgrundlage Art. 6 Abs. 1 lit. b und f DSGVO). Erst nach dieser Prüfung
-      werden die gekauften Edelsteine gutgeschrieben. Es gilt zusätzlich die
-      Datenschutzerklärung von Google Play.
+      Käufe von Edelstein-Paketen wickelt Google Play ab. Wir erhalten keine
+      Zahlungsdaten (keine Kontonummern, keine Rechnungsadresse). Unser Server
+      prüft jede von Google Play gelieferte Kaufbestätigung (Kauf-Token) über die
+      Google Play Developer API; erst danach werden die Edelsteine
+      gutgeschrieben. Gespeichert werden zum anonymen Konto: Kauf-Token,
+      Produkt, Bestellnummer, Zeitpunkt, ob es ein Testkauf war, und der Stand
+      (gutgeschrieben oder erstattet) (Rechtsgrundlage Art. 6 Abs. 1 lit. b und
+      f DSGVO). Mit dem Kauf geht ein Hashwert deiner Konto-ID an Google, damit
+      der Kauf deinem Konto zugeordnet werden kann. Einmal am Tag fragt der
+      Server bei Google nach erstatteten Käufen und bucht die Edelsteine zurück.
+      Kaufbelege bleiben auch nach dem Löschen des Kontos gespeichert, dann ohne
+      Konto-ID, so lange das Steuerrecht die Aufbewahrung verlangt (§ 147 AO).
+      Es gilt zusätzlich die Datenschutzerklärung von Google Play.
     </p>
 
     <h3>Berechtigungen</h3>
     <p>
-      Die App nutzt die Internet-Berechtigung (Spielstand-Sicherung, PvP-Modus,
-      Kaufprüfung und Google Play Billing). Weitere Berechtigungen werden nicht
-      angefordert.
+      Die App nutzt die Internet-Berechtigung (Spielstand, Kämpfe, Arena,
+      Kaufprüfung, Google Play Billing und Google Play Spiele). Weitere
+      Berechtigungen werden nicht angefordert.
     </p>
 
     <h3>Frühere Beta-Anmeldung auf dieser Website</h3>
@@ -164,13 +218,51 @@
       Benachrichtigung werden die Adressen gelöscht.
     </p>
 
+    <h3>Diese Website</h3>
+    <p>
+      tactics-arena.xyz liegt auf GitHub Pages, betrieben von GitHub, Inc.,
+      88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf
+      einer Seite protokolliert GitHub die IP-Adresse des Besuchers zu
+      Sicherheitszwecken. Ohne diese Übertragung lässt sich die Seite nicht
+      ausliefern; Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO
+      (Bereitstellung und Sicherheit der Website). GitHub ist nach dem
+      EU-US Data Privacy Framework zertifiziert und setzt für Übermittlungen
+      in die USA zusätzlich die Standardvertragsklauseln der EU-Kommission
+      ein. Einzelheiten stehen in
+      <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHubs
+      Datenschutzerklärung</a>.
+    </p>
+    <p>
+      Sonst verarbeitet die Website nichts: keine Analyse-Dienste, keine
+      Werbung, keine Cookies, kein Kontaktformular. Schriften, Bilder und
+      Stylesheets liegen auf demselben Server wie die Seite, von Dritten
+      wird nichts nachgeladen. Die gewählte Sprache (Deutsch oder Englisch)
+      legt der Browser lokal im localStorage ab. Sie wird nicht übertragen
+      und verschwindet, sobald du die Websitedaten im Browser löschst.
+    </p>
+
     <h3>Deine Rechte</h3>
     <p>
       Du hast nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung,
       Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das
-      Recht auf Beschwerde bei einer Aufsichtsbehörde. Für die Löschung deiner
-      Server-Daten (Cloud-Spielstand, Arena-Daten, Kaufbelege) genügt eine formlose
-      E-Mail mit deinem Arena-Namen samt Nummer an die oben genannte Adresse.
+      Recht auf Beschwerde bei einer Aufsichtsbehörde. Wie du dein Konto samt
+      Server-Daten löschst, steht unter „Konto löschen".
+    </p>
+
+    <h3>Konto löschen</h3>
+    <p>
+      Ab der Version mit Play-Spiele-Anmeldung kannst du dein Konto in den
+      Einstellungen der App löschen. Das entfernt
+      Spielstand, Buch, Arena-Eintrag (dein Platz geht an einen Bot, dein
+      gewählter Name wird ersetzt), Höhlenläufe, die Verknüpfung mit Google Play
+      Spiele und das technische Konto vom Server. Angriffe, die auf deinen
+      Eintrag zeigen, und die Wochenergebnisse bleiben stehen, tragen aber den
+      ersetzten Namen. Kaufbelege bleiben ohne Konto-ID stehen (siehe „Käufe").
+      Du kannst die Löschung auch per E-Mail an die oben genannte Adresse
+      verlangen; nenne dazu deinen Arena-Namen samt Nummer oder, ab der Version
+      mit Play-Spiele-Anmeldung, die Konto-ID aus den Einstellungen. Beides
+      steht auch auf der
+      <a href="support.html#delete">Support-Seite</a>.
     </p>
 
     <h3>Änderungen</h3>
@@ -195,29 +287,57 @@
       <h3>Summary</h3>
       <p>
         Tactics Arena shows no ads, uses no tracking or analytics services and requires
-        no registration. Your save game lives on your device and is additionally backed
-        up pseudonymously on our game server, under a random technical account id
-        with no name, email address or password. Purchases are handled by Google Play;
-        our server verifies each purchase confirmation with Google before gems are
-        credited.
+        no registration. On first launch the app creates an anonymous technical account
+        on our game server, with a random account id and no name, email address or
+        password. Your save lives on that server; the app keeps a display copy. Fights
+        are opened and replayed by the server. If you sign in to Google Play Games, the
+        server stores your Play Games player id so you can find your account again on a
+        new device. Purchases are handled by Google Play; our server verifies each
+        purchase with Google and credits the gems.
+        The website itself sets no cookies and counts no visits; what still goes
+        to third parties when a page loads is listed under “This website”.
       </p>
 
-      <h3>Save game (device and cloud)</h3>
+      <h3>Save game</h3>
       <p>
-        Your game progress (campaign, heroes, units, gems) and your settings are stored
-        in the app's local storage; settings stay there exclusively.
+        On first launch the app creates an anonymous technical account on our game
+        server, hosted on Supabase in the EU (Ireland region): a randomly generated
+        account id with no name, email address, password or any other link to your
+        identity. Your save lives on that server and only there: campaign, stars, Hero
+        Trials, heroes and cards, unit levels and perks, gems, XP, Wild Cards, Sky Spire
+        floor, Map Fragments, Valor Marks, Hollow streak and achievements. The app keeps
+        a display copy, which it replaces from the server. Your settings stay on the
+        device only.
       </p>
       <p>
-        In addition, the app stores the save game (campaign progress, heroes, unit
-        levels and perks, gem balance, PvP identifiers) on our game server, hosted on
-        Supabase in the EU (Ireland region). For this the app creates an anonymous
-        technical account on first launch: a randomly generated account id with no
-        name, email address, password or any other link to your identity. The server
-        copy exists to run the game and to protect it against manipulation and fraud,
-        in particular fair PvP duels and purchase protection (Art. 6 (1)(b) and (f)
-        GDPR). Clearing the app's data or uninstalling loses access to this anonymous
-        account; the server copy is then no longer reachable and is deleted on request
-        (see "Your rights").
+        Every change to gems, XP, cards and Valor Marks is written to a ledger with its
+        time and reason, and once a day the server keeps a copy of the save. That is how
+        we spot manipulation and protect purchases (Art. 6 (1)(b) and (f) GDPR). If you
+        clear the app's data or uninstall without being signed in to Google Play Games,
+        access to this account is gone. We delete it on request (see "Deleting your
+        account").
+      </p>
+
+      <h3>Fights</h3>
+      <p>
+        Every fight in the campaign, the Sky Spire, the Arena and the Hollow is opened
+        by the server and, at its end, reported by your device to the server. What is
+        reported are your moves, not a result: which units you picked, when you
+        rerolled, when you used your hero's abilities, and which relic you took in
+        the Hollow. The server replays the fight with the same rules and credits the
+        reward. These four modes therefore need an
+        internet connection; the quick match runs without the server.
+      </p>
+      <p>
+        For the campaign, the Sky Spire and the Arena the moves are not stored. The
+        fight itself is: which fight, hero, unit levels and perks, outcome, reward, app
+        version and times. For the campaign and the Sky Spire we delete that record
+        after 90 days. An Arena attack keeps its record as before (see "Arena
+        (online)"), now with the attacker's roster and the settlement. A Hollow run is
+        stored with its day, hero, band with unit levels and perks, the cave reached,
+        relics, outcome, reward, app version and times; its moves are stored with the
+        run and deleted after 90 days. The ledger entries
+        (see "Save game") stay.
       </p>
 
       <h3>Arena (online)</h3>
@@ -238,15 +358,16 @@
         <li>how many attacks and re-draws you have used today, and which two
           opponents you are currently being offered,</li>
         <li>one record per attack: who attacked whom at which place, the random
-          seed of the fight, the week, the outcome and the time,</li>
+          seed of the fight, the week, the attacker's roster (hero, unit levels
+          and perks), the settlement, the outcome, the app version and the
+          time,</li>
         <li>at the end of each week (Sundays 18:00 UTC) your name, your place and
           the Valor Marks it paid you,</li>
         <li>when your entry was created and when you last changed your
           Defense.</li>
       </ul>
       <p>
-        The fights run on your device. Moves are neither transferred nor stored.
-        The server only learns whether an attack was won or lost.
+        How an attack is reported and replayed is described under "Fights".
       </p>
       <p>
         Other players see your name, your Banner and your place on the ladder.
@@ -263,23 +384,47 @@
         yourself: if you enter your real name there, other players will see it.
         No contact data is collected, the data is never linked to your identity,
         never used for advertising and never sold. We delete it on request (see
-        "Your rights").
+        "Deleting your account").
+      </p>
+
+      <h3>Google Play Games</h3>
+      <p>
+        If you sign in to Google Play Games on your device (that is Google's sign-in,
+        not ours), the app sends a one-time code to our server. The server uses it to
+        obtain your Play Games player id from Google and stores that id with your
+        account. Purpose: finding your account again on a new device. When you sign in
+        there with the same Google account, the server finds your account through the
+        id and brings it to the new device. The previous device then loses access; a
+        save is reachable from one device at a time. If the new device already has
+        progress of its own, the app asks first which one to keep. Only the id is
+        stored on our
+        server, never your Play name or picture (Art. 6 (1)(b) GDPR). While you are
+        signed in, the app also reports your achievements to Google Play Games: which
+        ones you have earned and the counters of the rest. Google's privacy policy
+        applies to that. Without this sign-in there is no recovery.
       </p>
 
       <h3>Purchases</h3>
       <p>
-        Gem pack purchases are processed by Google Play. We receive no payment data. To
-        protect against fraud, our server verifies each purchase confirmation (purchase
-        token) provided by Google Play against the Google Play Developer API and stores
-        the confirmed purchase (purchase token, product, order number, timestamp) with
-        the anonymous account (Art. 6 (1)(b) and (f) GDPR). Gems are credited only
-        after this check. Google Play's own privacy policy additionally applies.
+        Gem pack purchases are processed by Google Play. We receive no payment data (no
+        account numbers, no billing address). Our server verifies each purchase
+        confirmation (purchase token) provided by Google Play against the Google Play
+        Developer API; only then are the gems credited. Stored with the anonymous
+        account are the purchase token, product, order number, time, whether it was a
+        test purchase, and its state (credited or refunded) (Art. 6 (1)(b) and (f)
+        GDPR). A hash of your account id travels with the purchase to Google, so the
+        purchase can be matched to your account. Once a day the server asks Google for
+        refunded purchases and takes the gems back. Purchase records stay after account
+        deletion, then without the account id, for as long as tax law requires them to
+        be kept (section 147 of the German Fiscal Code). Google Play's own privacy
+        policy additionally applies.
       </p>
 
       <h3>Permissions</h3>
       <p>
-        The app uses the Internet permission (save-game sync, PvP mode, purchase
-        verification and Google Play Billing). No other permissions are requested.
+        The app uses the Internet permission (save game, fights, Arena, purchase
+        verification, Google Play Billing and Google Play Games). No other permissions
+        are requested.
       </p>
 
       <h3>Former beta signup on this website</h3>
@@ -298,13 +443,48 @@
         twelve months after signup, or right after the notification.
       </p>
 
+      <h3>This website</h3>
+      <p>
+        tactics-arena.xyz is hosted on GitHub Pages, operated by GitHub, Inc.,
+        88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When a page
+        is requested, GitHub logs the visitor's IP address for security
+        purposes. Without that transfer the page cannot be delivered; the legal
+        basis is Art. 6 (1)(f) GDPR (providing and securing the website).
+        GitHub is certified under the EU-U.S. Data Privacy Framework and also
+        uses the European Commission's standard contractual clauses for
+        transfers to the USA. Details are in
+        <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub's
+        privacy statement</a>.
+      </p>
+      <p>
+        Nothing else is processed on the website: no analytics, no ads, no
+        cookies, no contact form. Fonts, images and stylesheets come from
+        the same server as the page, nothing is loaded from third parties.
+        The language you pick (German or English) is kept locally in the
+        browser's localStorage. It is never transmitted and disappears as
+        soon as you clear the site data in your browser.
+      </p>
+
       <h3>Your rights</h3>
       <p>
         Under the GDPR you have the right to access, rectification, erasure, restriction
         of processing, data portability and objection, and the right to lodge a complaint
-        with a supervisory authority. To delete your server data (cloud save, Arena data,
-        purchase records), send an informal email with your Arena name and number to the
-        address above.
+        with a supervisory authority. How to delete your account and its server data is
+        described under "Deleting your account".
+      </p>
+
+      <h3>Deleting your account</h3>
+      <p>
+        From the version with Play Games sign-in you can delete your account in the
+        app's settings. This removes the save, the
+        ledger, the Arena entry (your seat goes to a bot and your chosen name is
+        replaced), Hollow runs, the Google Play Games link and the technical account
+        from the server. Attacks that point at your entry and the weekly results stay,
+        under the replaced name. Purchase records stay without the account id (see
+        "Purchases"). You can also request deletion by email to the address above; name
+        your Arena name with its number or, from the version with Play Games sign-in,
+        the account id from the settings. Both are
+        also on the <a href="support.html#delete">support page</a>.
       </p>
     </div>
 

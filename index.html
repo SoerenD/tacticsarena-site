@@ -15,10 +15,9 @@
 <meta property="og:url" content="https://tactics-arena.xyz/">
 <meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="assets/logo.webp">
-<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -34,8 +33,8 @@
     <nav>
       <a href="#how" data-en="How it plays">So spielt es sich</a>
       <a href="#units" data-en="Units">Einheiten</a>
-      <a href="#heroes" data-secondary data-en="Heroes">Helden</a>
-      <a href="#campaign" data-secondary data-en="Campaign">Kampagne</a>
+      <a href="#heroes" data-en="Heroes">Helden</a>
+      <a href="#campaign" data-en="Campaign">Kampagne</a>
       <a href="#arena" data-en="Arena">Arena</a>
       <button class="lang-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
       <a class="badge-play" id="badge-top" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
@@ -138,7 +137,7 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="Units">Einheiten</span><span class="gem" aria-hidden="true"></span></p>
-      <h2 data-en="Six units that counter each other">Sechs Einheiten, die sich gegenseitig kontern</h2>
+      <h2 data-en="Seven units that counter each other">Sieben Einheiten, die sich gegenseitig kontern</h2>
       <p class="lede" data-en="From round two on you have watched the enemy army fight once. All of it comes back.">
         Ab Runde zwei hast du die gegnerische Armee einmal kämpfen sehen. Sie
         kommt komplett wieder.
@@ -200,6 +199,16 @@
           Nachladen. Die Antwort auf alles Gepanzerte.
         </p>
       </article>
+      <article class="card unit">
+        <img src="assets/unit-plaguecaller.webp" alt="" width="210" height="210" loading="lazy">
+        <span class="tag tag-ranged" data-en="Ranged">Fernkampf</span>
+        <h3 data-en="Plaguecaller">Seuchenrufer</h3>
+        <p data-en="Weak on its own. Its plague hits every enemy of the kind it strikes, and when it falls, every enemy of its killer's kind. The answer to an army of one unit.">
+          Allein schwach. Seine Seuche trifft jeden Gegner der Art, die er
+          angreift, und fällt er, jeden Gegner von der Art seines Mörders.
+          Die Antwort auf eine Armee aus einer einzigen Einheit.
+        </p>
+      </article>
     </div>
 
   </div>
@@ -220,7 +229,7 @@
     <div class="grid grid-3 reveal">
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-sir_aldric.webp" alt="" width="152" height="156" loading="lazy">
+          <img src="assets/hero-sir_aldric.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Sir Aldric</h3>
             <p data-en="Knight Commander &middot; Melee">Ritterkommandant · Nahkampf</p>
@@ -237,7 +246,7 @@
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-elara.webp" alt="" width="122" height="156" loading="lazy">
+          <img src="assets/hero-elara.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Elara</h3>
             <p data-en="Forest Ranger &middot; Ranged">Waldläuferin · Fernkampf</p>
@@ -247,14 +256,14 @@
           <dt data-en="Passive">Passiv</dt>
           <dd><span class="ability" data-en="Ranger Training">Waldläufer-Training</span>: <span data-en="Ranged units attack faster.">Fernkämpfer greifen schneller an.</span></dd>
           <dt data-en="Tactical">Taktik</dt>
-          <dd><span class="ability" data-en="Scout">Spähen</span>: <span data-en="Reveals the enemy's draft pair.">Zeigt dir das Draft-Paar des Gegners.</span></dd>
+          <dd><span class="ability" data-en="Scout">Spähen</span>: <span data-en="Shows you the enemy's whole army mid-draft.">Zeigt dir mitten im Draft die ganze Armee des Gegners.</span></dd>
           <dt>Ultimate</dt>
           <dd><span class="ability" data-en="Arrow Storm">Pfeilsturm</span>: <span data-en="Every ranged unit's first shot hits twice as hard.">Der erste Schuss jedes Fernkämpfers trifft doppelt so hart.</span></dd>
         </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-vex.webp" alt="" width="147" height="156" loading="lazy">
+          <img src="assets/hero-vex.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Vex</h3>
             <p data-en="Shadow Master &middot; Assassins">Schattenmeister · Assassinen</p>
@@ -262,16 +271,16 @@
         </div>
         <dl>
           <dt data-en="Passive">Passiv</dt>
-          <dd><span class="ability" data-en="Night Steps">Nachtschritte</span>: <span data-en="Assassins move faster.">Assassinen sind schneller unterwegs.</span></dd>
+          <dd><span class="ability" data-en="Night Steps">Nachtschritte</span>: <span data-en="Assassins are harder to kill.">Assassinen sind schwerer zu töten.</span></dd>
           <dt data-en="Tactical">Taktik</dt>
-          <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span>: <span data-en="Assassins move faster still for one battle.">Assassinen sind eine Schlacht lang noch schneller.</span></dd>
+          <dd><span class="ability" data-en="Shadow Step">Schattenschritt</span>: <span data-en="An assassin's opening strike hits far harder for one battle.">Der Eröffnungsangriff von Assassinen trifft eine Schlacht lang viel härter.</span></dd>
           <dt>Ultimate</dt>
-          <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span>: <span data-en="Assassins deal 30% more damage and gain 30% speed.">Assassinen machen 30 % mehr Schaden und sind 30 % schneller.</span></dd>
+          <dd><span class="ability" data-en="Shadow Assault">Schattenangriff</span>: <span data-en="Assassins deal 30% more damage and attack 25% faster.">Assassinen machen 30 % mehr Schaden und greifen 25 % schneller an.</span></dd>
         </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-borin.webp" alt="" width="148" height="156" loading="lazy">
+          <img src="assets/hero-borin.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Borin</h3>
             <p data-en="Iron Guardian &middot; Defense">Eiserner Wächter · Verteidigung</p>
@@ -288,24 +297,24 @@
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-lyra.webp" alt="" width="148" height="156" loading="lazy">
+          <img src="assets/hero-lyra.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Lyra</h3>
-            <p data-en="Tactician &amp; Merchant &middot; Economy">Taktikerin &amp; Händlerin · Wirtschaft</p>
+            <p data-en="Field Tactician &middot; Combined Arms">Feldtaktikerin · Verbundene Waffen</p>
           </div>
         </div>
         <dl>
           <dt data-en="Passive">Passiv</dt>
-          <dd><span class="ability" data-en="Sharp Ledger">Scharfe Bücher</span>: <span data-en="Extra coins after every battle.">Extra Münzen nach jeder Schlacht.</span></dd>
+          <dd><span class="ability" data-en="Order of Battle">Schlachtordnung</span>: <span data-en="Your whole army deals more damage.">Deine ganze Armee verursacht mehr Schaden.</span></dd>
           <dt data-en="Tactical">Taktik</dt>
-          <dd><span class="ability" data-en="Recruiter">Anwerberin</span>: <span data-en="Your next reroll is free.">Dein nächster Neuwurf ist gratis.</span></dd>
+          <dd><span class="ability" data-en="Press the Attack">Nachsetzen</span>: <span data-en="The whole army attacks faster for one battle.">Die ganze Armee greift eine Schlacht lang schneller an.</span></dd>
           <dt>Ultimate</dt>
-          <dd><span class="ability" data-en="Golden Age">Goldenes Zeitalter</span>: <span data-en="An instant pile of coins.">Sofort ein Schwung Münzen.</span></dd>
+          <dd><span class="ability" data-en="Master Strategist">Meisterstrategin</span>: <span data-en="Your whole army deals 25% more damage.">Die ganze Armee verursacht 25 % mehr Schaden.</span></dd>
         </dl>
       </article>
       <article class="card hero-card">
         <div class="hero-head">
-          <img src="assets/hero-kael.webp" alt="" width="148" height="156" loading="lazy">
+          <img src="assets/hero-kael.webp" alt="" width="302" height="368" loading="lazy">
           <div>
             <h3>Kael</h3>
             <p data-en="Ash Commander &middot; Aggression">Aschekommandant · Aggression</p>
@@ -318,6 +327,23 @@
           <dd><span class="ability" data-en="Ignite">Entzünden</span>: <span data-en="The opening hits harder still for one battle.">Eine Schlacht lang trifft die Eröffnung noch härter.</span></dd>
           <dt>Ultimate</dt>
           <dd><span class="ability" data-en="Onslaught">Ansturm</span>: <span data-en="Your whole army attacks 25% faster.">Die ganze Armee greift 25 % schneller an.</span></dd>
+        </dl>
+      </article>
+      <article class="card hero-card">
+        <div class="hero-head">
+          <img src="assets/hero-cassian.webp" alt="" width="302" height="368" loading="lazy">
+          <div>
+            <h3>Cassian</h3>
+            <p data-en="Banner Marshal &middot; Mixed Ranks">Bannermarschall · Gemischte Reihen</p>
+          </div>
+        </div>
+        <dl>
+          <dt data-en="Passive">Passiv</dt>
+          <dd><span class="ability" data-en="Every Banner">Alle Banner</span>: <span data-en="Each unit type in your army makes all of it hit harder.">Jeder Einheitentyp in deiner Armee lässt die ganze Armee härter zuschlagen.</span></dd>
+          <dt data-en="Tactical">Taktik</dt>
+          <dd><span class="ability" data-en="Break Formation">Formation brechen</span>: <span data-en="For one battle the enemy's most numerous unit type deals less damage.">Eine Schlacht lang verursacht der häufigste Einheitentyp des Gegners weniger Schaden.</span></dd>
+          <dt>Ultimate</dt>
+          <dd><span class="ability" data-en="Checkmate">Schachmatt</span>: <span data-en="The enemy's most numerous unit type takes 25% more damage.">Der häufigste Einheitentyp des Gegners erleidet 25 % mehr Schaden.</span></dd>
         </dl>
       </article>
     </div>
