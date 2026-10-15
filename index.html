@@ -19,6 +19,7 @@
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
+<noscript><style>.reveal { opacity: 1; transform: none; }</style></noscript>
 </head>
 <body>
 
@@ -73,23 +74,25 @@
   <div class="wrap">
     <div class="section-head reveal">
       <p class="rail"><span class="gem" aria-hidden="true"></span><span data-en="The trailer">Der Trailer</span><span class="gem" aria-hidden="true"></span></p>
-      <h2 data-en="Half a minute, one descent.">Eine halbe Minute, ein Abstieg.</h2>
+      <h2 data-en="Just under forty seconds, one descent.">Knapp vierzig Sekunden, ein Abstieg.</h2>
       <p class="lede" data-en="Draft, heroes, the Hollow and the blow at the end. Captured from the game, in your language.">
         Draft, Helden, die Höhle und der Schlag am Ende. Aufgenommen aus dem
         Spiel, in deiner Sprache.
       </p>
     </div>
 
-    <div class="trailer reveal" id="trailer-box" data-video-de="Z4mdsir1NK4" data-video-en="A9QCJtGTFrg">
-      <button class="trailer-play" id="trailer-play" type="button">
-        <img src="assets/trailer-poster.webp" alt="" width="720" height="1280" loading="lazy">
-        <span class="trailer-ring" aria-hidden="true"></span>
-        <span class="trailer-label" data-en="Play the trailer">Trailer abspielen</span>
+    <div class="trailer reveal" id="trailer-box">
+      <video id="trailer-video" src="assets/trailer-de.mp4"
+        width="720" height="1280" controls playsinline preload="none" aria-label="Tactics Arena Trailer"
+        data-src-de="assets/trailer-de.mp4" data-src-en="assets/trailer-en.mp4"
+        data-poster-de="assets/trailer-poster-de.webp" data-poster-en="assets/trailer-poster-en.webp"></video>
+      <button class="trailer-play" id="trailer-play" type="button" hidden>
+        <span class="trailer-cta">
+          <span class="trailer-ring" aria-hidden="true"></span>
+          <span class="trailer-label" data-en="Play the trailer">Trailer abspielen</span>
+        </span>
       </button>
     </div>
-    <p class="trailer-note" data-en="The video comes from YouTube and loads only when you press play.">
-      Das Video kommt von YouTube und lädt erst, wenn du auf Abspielen drückst.
-    </p>
   </div>
 </section>
 
@@ -580,32 +583,43 @@
 })();
 
 (function () {
-  var box = document.getElementById('trailer-box');
+  var video = document.getElementById('trailer-video');
   var play = document.getElementById('trailer-play');
   var toggle = document.getElementById('lang-toggle');
-  if (!box || !play) { return; }
-  function videoId() {
-    var lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'de';
-    return box.getAttribute('data-video-' + lang);
+  if (!video || !play) { return; }
+  function lang() {
+    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'de';
   }
-  function src(id, autoplay) {
-    return 'https://www.youtube-nocookie.com/embed/' + id +
-      '?rel=0&playsinline=1' + (autoplay ? '&autoplay=1' : '');
+  function leaveFullscreen() {
+    if (document.fullscreenElement === video && document.exitFullscreen) {
+      var left = document.exitFullscreen();
+      if (left && left.catch) { left.catch(function () { }); }
+    } else if (video.webkitDisplayingFullscreen && video.webkitExitFullscreen) {
+      video.webkitExitFullscreen();
+    }
+  }
+  function reset() {
+    var hadFocus = document.activeElement === video;
+    leaveFullscreen();
+    video.pause();
+    video.controls = false;
+    video.removeAttribute('src');
+    video.poster = video.getAttribute('data-poster-' + lang());
+    video.load();
+    play.hidden = false;
+    if (hadFocus) { play.focus({ preventScroll: true }); }
   }
   play.addEventListener('click', function () {
-    var frame = document.createElement('iframe');
-    frame.src = src(videoId(), true);
-    frame.title = 'Tactics Arena Trailer';
-    frame.setAttribute('allow', 'autoplay; encrypted-media; picture-in-picture; fullscreen');
-    frame.setAttribute('allowfullscreen', '');
-    box.replaceChild(frame, play);
+    video.src = video.getAttribute('data-src-' + lang());
+    video.controls = true;
+    play.hidden = true;
+    var started = video.play();
+    if (started && started.catch) { started.catch(function () { }); }
+    video.focus({ preventScroll: true });
   });
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var frame = box.querySelector('iframe');
-      if (frame) { frame.src = src(videoId(), false); }
-    });
-  }
+  video.addEventListener('ended', reset);
+  if (toggle) { toggle.addEventListener('click', reset); }
+  reset();
 })();
 </script>
 
