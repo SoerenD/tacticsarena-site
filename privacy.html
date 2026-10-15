@@ -30,7 +30,7 @@
   <div class="wrap">
 
     <h1 data-en="Privacy Policy">Datenschutzerklärung</h1>
-    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 12 October 2026">Stand: 12. Oktober 2026</span></p>
+    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 15 October 2026">Stand: 15. Oktober 2026</span></p>
     <div class="lang-switch">
       <a class="btn btn-slate" href="#english" id="lang-switch">Read in English</a>
     </div>
@@ -49,8 +49,9 @@
 
     <h3>Kurzfassung</h3>
     <p>
-      Tactics Arena zeigt keine Werbung, nutzt keine Tracking- oder Analyse-Dienste und
-      verlangt keine Registrierung. Beim ersten Start legt die App auf unserem
+      Tactics Arena zeigt keine Werbung, verlangt keine Registrierung und sendet
+      Nutzungsstatistik und Absturzberichte nur, wenn du beim ersten Start
+      zustimmst (siehe „Nutzungsstatistik und Absturzberichte“). Beim ersten Start legt die App auf unserem
       Spielserver ein anonymes technisches Konto an, mit einer zufälligen Konto-ID
       ohne Namen, E-Mail-Adresse oder Passwort. Dein Spielstand liegt auf diesem
       Server; die App hält davon eine Anzeigekopie. Kämpfe werden vom Server
@@ -201,11 +202,35 @@
       Es gilt zusätzlich die Datenschutzerklärung von Google Play.
     </p>
 
+    <h3>Nutzungsstatistik und Absturzberichte</h3>
+    <p>
+      Beim ersten Start fragt die App, ob sie anonyme Nutzungsstatistik und
+      Absturzberichte an Google senden darf. Sagst du Nein, bleibt alles aus;
+      die Antwort änderst du jederzeit in den Einstellungen unter „Statistik
+      und Absturzberichte“. Sagst du Ja, nutzt die App Google Analytics for
+      Firebase und Firebase Crashlytics (Anbieter: Google Ireland Limited,
+      Gordon House, Barrow Street, Dublin 4, Irland, als Auftragsverarbeiter).
+      Übermittelt werden Ereignisse im Spiel (zum Beispiel erster Kampf, Shop
+      geöffnet, Kauf abgeschlossen), Sitzungen, Absturzberichte mit
+      Gerätemodell, Android-Version, App-Version und dem Zustand der App beim
+      Absturz, sowie eine zufällige Installations-ID, die Firebase auf dem
+      Gerät speichert. Keine Werbe-ID, kein Name, keine Konto-ID. Die Daten
+      können in den USA verarbeitet werden; Google ist nach dem EU-US Data
+      Privacy Framework zertifiziert. Rechtsgrundlage ist deine Einwilligung
+      (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO). Ein Widerruf wirkt ab
+      sofort; bereits gesendete Daten bleiben bis zum Ablauf der
+      Speicherfrist: Analytics 14 Monate, Crashlytics 90 Tage.
+    </p>
+
     <h3>Berechtigungen</h3>
     <p>
-      Die App nutzt die Internet-Berechtigung (Spielstand, Kämpfe, Arena,
-      Kaufprüfung, Google Play Billing und Google Play Spiele). Weitere
-      Berechtigungen werden nicht angefordert.
+      Die App fragt dich nach keiner Berechtigung. Im Paket stehen Internet
+      und Netzwerkstatus (Spielstand, Kämpfe, Arena, Kaufprüfung, Google Play
+      Spiele, Statistik und Absturzberichte), Wachhalten (Firebase plant damit
+      das Senden von Statistik und Absturzberichten), Google Play Billing und
+      die Anbindung an den Installationsdienst von Google Play, die das
+      Analytics-SDK mitbringt. Eine Werbe-ID-Berechtigung enthält das Paket
+      nicht.
     </p>
 
     <h3>Frühere Beta-Anmeldung auf dieser Website</h3>
@@ -245,9 +270,26 @@
       Sonst verarbeitet die Website nichts: keine Analyse-Dienste, keine
       Werbung, keine Cookies, kein Kontaktformular. Schriften, Bilder und
       Stylesheets liegen auf demselben Server wie die Seite, von Dritten
-      wird nichts nachgeladen. Die gewählte Sprache (Deutsch oder Englisch)
+      wird beim Aufruf nichts nachgeladen; die eine Ausnahme ist der Trailer,
+      siehe den nächsten Absatz. Die gewählte Sprache (Deutsch oder Englisch)
       legt der Browser lokal im localStorage ab. Sie wird nicht übertragen
       und verschwindet, sobald du die Websitedaten im Browser löschst.
+    </p>
+    <p>
+      Der Trailer auf der Startseite liegt bei YouTube (Google Ireland
+      Limited, Gordon House, Barrow Street, Dublin 4, Irland). Beim Aufruf
+      der Seite lädt dein Browser nur ein Vorschaubild von unserem Server,
+      zu YouTube geht nichts. Erst wenn du auf „Trailer abspielen“ drückst,
+      holt der Browser den Player von youtube-nocookie.com, dem erweiterten
+      Datenschutzmodus von YouTube. Ab dann erhält Google deine IP-Adresse
+      und die Angaben, die dein Browser bei jedem Abruf mitschickt, und kann
+      Daten in deinem Browser ablegen; bist du bei Google angemeldet, kann
+      Google die Wiedergabe deinem Konto zuordnen. Rechtsgrundlage ist deine
+      Einwilligung durch den Klick (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a
+      DSGVO). Sie gilt für diesen Seitenaufruf; lädst du die Seite neu, ist
+      der Player wieder weg. Google ist nach dem EU-US Data Privacy Framework
+      zertifiziert; Einzelheiten stehen in
+      <a href="https://policies.google.com/privacy">Googles Datenschutzerklärung</a>.
     </p>
 
     <h3>Deine Rechte</h3>
@@ -295,8 +337,9 @@
 
       <h3>Summary</h3>
       <p>
-        Tactics Arena shows no ads, uses no tracking or analytics services and requires
-        no registration. On first launch the app creates an anonymous technical account
+        Tactics Arena shows no ads, requires no registration and sends usage
+        statistics and crash reports only if you agree on first launch (see
+        “Usage statistics and crash reports”). On first launch the app creates an anonymous technical account
         on our game server, with a random account id and no name, email address or
         password. Your save lives on that server; the app keeps a display copy. Fights
         are opened and replayed by the server. If you sign in to Google Play Games, the
@@ -437,11 +480,32 @@
         policy additionally applies.
       </p>
 
+      <h3>Usage statistics and crash reports</h3>
+      <p>
+        On first launch the app asks whether it may send anonymous usage statistics
+        and crash reports to Google. If you say no, nothing is sent; you can change
+        the answer at any time in the settings under “Statistics and crash
+        reports”. If you say yes, the app uses Google Analytics for Firebase and
+        Firebase Crashlytics (provider: Google Ireland Limited, Gordon House, Barrow
+        Street, Dublin 4, Ireland, as a processor). Sent are in-game events (for
+        example first fight, shop opened, purchase completed), sessions, crash
+        reports with device model, Android version, app version and the state of
+        the app at the crash, and a random installation id that Firebase stores on
+        the device. No advertising id, no name, no account id. The data may be
+        processed in the USA; Google is certified under the EU-US Data Privacy
+        Framework. The legal basis is your consent (section 25 (1) TDDDG, Art. 6
+        (1)(a) GDPR). Withdrawing it takes effect at once; data already sent stays
+        until its retention period ends: Analytics 14 months, Crashlytics 90 days.
+      </p>
+
       <h3>Permissions</h3>
       <p>
-        The app uses the Internet permission (save game, fights, Arena, purchase
-        verification, Google Play Billing and Google Play Games). No other permissions
-        are requested.
+        The app never asks you for a permission. The package declares Internet and
+        network state (save game, fights, Arena, purchase verification, Google Play
+        Games, statistics and crash reports), wake lock (Firebase uses it to schedule
+        the sending of statistics and crash reports), Google Play Billing and the
+        binding to Google Play's install service that the Analytics SDK brings
+        along. No advertising-id permission is in the package.
       </p>
 
       <h3>Former beta signup on this website</h3>
@@ -476,10 +540,27 @@
       <p>
         Nothing else is processed on the website: no analytics, no ads, no
         cookies, no contact form. Fonts, images and stylesheets come from
-        the same server as the page, nothing is loaded from third parties.
-        The language you pick (German or English) is kept locally in the
+        the same server as the page, nothing is loaded from third parties
+        when the page opens; the one exception is the trailer, see the next
+        paragraph. The language you pick (German or English) is kept locally in the
         browser's localStorage. It is never transmitted and disappears as
         soon as you clear the site data in your browser.
+      </p>
+      <p>
+        The trailer on the start page is hosted by YouTube (Google Ireland
+        Limited, Gordon House, Barrow Street, Dublin 4, Ireland). When the
+        page opens, your browser only fetches a preview image from our
+        server; nothing goes to YouTube. Only when you press “Play the
+        trailer” does the browser load the player from youtube-nocookie.com,
+        YouTube's privacy-enhanced mode. From then on Google receives your IP
+        address and the details your browser sends with every request, and
+        may store data in your browser; if you are signed in to Google, it
+        can link the playback to your account. The legal basis is your
+        consent given by that click (section 25 (1) TDDDG, Art. 6 (1)(a)
+        GDPR). It covers this page view; reload the page and the player is
+        gone. Google is certified under the EU-U.S. Data Privacy Framework;
+        details are in
+        <a href="https://policies.google.com/privacy">Google's privacy policy</a>.
       </p>
 
       <h3>Your rights</h3>
