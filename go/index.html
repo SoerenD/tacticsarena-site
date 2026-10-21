@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Tactics Arena on Google Play</title>
+<!-- The profile link of the clip accounts: /go/?s=tiktok, youtube, facebook
+     or instagram. The page sends the visitor on to Google Play with the
+     source in the install referrer, so the Play Console counts the installs
+     per platform (docs/marketing/clip-agent.md, section 6). No tracking
+     script, no cookie: the referrer is the only thing passed on. -->
+<meta name="description" content="A tactical 1v1 auto battler for Android. Draft three units a round and counter the enemy's army.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tactics Arena">
+<meta property="og:description" content="A tactical 1v1 auto battler for Android. Free on Google Play.">
+<meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/icon-180.png" sizes="180x180">
+<meta name="theme-color" content="#070d18">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cinzel-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .go { text-align: center; }
+  .go .mark { width: min(200px, 48vw); margin: 0 auto 1.4rem; }
+  .go .badge-play img { height: 64px; margin-inline: auto; }
+  .go .note { color: var(--muted); font-size: 0.92rem; margin-top: 1.2rem; }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="gem" aria-hidden="true"></span>
+      Tactics Arena
+    </a>
+  </div>
+</header>
+
+<main class="doc go">
+  <div class="wrap">
+    <img class="mark" src="/assets/logo.webp" alt="Tactics Arena" width="533" height="560">
+    <h1>Opening Google Play</h1>
+    <p>If nothing happens, tap the button.</p>
+    <p>
+      <a class="badge-play" id="play" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
+        <img src="/assets/play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
+      </a>
+    </p>
+    <p class="note">
+      Tactics Arena is available in the Philippines, Malaysia and South Africa
+      for now.
+    </p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Tactics Arena</span>
+    <nav>
+      <a href="/privacy.html">Privacy</a>
+      <a href="/support.html">Support</a>
+      <a href="/impressum.html">Imprint</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+  // Only the known sources get a tag; anything else goes to Play untagged,
+  // so a typo in a link cannot create a source of its own.
+  (function () {
+    var sources = ['tiktok', 'youtube', 'facebook', 'instagram'];
+    var store = 'https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena';
+    var source = (new URLSearchParams(location.search).get('s') || '').toLowerCase();
+    var url = store;
+    if (sources.indexOf(source) >= 0) {
+      url += '&referrer=' + encodeURIComponent('utm_source=' + source + '&utm_medium=social&utm_campaign=clips');
+    }
+    document.getElementById('play').href = url;
+    location.replace(url);
+  })();
+</script>
+</body>
+</html>
