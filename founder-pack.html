@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Gründer-Paket: Teilnahmebedingungen / Founder Pack: Terms - Tactics Arena</title>
-<meta name="description" content="Teilnahmebedingungen für das Gründer-Paket, die Vorregistrierungsprämie des Android-Spiels Tactics Arena. Terms for the Founder Pack pre-registration reward.">
+<title data-en="Founder Pack: Terms - Tactics Arena">Gründer-Paket: Teilnahmebedingungen - Tactics Arena</title>
+<meta name="description" content="Teilnahmebedingungen für das Gründer-Paket, die Vorregistrierungsprämie des Android-Spiels Tactics Arena." data-en="Terms for the Founder Pack, the pre-registration reward of the Android game Tactics Arena.">
 <link rel="canonical" href="https://tactics-arena.xyz/founder-pack.html">
+<link rel="alternate" hreflang="de" href="https://tactics-arena.xyz/founder-pack.html">
+<link rel="alternate" hreflang="en" href="https://tactics-arena.xyz/en/founder-pack.html">
+<link rel="alternate" hreflang="x-default" href="https://tactics-arena.xyz/en/founder-pack.html">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
@@ -20,8 +23,10 @@
       Tactics Arena
     </a>
     <nav>
-      <a href="./">Home</a>
+      <a href="./" data-en="Home">Startseite</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
       <a href="support.html">Support</a>
+      <a class="lang-btn" href="en/founder-pack.html" hreflang="en" lang="en" aria-label="Switch to English" data-en="DE" data-en-href="../founder-pack.html" data-en-hreflang="de" data-en-lang="de" data-en-aria-label="Auf Deutsch umschalten">EN</a>
     </nav>
   </div>
 </header>
@@ -32,12 +37,12 @@
     <h1 data-en="Founder Pack: Terms">Gründer-Paket: Teilnahmebedingungen</h1>
     <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 11 October 2026">Stand: 11. Oktober 2026</span></p>
     <div class="lang-switch">
-      <a class="btn btn-slate" href="#english" id="lang-switch">Read in English</a>
+      <a class="btn btn-slate" href="en/founder-pack.html" hreflang="en" lang="en" data-en="Auf Deutsch lesen" data-en-href="../founder-pack.html" data-en-hreflang="de" data-en-lang="de">Read in English</a>
     </div>
 
-    <div id="lang-de" lang="de">
+    <div data-only="de">
 
-    <p id="deutsch">
+    <p>
       Das Gründer-Paket ist die Prämie für alle, die Tactics Arena bei Google
       Play vorregistrieren, bevor das Spiel erscheint. Hier steht, was drin ist,
       wer es bekommt und wie es im Spiel ankommt.
@@ -129,9 +134,9 @@
 
     </div>
 
-    <div id="lang-en" lang="en">
+    <template data-only="en">
 
-    <p id="english">
+    <p>
       The Founder Pack is the reward for everyone who pre-registers for Tactics
       Arena on Google Play before the game is released. This page says what is
       in it, who gets it and how it reaches your game.
@@ -217,7 +222,7 @@
       applies. Your statutory rights as a consumer are not affected.
     </p>
 
-    </div>
+    </template>
 
   </div>
 </main>
@@ -226,50 +231,14 @@
   <div class="wrap">
     <span>&copy; 2026 Tactics Arena</span>
     <nav>
-      <a href="./">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="mailto:contact@tactics-arena.xyz">Contact</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
+      <a href="terms.html" data-en="Terms">Nutzungsbedingungen</a>
+      <a href="support.html">Support</a>
+      <a href="impressum.html" data-en="Legal notice">Impressum</a>
+      <a href="mailto:contact@tactics-arena.xyz" data-en="Contact">Kontakt</a>
     </nav>
   </div>
 </footer>
-
-<script>
-(function () {
-  var KEY = 'ta-lang';
-  var de = document.getElementById('lang-de');
-  var en = document.getElementById('lang-en');
-  var link = document.getElementById('lang-switch');
-  var i18n = document.querySelectorAll('[data-en]');
-  function apply(lang) {
-    var showEn = lang === 'en';
-    de.hidden = showEn;
-    en.hidden = !showEn;
-    document.documentElement.setAttribute('lang', lang);
-    link.textContent = showEn ? 'Auf Deutsch lesen' : 'Read in English';
-    link.setAttribute('href', showEn ? '#deutsch' : '#english');
-    for (var i = 0; i < i18n.length; i++) {
-      var el = i18n[i];
-      if (!el.getAttribute('data-de')) el.setAttribute('data-de', el.textContent);
-      el.textContent = el.getAttribute(showEn ? 'data-en' : 'data-de');
-    }
-  }
-  var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) { }
-  var lang;
-  if (window.location.hash === '#english') { lang = 'en'; }
-  else if (window.location.hash === '#deutsch') { lang = 'de'; }
-  else if (saved === 'en' || saved === 'de') { lang = saved; }
-  else { lang = (navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en'; }
-  apply(lang);
-  link.addEventListener('click', function (ev) {
-    ev.preventDefault();
-    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
-    apply(next);
-    try { localStorage.setItem(KEY, next); } catch (e) { }
-  });
-})();
-</script>
 
 </body>
 </html>

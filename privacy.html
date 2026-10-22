@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Datenschutzerklärung / Privacy Policy - Tactics Arena</title>
-<meta name="description" content="Datenschutzerklärung und Privacy Policy für die Android-App Tactics Arena.">
+<title data-en="Privacy Policy - Tactics Arena">Datenschutzerklärung / Privacy Policy - Tactics Arena</title>
+<meta name="description" content="Datenschutzerklärung für das Android-Spiel Tactics Arena: Spielstand, Kämpfe, Arena, Google Play Spiele, Käufe, Nutzungsstatistik und Absturzberichte. Deutsch und Englisch." data-en="Privacy policy for the Android game Tactics Arena: save game, fights, Arena, Google Play Games, purchases, usage statistics and crash reports.">
 <link rel="canonical" href="https://tactics-arena.xyz/privacy.html">
+<link rel="alternate" hreflang="de" href="https://tactics-arena.xyz/privacy.html">
+<link rel="alternate" hreflang="en" href="https://tactics-arena.xyz/en/privacy.html">
+<link rel="alternate" hreflang="x-default" href="https://tactics-arena.xyz/en/privacy.html">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
@@ -20,8 +23,10 @@
       Tactics Arena
     </a>
     <nav>
-      <a href="./">Home</a>
+      <a href="./" data-en="Home">Startseite</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
       <a href="support.html">Support</a>
+      <a class="lang-btn" href="en/privacy.html" hreflang="en" lang="en" aria-label="Switch to English" data-en="DE" data-en-href="../privacy.html" data-en-hreflang="de" data-en-lang="de" data-en-aria-label="Auf Deutsch umschalten">EN</a>
     </nav>
   </div>
 </header>
@@ -30,16 +35,18 @@
   <div class="wrap">
 
     <h1 data-en="Privacy Policy">Datenschutzerklärung</h1>
-    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 15 October 2026">Stand: 15. Oktober 2026</span></p>
-    <div class="lang-switch">
-      <a class="btn btn-slate" href="#english" id="lang-switch">Read in English</a>
+    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 22 October 2026">Stand: 22. Oktober 2026</span></p>
+    <div class="lang-switch" data-only="de">
+      <!-- One page, both languages: the app opens #deutsch or #english
+           from its settings, and the Play Console links this address.
+           /en/ has the English half as a page of its own. -->
+      <a class="btn btn-slate" href="#deutsch">Deutsch</a>
+      <a class="btn btn-slate" href="#english" lang="en">English</a>
     </div>
 
-    <div id="lang-de" lang="de">
+    <div id="deutsch" data-only="de">
 
-    <h2 id="deutsch">Deutsch</h2>
-
-    <h3>Verantwortlicher</h3>
+    <h2>Verantwortlicher</h2>
     <address>
       Sören Dierkes<br>
       Gersteweg 18<br>
@@ -47,7 +54,7 @@
       E-Mail: <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>
     </address>
 
-    <h3>Kurzfassung</h3>
+    <h2>Kurzfassung</h2>
     <p>
       Tactics Arena zeigt keine Werbung, verlangt keine Registrierung und sendet
       Nutzungsstatistik und Absturzberichte nur, wenn du beim ersten Start
@@ -63,7 +70,7 @@
       Aufruf trotzdem an Dritte geht, steht unter „Diese Website“.
     </p>
 
-    <h3>Spielstand</h3>
+    <h2>Spielstand</h2>
     <p>
       Beim ersten Start legt die App auf unserem Spielserver, gehostet bei Supabase
       in der EU (Region Irland), ein anonymes technisches Konto an: eine zufällig
@@ -85,7 +92,7 @@
       wir es (siehe „Konto löschen").
     </p>
 
-    <h3>Kämpfe</h3>
+    <h2>Kämpfe</h2>
     <p>
       Jeder Kampf in Kampagne, Himmelsturm, Arena und Höhle wird vom Server
       eröffnet und am Ende von deinem Gerät an den Server gemeldet. Gemeldet
@@ -109,7 +116,7 @@
       Die Buchungen im Buch (siehe „Spielstand") bleiben.
     </p>
 
-    <h3>Arena (online)</h3>
+    <h2>Arena (online)</h2>
     <p>
       Wenn du die Arena betrittst, werden folgende Daten an unseren Spielserver
       (gehostet bei Supabase) übertragen und dort gespeichert:
@@ -166,7 +173,7 @@
       verkauft. Auf Anfrage löschen wir sie (siehe „Konto löschen").
     </p>
 
-    <h3>Google Play Spiele</h3>
+    <h2>Google Play Spiele</h2>
     <p>
       Wenn du dich auf deinem Gerät bei Google Play Spiele anmeldest (das ist
       Googles Anmeldung, nicht unsere), schickt die App einen einmaligen Code an
@@ -185,7 +192,28 @@
       Anmeldung gibt es keine Wiederherstellung.
     </p>
 
-    <h3>Käufe</h3>
+    <h2>Freunde einladen</h2>
+    <p>
+      Jedes Konto hat einen Einladungscode. Unser Server legt ihn an, wenn du
+      „Freunde einladen“ zum ersten Mal öffnest, und er ändert sich nicht.
+      Installiert jemand das Spiel über deinen Link aus Google Play, gibt Google
+      Play der App beim ersten Start die Installationsquelle (den „Install
+      Referrer“) mit, in der dieser Code steht. Die App liest sie auf dem Gerät
+      und schickt nur den Code an unseren Server; ebenso, wenn jemand den Code
+      von Hand eintippt. Der Server speichert dann, welches Konto welches
+      eingeladen hat, wann, und wann die Belohnung dafür gezahlt wurde, und
+      hält die Edelsteine wie jede Gutschrift im Buch fest (siehe
+      „Spielstand“). Zweck ist allein, die Belohnung zu zahlen (Rechtsgrundlage
+      Art. 6 Abs. 1 lit. b DSGVO). Wer eingeladen hat, sieht den Arena-Namen
+      des Freundes, sobald dieser mitspielt, und der Freund sieht den
+      Arena-Namen dessen, der ihn eingeladen hat. Die Einladung wird mit dem
+      Konto gelöscht, mit deinem wie mit dem des Freundes (siehe „Konto
+      löschen“). Die Seite hinter dem Link, tactics-arena.xyz/i/, liest den
+      Code nur in deinem Browser aus der Adresse und hängt ihn an den Link zu
+      Google Play.
+    </p>
+
+    <h2>Käufe</h2>
     <p>
       Käufe von Edelstein-Paketen wickelt Google Play ab. Wir erhalten keine
       Zahlungsdaten (keine Kontonummern, keine Rechnungsadresse). Unser Server
@@ -202,7 +230,7 @@
       Es gilt zusätzlich die Datenschutzerklärung von Google Play.
     </p>
 
-    <h3>Nutzungsstatistik und Absturzberichte</h3>
+    <h2>Nutzungsstatistik und Absturzberichte</h2>
     <p>
       Beim ersten Start fragt die App, ob sie anonyme Nutzungsstatistik und
       Absturzberichte an Google senden darf. Sagst du Nein, bleibt alles aus;
@@ -222,18 +250,26 @@
       Speicherfrist: Analytics 14 Monate, Crashlytics 90 Tage.
     </p>
 
-    <h3>Berechtigungen</h3>
+    <h2>Push-Nachrichten</h2>
+    <p>
+      Die App sendet heute keine Push-Nachrichten und fragt dich auch nicht
+      nach der Berechtigung dafür. Kommt das mit einem Update dazu, wird
+      diese Erklärung vorher ergänzt.
+    </p>
+
+    <h2>Berechtigungen</h2>
     <p>
       Die App fragt dich nach keiner Berechtigung. Im Paket stehen Internet
       und Netzwerkstatus (Spielstand, Kämpfe, Arena, Kaufprüfung, Google Play
       Spiele, Statistik und Absturzberichte), Wachhalten (Firebase plant damit
       das Senden von Statistik und Absturzberichten), Google Play Billing und
-      die Anbindung an den Installationsdienst von Google Play, die das
-      Analytics-SDK mitbringt. Eine Werbe-ID-Berechtigung enthält das Paket
-      nicht.
+      die Anbindung an den Installationsdienst von Google Play. Über sie liest
+      die App beim ersten Start die Installationsquelle (siehe „Freunde
+      einladen“), und das Analytics-SDK nutzt sie ebenfalls. Eine
+      Werbe-ID-Berechtigung enthält das Paket nicht.
     </p>
 
-    <h3>Frühere Beta-Anmeldung auf dieser Website</h3>
+    <h2>Frühere Beta-Anmeldung auf dieser Website</h2>
     <p>
       Bis zum 15. September 2026 konntest du auf der Startseite freiwillig
       deine E-Mail-Adresse eintragen, um einmalig benachrichtigt zu werden,
@@ -252,7 +288,7 @@
       Benachrichtigung werden die Adressen gelöscht.
     </p>
 
-    <h3>Diese Website</h3>
+    <h2>Diese Website</h2>
     <p>
       tactics-arena.xyz liegt auf GitHub Pages, betrieben von GitHub, Inc.,
       88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. Beim Aufruf
@@ -270,12 +306,13 @@
       Sonst verarbeitet die Website nichts: keine Analyse-Dienste, keine
       Werbung, keine Cookies, kein Kontaktformular. Schriften, Bilder,
       Stylesheets und der Trailer liegen auf demselben Server wie die Seite;
-      von Dritten wird nichts nachgeladen. Die gewählte Sprache (Deutsch oder Englisch)
-      legt der Browser lokal im localStorage ab. Sie wird nicht übertragen
-      und verschwindet, sobald du die Websitedaten im Browser löschst.
+      von Dritten wird nichts nachgeladen. Deutsch und Englisch sind eigene
+      Seiten (tactics-arena.xyz und tactics-arena.xyz/en/), zwischen denen
+      du über den Link EN beziehungsweise DE wechselst; die Website merkt
+      sich dabei nichts.
     </p>
 
-    <h3>Deine Rechte</h3>
+    <h2>Deine Rechte</h2>
     <p>
       Du hast nach der DSGVO das Recht auf Auskunft, Berichtigung, Löschung,
       Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch sowie das
@@ -283,7 +320,7 @@
       Server-Daten löschst, steht unter „Konto löschen".
     </p>
 
-    <h3>Konto löschen</h3>
+    <h2>Konto löschen</h2>
     <p>
       Ab der Version mit Play-Spiele-Anmeldung kannst du dein Konto in den
       Einstellungen der App löschen. Das entfernt
@@ -299,7 +336,7 @@
       <a href="support.html#delete">Support-Seite</a>.
     </p>
 
-    <h3>Änderungen</h3>
+    <h2>Änderungen</h2>
     <p>
       Bei Änderungen der App-Funktionen wird diese Erklärung angepasst; die jeweils
       aktuelle Fassung ist unter der im Store hinterlegten URL abrufbar.
@@ -307,10 +344,8 @@
 
     </div>
 
-    <div id="lang-en" lang="en">
-
-      <h2 id="english">English</h2>
-      <h3>Controller</h3>
+    <div id="english" lang="en" data-only="en">
+      <h2>Controller</h2>
       <address>
         Sören Dierkes<br>
         Gersteweg 18<br>
@@ -318,7 +353,7 @@
         Contact: <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>
       </address>
 
-      <h3>Summary</h3>
+      <h2>Summary</h2>
       <p>
         Tactics Arena shows no ads, requires no registration and sends usage
         statistics and crash reports only if you agree on first launch (see
@@ -333,7 +368,7 @@
         to third parties when a page loads is listed under “This website”.
       </p>
 
-      <h3>Save game</h3>
+      <h2>Save game</h2>
       <p>
         On first launch the app creates an anonymous technical account on our game
         server, hosted on Supabase in the EU (Ireland region): a randomly generated
@@ -353,7 +388,7 @@
         account").
       </p>
 
-      <h3>Fights</h3>
+      <h2>Fights</h2>
       <p>
         Every fight in the campaign, the Sky Spire, the Arena and the Hollow is opened
         by the server and, at its end, reported by your device to the server. What is
@@ -375,7 +410,7 @@
         (see "Save game") stay.
       </p>
 
-      <h3>Arena (online)</h3>
+      <h2>Arena (online)</h2>
       <p>
         When you enter the Arena, the following data is transferred to and stored
         on our game server (hosted on Supabase):
@@ -430,7 +465,7 @@
         "Deleting your account").
       </p>
 
-      <h3>Google Play Games</h3>
+      <h2>Google Play Games</h2>
       <p>
         If you sign in to Google Play Games on your device (that is Google's sign-in,
         not ours), the app sends a one-time code to our server. The server uses it to
@@ -447,7 +482,26 @@
         applies to that. Without this sign-in there is no recovery.
       </p>
 
-      <h3>Purchases</h3>
+      <h2>Inviting friends</h2>
+      <p>
+        Every account has an invite code. Our server creates it the first time
+        you open "Invite friends", and it never changes. When someone installs
+        the game from Google Play through your link, Google Play hands the app
+        the install source (the "install referrer") on its first start, and the
+        code is in it. The app reads it on the device and sends only the code to
+        our server; the same goes for a code someone types in. The server then
+        stores which account invited which, when, and when the reward for it
+        was paid, and books the gems in the ledger like any other credit (see
+        "Save game"). The only purpose is paying the reward (Art. 6 (1)(b)
+        GDPR). The player who invited sees the friend's Arena name once the
+        friend plays, and the friend sees the Arena name of the player who
+        invited them. The invite is deleted with the account, yours or your
+        friend's (see "Deleting your account"). The page behind the link,
+        tactics-arena.xyz/i/, reads the code from the address in your browser
+        only and adds it to the link to Google Play.
+      </p>
+
+      <h2>Purchases</h2>
       <p>
         Gem pack purchases are processed by Google Play. We receive no payment data (no
         account numbers, no billing address). Our server verifies each purchase
@@ -463,7 +517,7 @@
         policy additionally applies.
       </p>
 
-      <h3>Usage statistics and crash reports</h3>
+      <h2>Usage statistics and crash reports</h2>
       <p>
         On first launch the app asks whether it may send anonymous usage statistics
         and crash reports to Google. If you say no, nothing is sent; you can change
@@ -481,17 +535,26 @@
         until its retention period ends: Analytics 14 months, Crashlytics 90 days.
       </p>
 
-      <h3>Permissions</h3>
+      <h2>Push notifications</h2>
+      <p>
+        The app sends no push notifications today and does not ask for the
+        permission to do so. If an update adds them, this policy is updated
+        first.
+      </p>
+
+      <h2>Permissions</h2>
       <p>
         The app never asks you for a permission. The package declares Internet and
         network state (save game, fights, Arena, purchase verification, Google Play
         Games, statistics and crash reports), wake lock (Firebase uses it to schedule
         the sending of statistics and crash reports), Google Play Billing and the
-        binding to Google Play's install service that the Analytics SDK brings
-        along. No advertising-id permission is in the package.
+        binding to Google Play's install service. The app reads the install
+        source through it on first start (see "Inviting friends"), and the
+        Analytics SDK uses it too. No advertising-id permission is in the
+        package.
       </p>
 
-      <h3>Former beta signup on this website</h3>
+      <h2>Former beta signup on this website</h2>
       <p>
         Until 15 September 2026 you could voluntarily leave your email address
         on the start page to be notified once when the Tactics Arena test opens
@@ -507,7 +570,7 @@
         twelve months after signup, or right after the notification.
       </p>
 
-      <h3>This website</h3>
+      <h2>This website</h2>
       <p>
         tactics-arena.xyz is hosted on GitHub Pages, operated by GitHub, Inc.,
         88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA. When a page
@@ -524,12 +587,12 @@
         Nothing else is processed on the website: no analytics, no ads, no
         cookies, no contact form. Fonts, images, stylesheets and the trailer
         come from the same server as the page; nothing is loaded from third
-        parties. The language you pick (German or English) is kept locally in the
-        browser's localStorage. It is never transmitted and disappears as
-        soon as you clear the site data in your browser.
+        parties. German and English are separate pages (tactics-arena.xyz
+        and tactics-arena.xyz/en/), and you switch between them with the EN
+        or DE link; the website remembers nothing about that.
       </p>
 
-      <h3>Your rights</h3>
+      <h2>Your rights</h2>
       <p>
         Under the GDPR you have the right to access, rectification, erasure, restriction
         of processing, data portability and objection, and the right to lodge a complaint
@@ -537,7 +600,7 @@
         described under "Deleting your account".
       </p>
 
-      <h3>Deleting your account</h3>
+      <h2>Deleting your account</h2>
       <p>
         From the version with Play Games sign-in you can delete your account in the
         app's settings. This removes the save, the
@@ -550,6 +613,12 @@
         the account id from the settings. Both are
         also on the <a href="support.html#delete">support page</a>.
       </p>
+
+      <h2>Changes</h2>
+      <p>
+        When the app's features change, this policy is updated; the current
+        version is always at the URL stored in the Play Store listing.
+      </p>
     </div>
 
   </div>
@@ -559,54 +628,14 @@
   <div class="wrap">
     <span>&copy; 2026 Tactics Arena</span>
     <nav>
-      <a href="./">Home</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
+      <a href="terms.html" data-en="Terms">Nutzungsbedingungen</a>
       <a href="support.html">Support</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="mailto:contact@tactics-arena.xyz">Contact</a>
+      <a href="impressum.html" data-en="Legal notice">Impressum</a>
+      <a href="mailto:contact@tactics-arena.xyz" data-en="Contact">Kontakt</a>
     </nav>
   </div>
 </footer>
-
-<script>
-(function () {
-  var KEY = 'ta-lang';
-  var de = document.getElementById('lang-de');
-  var en = document.getElementById('lang-en');
-  var link = document.getElementById('lang-switch');
-  function apply(lang) {
-    var showEn = lang === 'en';
-    de.hidden = showEn;
-    en.hidden = !showEn;
-    document.documentElement.setAttribute('lang', lang);
-    var nodes = document.querySelectorAll('[data-en]');
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      if (el.getAttribute('data-de') === null) {
-        el.setAttribute('data-de', el.textContent);
-      }
-      el.textContent = showEn
-        ? el.getAttribute('data-en')
-        : el.getAttribute('data-de');
-    }
-    link.textContent = showEn ? 'Auf Deutsch lesen' : 'Read in English';
-    link.setAttribute('href', showEn ? '#deutsch' : '#english');
-  }
-  var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) { }
-  var lang;
-  if (window.location.hash === '#english') { lang = 'en'; }
-  else if (window.location.hash === '#deutsch') { lang = 'de'; }
-  else if (saved === 'en' || saved === 'de') { lang = saved; }
-  else { lang = (navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en'; }
-  apply(lang);
-  link.addEventListener('click', function (ev) {
-    ev.preventDefault();
-    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
-    apply(next);
-    try { localStorage.setItem(KEY, next); } catch (e) { }
-  });
-})();
-</script>
 
 </body>
 </html>

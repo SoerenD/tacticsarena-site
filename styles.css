@@ -208,7 +208,9 @@ p:last-child { margin-bottom: 0; }
 .topbar nav a:hover { color: var(--gold-lit); border-bottom-color: var(--gold-dim); }
 .topbar .badge-play img { height: 38px; }
 
-.lang-btn {
+/* The EN/DE link in the top bar. The second selector outweighs the plain
+   nav link rule above, which would otherwise take the border and padding. */
+.lang-btn, .topbar nav a.lang-btn {
   padding: 0.3rem 0.8rem;
   border: 1px solid var(--gold-dim);
   background: rgba(224, 165, 42, 0.07);
@@ -216,9 +218,10 @@ p:last-child { margin-bottom: 0; }
   font-family: var(--body);
   font-size: 0.75rem; font-weight: 600;
   letter-spacing: 0.14em; text-transform: uppercase;
+  text-decoration: none;
   cursor: pointer;
 }
-.lang-btn:hover { color: var(--gold); border-color: var(--gold); }
+.lang-btn:hover, .topbar nav a.lang-btn:hover { color: var(--gold); border-color: var(--gold); }
 
 @media (max-width: 1040px) { .topbar .badge-play { display: none; } }
 /* Heroes and Campaign used to drop out of the bar here, which hid two of
@@ -285,6 +288,8 @@ p:last-child { margin-bottom: 0; }
 
 section { position: relative; padding: clamp(3.5rem, 8vw, 6.5rem) 0; }
 section[id] { scroll-margin-top: 78px; }
+/* Anchors on the text pages (#english, #delete) land below the sticky bar. */
+.doc [id] { scroll-margin-top: 78px; }
 
 section + section::before {
   content: "";
@@ -539,6 +544,8 @@ footer a:hover { color: var(--gold-lit); }
 .doc .updated { color: var(--muted-dim); font-size: 0.88rem; }
 .doc address { font-style: normal; color: #c6d4e6; }
 .lang-switch { display: flex; gap: 0.6rem; margin: 1.6rem 0 0; }
+/* Read by screen readers, drawn nowhere. */
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 
 .todo {
   background: rgba(171, 38, 48, 0.18);
@@ -608,6 +615,34 @@ footer a:hover { color: var(--gold-lit); }
   letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--gold-lit);
 }
+
+/* The invite page, /i/: a friend's code and the way to Play. */
+.invite { text-align: center; }
+.invite .mark { width: min(200px, 48vw); margin: 0 auto 1.4rem; }
+.invite h1 { margin-bottom: 0.9rem; }
+.invite .code-box {
+  display: inline-block;
+  margin: 0.6rem 0 1.4rem;
+  padding: 0.9rem 1.6rem 1rem;
+  background: var(--plate);
+  border: 1px solid var(--gold-dim);
+  box-shadow: var(--lift);
+}
+.invite .code-label {
+  margin-bottom: 0.3rem;
+  color: var(--muted); font-size: 0.82rem;
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.invite .code {
+  margin: 0;
+  font-family: var(--display); font-weight: 700;
+  font-size: clamp(2.1rem, 9vw, 2.9rem); letter-spacing: 0.16em;
+  color: var(--gold-lit);
+}
+.invite .badge-play img { height: 64px; margin-inline: auto; }
+.invite .note { color: var(--muted); font-size: 0.92rem; margin-top: 1.2rem; }
+/* The code box sets its own display; without a good code it stays out. */
+.invite [hidden] { display: none; }
 
 .reveal { opacity: 0; transform: translateY(18px); }
 .reveal.shown {

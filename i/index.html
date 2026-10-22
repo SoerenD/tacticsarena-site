@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Fight me in Tactics Arena</title>
+<meta name="description" content="A friend invited you to Tactics Arena, a 1v1 auto battler for Android. Once you conquer your first territory, you both get 100 gems.">
+<link rel="icon" href="/assets/icon-180.png" sizes="180x180">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<meta name="theme-color" content="#070d18">
+<!-- The preview WhatsApp and Messenger draw. Static on purpose: the page
+     has no server, so the code in the address never reaches these. No
+     og:url and no canonical link: either would point the preview, or a
+     share of it, at the page without the code. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Tactics Arena">
+<meta property="og:title" content="Fight me in Tactics Arena">
+<meta property="og:description" content="A 1v1 auto battler for Android. Join with my link: once you conquer your first territory, we both get 100 gems.">
+<meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
+<link rel="preload" as="font" type="font/woff2" href="/assets/fonts/cinzel-latin.woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/">
+      <span class="gem" aria-hidden="true"></span>
+      Tactics Arena
+    </a>
+  </div>
+</header>
+
+<main class="doc invite">
+  <div class="wrap">
+
+    <img class="mark" src="/assets/logo.webp" alt="Tactics Arena" width="533" height="560">
+    <h1 data-de="Spiel gegen mich in Tactics Arena">Fight me in Tactics Arena</h1>
+    <p data-de="Ein Freund hat dich eingeladen. Hol dir das Spiel über den Knopf unten. Sobald du dein erstes Gebiet eroberst, bekommt ihr beide 100 Edelsteine.">
+      A friend invited you. Get the game with the button below. Once you
+      conquer your first territory, you both get 100 gems.
+    </p>
+
+    <div class="code-box" id="code-box" hidden>
+      <p class="code-label" data-de="Einladungscode">Invite code</p>
+      <p class="code" id="code"></p>
+    </div>
+
+    <p>
+      <a class="badge-play" id="play" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
+        <img id="badge" src="/assets/play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
+      </a>
+    </p>
+
+    <p class="note" id="code-note" hidden data-de="Findet das Spiel den Code nicht von selbst, tippe auf der Weltkarte oder im Arena-Tab auf EINLADEN und gib ihn unter Code eines Freundes ein. Das geht in deinen ersten 7 Tagen.">
+      If the game does not find the code by itself, tap INVITE on the world
+      map or the Arena tab and type it under A friend's code. That works in
+      your first 7 days.
+    </p>
+    <p class="note" data-de="Tactics Arena gibt es vorerst auf den Philippinen, in Malaysia und in Südafrika.">
+      Tactics Arena is available in the Philippines, Malaysia and South Africa
+      for now.
+    </p>
+
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>&copy; 2026 Tactics Arena</span>
+    <nav>
+      <a href="/privacy.html" data-de="Datenschutz">Privacy</a>
+      <a href="/support.html">Support</a>
+      <a href="/impressum.html" data-de="Impressum">Legal notice</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // The friend's code from ?c=, in the shape the server draws it. With a
+  // good code the button carries it to Play as the install referrer, which
+  // the app reads after the install; without one it is the plain listing.
+  var STORE = 'https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena';
+  var raw = '';
+  try { raw = new URLSearchParams(window.location.search).get('c') || ''; } catch (e) { }
+  var code = raw.toUpperCase().replace(/[\s-]/g, '');
+  if (/^[A-HJ-NP-Z2-9]{6}$/.test(code)) {
+    document.getElementById('play').href = STORE + '&referrer=' +
+      encodeURIComponent('utm_source=invite&utm_medium=friend&ic=' + code);
+    document.getElementById('code').textContent = code;
+    document.getElementById('code-box').hidden = false;
+    document.getElementById('code-note').hidden = false;
+  }
+
+  // English unless the reader chose German on this site or reads German.
+  var lang = 'en';
+  var saved = null;
+  try { saved = localStorage.getItem('ta-lang'); } catch (e) { }
+  if (saved === 'de' || saved === 'en') { lang = saved; }
+  else if ((navigator.language || '').slice(0, 2).toLowerCase() === 'de') { lang = 'de'; }
+  if (lang === 'de') {
+    document.documentElement.setAttribute('lang', 'de');
+    var nodes = document.querySelectorAll('[data-de]');
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].textContent = nodes[i].getAttribute('data-de');
+    }
+    var badge = document.getElementById('badge');
+    badge.src = '/assets/play-badge-de.png';
+    badge.alt = 'Jetzt bei Google Play';
+  }
+})();
+</script>
+
+</body>
+</html>

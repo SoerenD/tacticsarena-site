@@ -3,9 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Support - Tactics Arena</title>
-<meta name="description" content="Support, bug reports, purchase help and data deletion requests for the Android game Tactics Arena.">
+<title data-en="Support - Tactics Arena">Support - Tactics Arena</title>
+<meta name="description" content="Support für das Android-Spiel Tactics Arena: Bugs melden, Kaufprobleme, Erstattung, Daten löschen." data-en="Support for the Android game Tactics Arena: bug reports, purchase help, refunds and data deletion.">
 <link rel="canonical" href="https://tactics-arena.xyz/support.html">
+<link rel="alternate" hreflang="de" href="https://tactics-arena.xyz/support.html">
+<link rel="alternate" hreflang="en" href="https://tactics-arena.xyz/en/support.html">
+<link rel="alternate" hreflang="x-default" href="https://tactics-arena.xyz/en/support.html">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/inter-latin.woff2" crossorigin>
 <link rel="preload" as="font" type="font/woff2" href="assets/fonts/cinzel-latin.woff2" crossorigin>
@@ -20,8 +23,10 @@
       Tactics Arena
     </a>
     <nav>
-      <a href="./">Home</a>
-      <a href="privacy.html">Privacy</a>
+      <a href="./" data-en="Home">Startseite</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
+      <a href="support.html">Support</a>
+      <a class="lang-btn" href="en/support.html" hreflang="en" lang="en" aria-label="Switch to English" data-en="DE" data-en-href="../support.html" data-en-hreflang="de" data-en-lang="de" data-en-aria-label="Auf Deutsch umschalten">EN</a>
     </nav>
   </div>
 </header>
@@ -32,12 +37,73 @@
     <h1>Support</h1>
     <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>)</p>
     <div class="lang-switch">
-      <a class="btn btn-slate" href="#deutsch" id="lang-switch">Auf Deutsch lesen</a>
+      <a class="btn btn-slate" href="en/support.html" hreflang="en" lang="en" data-en="Auf Deutsch lesen" data-en-href="../support.html" data-en-hreflang="de" data-en-lang="de">Read in English</a>
     </div>
 
-    <div id="lang-en" lang="en">
+    <div data-only="de">
 
-    <p id="english">
+    <p>
+      Eine Adresse für alles: Bugs, Kaufprobleme, Balance-Beschwerden und
+      Löschanfragen gehen an
+      <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>.
+      Dahinter steckt ein Ein-Personen-Projekt; es antwortet ein Mensch, aber
+      nicht unbedingt sofort.
+    </p>
+
+    <h2>Einen Bug melden</h2>
+    <p>Je mehr davon du mitschickst, desto schneller ist der Bug behoben:</p>
+    <ul>
+      <li>Dein Handymodell und deine Android-Version.</li>
+      <li>Die App-Version, sie steht unten im Hauptmenü.</li>
+      <li>Was du gerade getan hast: welcher Bildschirm, welches Territorium, welcher Held.</li>
+      <li>Ein Screenshot oder eine Bildschirmaufnahme, wenn das Problem sichtbar ist.</li>
+    </ul>
+
+    <h2>Käufe und Erstattung</h2>
+    <p>
+      Edelstein-Pakete verkauft und verarbeitet Google Play, wir sehen deine
+      Zahlungsdaten also nie. Wurde ein Kauf abgebucht, aber die Edelsteine
+      sind nicht angekommen, schick uns die Google-Play-Bestellnummer (sie
+      steht in deiner Bestätigungs-E-Mail) und die Edelsteine werden
+      gutgeschrieben.
+    </p>
+    <p>
+      Erstattungen innerhalb von 48 Stunden nach dem Kauf laufen über
+      <a href="https://support.google.com/googleplay/answer/2479637">die
+      Erstattung bei Google Play selbst</a>. Danach schreib an die Adresse
+      oben und nenn die Google-Play-Bestellnummer; wir prüfen jede Anfrage.
+      Mehr dazu in den <a href="terms.html">Nutzungsbedingungen</a>.
+    </p>
+
+    <h2 id="delete">Deine Daten löschen</h2>
+    <p>
+      Ab der Version mit Play-Spiele-Anmeldung: öffne in der App die Einstellungen
+      und wähle „Konto löschen". Das entfernt
+      deinen Spielstand, das Buch, deinen Arena-Eintrag (dein Platz geht an einen
+      Bot, dein gewählter Name wird ersetzt), deine Höhlenläufe, die Verknüpfung
+      mit Google Play Spiele und das anonyme technische Konto vom Server. Das
+      lässt sich nicht rückgängig machen. Kaufbelege bleiben ohne Konto-ID
+      stehen; warum, steht in der <a href="privacy.html">Datenschutzerklärung</a>.
+    </p>
+    <p>
+      Du kannst die Löschung auch per E-Mail verlangen: schick deinen Arena-Namen
+      samt Nummer oder, ab der Version mit Play-Spiele-Anmeldung, deine Konto-ID
+      (sie steht in den Einstellungen) an
+      <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20Datenl%C3%B6schung">contact@tactics-arena.xyz</a>.
+    </p>
+
+    <h2>Verfügbarkeit</h2>
+    <p>
+      Tactics Arena ist derzeit als offener Test bei Google Play auf den
+      Philippinen, in Malaysia und in Südafrika verfügbar, in anderen Ländern
+      noch nicht. Fragen dazu an dieselbe Adresse.
+    </p>
+
+    </div>
+
+    <template data-only="en">
+
+    <p>
       One address for everything: bugs, purchase problems, balance complaints and data
       deletion at <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>.
       It is a one-person project, so expect a human but not an instant reply.
@@ -52,7 +118,7 @@
       <li>A screenshot or screen recording, if the problem is visible.</li>
     </ul>
 
-    <h2>Purchases</h2>
+    <h2>Purchases and refunds</h2>
     <p>
       Gem packs are sold and processed by Google Play, so we never see your payment
       details. If a purchase was charged but the gems did not arrive, mail the Google
@@ -62,7 +128,9 @@
     <p>
       Refunds within 48 hours of purchase run through
       <a href="https://support.google.com/googleplay/answer/2479637">Google Play's own
-      refund process</a>. After that, write to the address above.
+      refund process</a>. After that, write to the address above with the Google
+      Play order number; we look at every request. More in the
+      <a href="terms.html">terms of use</a>.
     </p>
 
     <h2 id="delete">Deleting your data</h2>
@@ -80,73 +148,14 @@
       <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20data%20deletion">contact@tactics-arena.xyz</a>.
     </p>
 
-    <h2>Closed test</h2>
+    <h2>Availability</h2>
     <p>
-      Tactics Arena is currently in closed testing on Google Play, so it is not
-      publicly listed yet. If you want in, or want out, mail the same address.
+      Tactics Arena is currently available as an open test on Google Play in the
+      Philippines, Malaysia and South Africa, and not yet in other countries.
+      Questions about that go to the same address.
     </p>
 
-    </div>
-
-    <div id="lang-de" lang="de">
-
-    <p id="deutsch">
-      Eine Adresse für alles: Bugs, Kaufprobleme, Balance-Beschwerden und
-      Löschanfragen gehen an
-      <a href="mailto:contact@tactics-arena.xyz">contact@tactics-arena.xyz</a>.
-      Dahinter steckt ein Ein-Personen-Projekt; es antwortet ein Mensch, aber
-      nicht unbedingt sofort.
-    </p>
-
-    <h2>Einen Bug melden</h2>
-    <p>Je mehr davon du mitschickst, desto schneller ist der Bug behoben:</p>
-    <ul>
-      <li>Dein Handymodell und deine Android-Version.</li>
-      <li>Die App-Version, sie steht unten im Hauptmenü.</li>
-      <li>Was du gerade getan hast: welcher Bildschirm, welches Territorium, welcher Held.</li>
-      <li>Ein Screenshot oder eine Bildschirmaufnahme, wenn das Problem sichtbar ist.</li>
-    </ul>
-
-    <h2>Käufe</h2>
-    <p>
-      Edelstein-Pakete verkauft und verarbeitet Google Play, wir sehen deine
-      Zahlungsdaten also nie. Wurde ein Kauf abgebucht, aber die Edelsteine
-      sind nicht angekommen, schick uns die Google-Play-Bestellnummer (sie
-      steht in deiner Bestätigungs-E-Mail) und die Edelsteine werden
-      gutgeschrieben.
-    </p>
-    <p>
-      Erstattungen innerhalb von 48 Stunden nach dem Kauf laufen über
-      <a href="https://support.google.com/googleplay/answer/2479637">die
-      Erstattung bei Google Play selbst</a>. Danach schreib an die Adresse
-      oben.
-    </p>
-
-    <h2 id="delete-de">Deine Daten löschen</h2>
-    <p>
-      Ab der Version mit Play-Spiele-Anmeldung: öffne in der App die Einstellungen
-      und wähle „Konto löschen". Das entfernt
-      deinen Spielstand, das Buch, deinen Arena-Eintrag (dein Platz geht an einen
-      Bot, dein gewählter Name wird ersetzt), deine Höhlenläufe, die Verknüpfung
-      mit Google Play Spiele und das anonyme technische Konto vom Server. Das
-      lässt sich nicht rückgängig machen. Kaufbelege bleiben ohne Konto-ID
-      stehen; warum, steht in der <a href="privacy.html">Datenschutzerklärung</a>.
-    </p>
-    <p>
-      Du kannst die Löschung auch per E-Mail verlangen: schick deinen Arena-Namen
-      samt Nummer oder, ab der Version mit Play-Spiele-Anmeldung, deine Konto-ID
-      (sie steht in den Einstellungen) an
-      <a href="mailto:contact@tactics-arena.xyz?subject=Tactics%20Arena%20Datenl%C3%B6schung">contact@tactics-arena.xyz</a>.
-    </p>
-
-    <h2>Geschlossener Test</h2>
-    <p>
-      Tactics Arena ist derzeit im geschlossenen Test auf Google Play und
-      darum noch nicht öffentlich gelistet. Wenn du mitmachen willst, oder
-      wieder raus, schreib an dieselbe Adresse.
-    </p>
-
-    </div>
+    </template>
 
   </div>
 </main>
@@ -155,50 +164,14 @@
   <div class="wrap">
     <span>&copy; 2026 Tactics Arena</span>
     <nav>
-      <a href="./">Home</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="impressum.html">Impressum</a>
-      <a href="mailto:contact@tactics-arena.xyz">Contact</a>
+      <a href="privacy.html" data-en="Privacy">Datenschutz</a>
+      <a href="terms.html" data-en="Terms">Nutzungsbedingungen</a>
+      <a href="support.html">Support</a>
+      <a href="impressum.html" data-en="Legal notice">Impressum</a>
+      <a href="mailto:contact@tactics-arena.xyz" data-en="Contact">Kontakt</a>
     </nav>
   </div>
 </footer>
-
-<script>
-(function () {
-  var KEY = 'ta-lang';
-  var de = document.getElementById('lang-de');
-  var en = document.getElementById('lang-en');
-  var link = document.getElementById('lang-switch');
-  function apply(lang) {
-    var showEn = lang === 'en';
-    de.hidden = showEn;
-    en.hidden = !showEn;
-    document.documentElement.setAttribute('lang', lang);
-    link.textContent = showEn ? 'Auf Deutsch lesen' : 'Read in English';
-    link.setAttribute('href', showEn ? '#deutsch' : '#english');
-  }
-  var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) { }
-  var lang;
-  if (window.location.hash === '#english') { lang = 'en'; }
-  else if (window.location.hash === '#deutsch') { lang = 'de'; }
-  else if (saved === 'en' || saved === 'de') { lang = saved; }
-  else { lang = (navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en'; }
-  apply(lang);
-  // The Play Console's deletion link ends in #delete. The section exists in
-  // both languages and only one is shown, so scroll to the visible one.
-  if (window.location.hash === '#delete') {
-    var target = document.getElementById(lang === 'en' ? 'delete' : 'delete-de');
-    if (target) target.scrollIntoView();
-  }
-  link.addEventListener('click', function (ev) {
-    ev.preventDefault();
-    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
-    apply(next);
-    try { localStorage.setItem(KEY, next); } catch (e) { }
-  });
-})();
-</script>
 
 </body>
 </html>

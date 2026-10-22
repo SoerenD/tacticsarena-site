@@ -3,15 +3,19 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tactics Arena - Draft. Counter. Conquer.</title>
-<meta name="description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Drafte drei Einheiten pro Runde und kontere die Armee des Gegners. Kampagne, Arena, keine Werbung, kein Konto.">
+<title data-en="Tactics Arena: Auto Battler for Android">Tactics Arena: Auto-Battler für Android</title>
+<meta name="description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Drafte drei Einheiten pro Runde und kontere die Armee des Gegners. Kampagne, Arena, keine Werbung, kein Konto." data-en="A tactical 1v1 auto battler for Android. Draft three units a round and counter the enemy's army. Campaign, Arena, no ads, no account.">
 <link rel="canonical" href="https://tactics-arena.xyz/">
+<link rel="alternate" hreflang="de" href="https://tactics-arena.xyz/">
+<link rel="alternate" hreflang="en" href="https://tactics-arena.xyz/en/">
+<link rel="alternate" hreflang="x-default" href="https://tactics-arena.xyz/en/">
 <link rel="icon" href="assets/icon-180.png" sizes="180x180">
 <link rel="apple-touch-icon" href="assets/icon-180.png">
 <meta name="theme-color" content="#070d18">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Tactics Arena - Draft. Counter. Conquer.">
-<meta property="og:description" content="Ein taktischer 1-gegen-1-Auto-Battler für Android. Draft, Counter, Conquer.">
+<meta property="og:locale" content="de_DE" data-en="en_US">
+<meta property="og:title" content="Tactics Arena: Auto-Battler für Android" data-en="Tactics Arena: Auto Battler for Android">
+<meta property="og:description" content="Draft. Counter. Conquer. Ein taktischer 1-gegen-1-Auto-Battler für Android." data-en="Draft. Counter. Conquer. A tactical 1v1 auto battler for Android.">
 <meta property="og:url" content="https://tactics-arena.xyz/">
 <meta property="og:image" content="https://tactics-arena.xyz/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -37,9 +41,9 @@
       <a href="#heroes" data-en="Heroes">Helden</a>
       <a href="#campaign" data-en="Campaign">Kampagne</a>
       <a href="#arena" data-en="Arena">Arena</a>
-      <button class="lang-btn" id="lang-toggle" type="button" aria-label="Switch to English">EN</button>
+      <a class="lang-btn" href="en/" hreflang="en" lang="en" aria-label="Switch to English" data-en="DE" data-en-href="../" data-en-hreflang="de" data-en-lang="de" data-en-aria-label="Auf Deutsch umschalten">EN</a>
       <a class="badge-play" id="badge-top" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
-        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" data-en-src="assets/play-badge-en.png" data-en-alt="Get it on Google Play" width="646" height="250">
       </a>
     </nav>
   </div>
@@ -57,7 +61,7 @@
     </p>
     <div class="cta-row">
       <a class="badge-play" id="badge-hero" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
-        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" data-en-src="assets/play-badge-en.png" data-en-alt="Get it on Google Play" width="646" height="250">
       </a>
       <a class="btn btn-slate" href="#how" data-en="See how it plays">So spielt es sich</a>
     </div>
@@ -82,10 +86,9 @@
     </div>
 
     <div class="trailer reveal" id="trailer-box">
-      <video id="trailer-video" src="assets/trailer-de.mp4"
+      <video id="trailer-video" src="assets/trailer-de.mp4" poster="assets/trailer-poster-de.webp"
         width="720" height="1280" controls playsinline preload="none" aria-label="Tactics Arena Trailer"
-        data-src-de="assets/trailer-de.mp4" data-src-en="assets/trailer-en.mp4"
-        data-poster-de="assets/trailer-poster-de.webp" data-poster-en="assets/trailer-poster-en.webp"></video>
+        data-en-src="assets/trailer-en.mp4" data-en-poster="assets/trailer-poster-en.webp"></video>
       <button class="trailer-play" id="trailer-play" type="button" hidden>
         <span class="trailer-cta">
           <span class="trailer-ring" aria-hidden="true"></span>
@@ -389,7 +392,7 @@
       </p>
     </div>
     <div class="split reveal">
-      <img class="map" src="assets/world-map.webp" alt="Die Weltkarte von Tactics Arena mit den eroberbaren Territorien" width="512" height="900" loading="lazy">
+      <img class="map" src="assets/world-map.webp" alt="Die Weltkarte von Tactics Arena mit den eroberbaren Territorien" data-en-alt="The world map of Tactics Arena with the territories to conquer" width="512" height="900" loading="lazy">
       <ul class="territories">
         <li>
           <img src="assets/shield-kingdom.webp" alt="" width="120" height="157" loading="lazy">
@@ -499,9 +502,10 @@
 
 <section id="get">
   <div class="wrap">
+    <h2 class="sr-only" data-en="Get the game">Hol dir das Spiel</h2>
     <div class="cta-row reveal">
       <a class="badge-play" id="badge-foot" href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena">
-        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" width="646" height="250" loading="lazy">
+        <img src="assets/play-badge-de.png" alt="Jetzt bei Google Play" data-en-src="assets/play-badge-en.png" data-en-alt="Get it on Google Play" width="646" height="250" loading="lazy">
       </a>
     </div>
   </div>
@@ -514,56 +518,15 @@
     <span>&copy; 2026 Tactics Arena</span>
     <nav>
       <a href="privacy.html" data-en="Privacy">Datenschutz</a>
+      <a href="terms.html" data-en="Terms">Nutzungsbedingungen</a>
       <a href="support.html">Support</a>
-      <a href="impressum.html">Impressum</a>
+      <a href="impressum.html" data-en="Legal notice">Impressum</a>
       <a href="mailto:contact@tactics-arena.xyz" data-en="Contact">Kontakt</a>
     </nav>
   </div>
 </footer>
 
 <script>
-(function () {
-  var KEY = 'ta-lang';
-  var btn = document.getElementById('lang-toggle');
-  var BADGE = {
-    de: { src: 'assets/play-badge-de.png', alt: 'Jetzt bei Google Play' },
-    en: { src: 'assets/play-badge-en.png', alt: 'Get it on Google Play' }
-  };
-  function apply(lang) {
-    document.documentElement.setAttribute('lang', lang);
-    var nodes = document.querySelectorAll('[data-en]');
-    for (var i = 0; i < nodes.length; i++) {
-      var el = nodes[i];
-      if (el.getAttribute('data-de') === null) {
-        el.setAttribute('data-de', el.textContent);
-      }
-      el.textContent = lang === 'en'
-        ? el.getAttribute('data-en')
-        : el.getAttribute('data-de');
-    }
-    var badges = document.querySelectorAll('.badge-play img');
-    for (var j = 0; j < badges.length; j++) {
-      badges[j].src = BADGE[lang].src;
-      badges[j].alt = BADGE[lang].alt;
-    }
-    btn.textContent = lang === 'en' ? 'DE' : 'EN';
-    btn.setAttribute('aria-label', lang === 'en'
-      ? 'Auf Deutsch umschalten'
-      : 'Switch to English');
-  }
-  var saved = null;
-  try { saved = localStorage.getItem(KEY); } catch (e) { }
-  var lang = saved === 'en' || saved === 'de'
-    ? saved
-    : ((navigator.language || '').slice(0, 2).toLowerCase() === 'de' ? 'de' : 'en');
-  if (lang === 'en') { apply('en'); }
-  btn.addEventListener('click', function () {
-    var next = document.documentElement.getAttribute('lang') === 'de' ? 'en' : 'de';
-    apply(next);
-    try { localStorage.setItem(KEY, next); } catch (e) { }
-  });
-})();
-
 (function () {
   var targets = document.querySelectorAll('.reveal');
   if (!('IntersectionObserver' in window) ||
@@ -585,11 +548,10 @@
 (function () {
   var video = document.getElementById('trailer-video');
   var play = document.getElementById('trailer-play');
-  var toggle = document.getElementById('lang-toggle');
   if (!video || !play) { return; }
-  function lang() {
-    return document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'de';
-  }
+  // The file in this page's language. The markup names it so that the
+  // video works without a script, too; loading starts only on the click.
+  var file = video.getAttribute('src');
   function leaveFullscreen() {
     if (document.fullscreenElement === video && document.exitFullscreen) {
       var left = document.exitFullscreen();
@@ -604,13 +566,12 @@
     video.pause();
     video.controls = false;
     video.removeAttribute('src');
-    video.poster = video.getAttribute('data-poster-' + lang());
     video.load();
     play.hidden = false;
     if (hadFocus) { play.focus({ preventScroll: true }); }
   }
   play.addEventListener('click', function () {
-    video.src = video.getAttribute('data-src-' + lang());
+    video.src = file;
     video.controls = true;
     play.hidden = true;
     var started = video.play();
@@ -618,7 +579,6 @@
     video.focus({ preventScroll: true });
   });
   video.addEventListener('ended', reset);
-  if (toggle) { toggle.addEventListener('click', reset); }
   reset();
 })();
 </script>
