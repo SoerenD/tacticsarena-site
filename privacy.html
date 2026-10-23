@@ -35,7 +35,7 @@
   <div class="wrap">
 
     <h1 data-en="Privacy Policy">Datenschutzerklärung</h1>
-    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 22 October 2026">Stand: 22. Oktober 2026</span></p>
+    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span data-en="Last updated: 23 October 2026">Stand: 23. Oktober 2026</span></p>
     <div class="lang-switch" data-only="de">
       <!-- One page, both languages: the app opens #deutsch or #english
            from its settings, and the Play Console links this address.
@@ -252,21 +252,52 @@
 
     <h2>Push-Nachrichten</h2>
     <p>
-      Die App sendet heute keine Push-Nachrichten und fragt dich auch nicht
-      nach der Berechtigung dafür. Kommt das mit einem Update dazu, wird
-      diese Erklärung vorher ergänzt.
+      Die App kann dir eine Push-Nachricht schicken, wenn ein anderer Spieler
+      deine Verteidigung schlägt und dir damit deinen Platz in der Arena
+      abnimmt. Sie nennt den Namen des Angreifers, den Platz, den er dir
+      abgenommen hat, und den Platz, auf dem du jetzt stehst. Andere
+      Push-Nachrichten schickt die App nicht.
+    </p>
+    <p>
+      Die App fragt dich einmal in der Arena, ob du das willst. Erst wenn du
+      Ja sagst, fragt Android nach der Berechtigung für Benachrichtigungen.
+      Dann holt die App von Firebase Cloud Messaging (Anbieter: Google Ireland
+      Limited, als Auftragsverarbeiter) ein Geräte-Token, eine zufällige
+      Kennung, über die Google dein Gerät erreicht, und schickt es mit der
+      Sprache der App an unseren Server. Gespeichert werden zu deinem Konto
+      das Token, die Sprache und wann es zuletzt übertragen wurde, für
+      höchstens fünf Geräte. Zu jeder Nachricht hält der Server fest, zu
+      welchem Angriff sie gehört, wann und wie oft sie versucht wurde und ob
+      sie ankam; diese Einträge löschen wir nach 30 Tagen. Der Text der
+      Nachricht geht über Google an dein Gerät und kann dabei in den USA
+      verarbeitet werden; Google ist nach dem EU-US Data Privacy Framework
+      zertifiziert.
+    </p>
+    <p>
+      Rechtsgrundlage ist deine Einwilligung (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1
+      lit. a DSGVO). Du widerrufst sie in den Einstellungen der App unter
+      „Arena-Benachrichtigungen“: Dann löscht der Server das Token sofort,
+      und die App verwirft es auch auf dem Gerät. Das Token wird außerdem
+      gelöscht, wenn du dein Konto löschst oder Google es als ungültig meldet,
+      etwa nach einer Deinstallation. Schaltest du die Benachrichtigungen nur
+      in den Android-Einstellungen ab, nimmt die App das Token beim nächsten
+      Öffnen vom Server.
     </p>
 
     <h2>Berechtigungen</h2>
     <p>
-      Die App fragt dich nach keiner Berechtigung. Im Paket stehen Internet
-      und Netzwerkstatus (Spielstand, Kämpfe, Arena, Kaufprüfung, Google Play
+      Die App fragt dich nach einer einzigen Berechtigung: Benachrichtigungen
+      (ab Android 13), und nur, nachdem du in der Arena Ja gesagt hast (siehe
+      „Push-Nachrichten“). Im Paket stehen außerdem Internet und
+      Netzwerkstatus (Spielstand, Kämpfe, Arena, Kaufprüfung, Google Play
       Spiele, Statistik und Absturzberichte), Wachhalten (Firebase plant damit
-      das Senden von Statistik und Absturzberichten), Google Play Billing und
-      die Anbindung an den Installationsdienst von Google Play. Über sie liest
-      die App beim ersten Start die Installationsquelle (siehe „Freunde
-      einladen“), und das Analytics-SDK nutzt sie ebenfalls. Eine
-      Werbe-ID-Berechtigung enthält das Paket nicht.
+      das Senden von Statistik und Absturzberichten und nimmt damit
+      Push-Nachrichten an), der Empfang von Nachrichten über Firebase Cloud
+      Messaging, Google Play Billing und die Anbindung an den
+      Installationsdienst von Google Play. Über sie liest die App beim ersten
+      Start die Installationsquelle (siehe „Freunde einladen“), und das
+      Analytics-SDK nutzt sie ebenfalls. Eine Werbe-ID-Berechtigung enthält
+      das Paket nicht.
     </p>
 
     <h2>Frühere Beta-Anmeldung auf dieser Website</h2>
@@ -326,7 +357,8 @@
       Einstellungen der App löschen. Das entfernt
       Spielstand, Buch, Arena-Eintrag (dein Platz geht an einen Bot, dein
       gewählter Name wird ersetzt), Höhlenläufe, die Verknüpfung mit Google Play
-      Spiele und das technische Konto vom Server. Angriffe, die auf deinen
+      Spiele, die Geräte-Tokens für Push-Nachrichten und das technische Konto
+      vom Server. Angriffe, die auf deinen
       Eintrag zeigen, und die Wochenergebnisse bleiben stehen, tragen aber den
       ersetzten Namen. Kaufbelege bleiben ohne Konto-ID stehen (siehe „Käufe").
       Du kannst die Löschung auch per E-Mail an die oben genannte Adresse
@@ -537,21 +569,49 @@
 
       <h2>Push notifications</h2>
       <p>
-        The app sends no push notifications today and does not ask for the
-        permission to do so. If an update adds them, this policy is updated
-        first.
+        The app can send you a push notification when another player beats
+        your Defense and takes your place in the Arena. It names the attacker,
+        the place they took from you and the place you hold now. The app sends
+        no other push notifications.
+      </p>
+      <p>
+        The app asks you once, in the Arena, whether you want this. Only if
+        you say yes does Android ask for the notification permission. The app
+        then gets a device token from Firebase Cloud Messaging (provider:
+        Google Ireland Limited, as a processor), a random identifier through
+        which Google reaches your device, and sends it with the app's language
+        to our server. Stored with your account are the token, the language
+        and when it was last sent, for at most five devices. For each
+        notification the server records which attack it belongs to, when and
+        how often it was tried and whether it got through; we delete these
+        records after 30 days. The text of the notification travels through
+        Google to your device and may be processed in the USA; Google is
+        certified under the EU-US Data Privacy Framework.
+      </p>
+      <p>
+        The legal basis is your consent (section 25 (1) TDDDG, Art. 6 (1)(a)
+        GDPR). You withdraw it in the app's settings under "Arena
+        notifications": the server then deletes the token at once, and the
+        app drops it on the device too. The token is also deleted when you
+        delete your account or Google reports it as invalid, for example after
+        an uninstall. If you only turn notifications off in Android's
+        settings, the app takes the token off the server the next time you
+        open it.
       </p>
 
       <h2>Permissions</h2>
       <p>
-        The app never asks you for a permission. The package declares Internet and
-        network state (save game, fights, Arena, purchase verification, Google Play
-        Games, statistics and crash reports), wake lock (Firebase uses it to schedule
-        the sending of statistics and crash reports), Google Play Billing and the
-        binding to Google Play's install service. The app reads the install
-        source through it on first start (see "Inviting friends"), and the
-        Analytics SDK uses it too. No advertising-id permission is in the
-        package.
+        The app asks you for one permission: notifications (Android 13 and
+        newer), and only after you said yes in the Arena (see "Push
+        notifications"). The package also declares Internet and network state
+        (save game, fights, Arena, purchase verification, Google Play Games,
+        statistics and crash reports), wake lock (Firebase uses it to schedule
+        the sending of statistics and crash reports and to take in push
+        notifications), receiving messages through Firebase Cloud Messaging,
+        Google Play Billing and the binding to Google Play's install service.
+        The app reads the install source through it on first start (see
+        "Inviting friends"), and the Analytics SDK uses it too. No
+        advertising-id permission is in the package.
       </p>
 
       <h2>Former beta signup on this website</h2>
@@ -605,8 +665,8 @@
         From the version with Play Games sign-in you can delete your account in the
         app's settings. This removes the save, the
         ledger, the Arena entry (your seat goes to a bot and your chosen name is
-        replaced), Hollow runs, the Google Play Games link and the technical account
-        from the server. Attacks that point at your entry and the weekly results stay,
+        replaced), Hollow runs, the Google Play Games link, the device tokens for
+        push notifications and the technical account from the server. Attacks that point at your entry and the weekly results stay,
         under the replaced name. Purchase records stay without the account id (see
         "Purchases"). You can also request deletion by email to the address above; name
         your Arena name with its number or, from the version with Play Games sign-in,
