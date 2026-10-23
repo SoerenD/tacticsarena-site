@@ -36,7 +36,7 @@
   <div class="wrap">
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span>Last updated: 23 October 2026</span></p>
+    <p class="updated">Tactics Arena (<code>com.nrgstash.tacticsarena</code>) &middot; <span>Last updated: 24 October 2026</span></p>
 
     <div id="english" lang="en">
       <h2>Controller</h2>
@@ -57,7 +57,9 @@
         are opened and replayed by the server. If you sign in to Google Play Games, the
         server stores your Play Games player id so you can find your account again on a
         new device. Purchases are handled by Google Play; our server verifies each
-        purchase with Google and credits the gems.
+        purchase with Google and credits the gems. From Google Play's install
+        source the server keeps which way the app was installed (see “Install
+        source”).
         The website itself sets no cookies and counts no visits; what still goes
         to third parties when a page loads is listed under “This website”.
       </p>
@@ -182,8 +184,9 @@
         you open "Invite friends", and it never changes. When someone installs
         the game from Google Play through your link, Google Play hands the app
         the install source (the "install referrer") on its first start, and the
-        code is in it. The app reads it on the device and sends only the code to
-        our server; the same goes for a code someone types in. The server then
+        code is in it. The app reads it on the device and sends the code to our
+        server; the same goes for a code someone types in. What else the app
+        sends from the install source is under "Install source". The server then
         stores which account invited which, when, and when the reward for it
         was paid, and books the gems in the ledger like any other credit (see
         "Save game"). The only purpose is paying the reward (Art. 6 (1)(b)
@@ -193,6 +196,22 @@
         friend's (see "Deleting your account"). The page behind the link,
         tactics-arena.xyz/i/, reads the code from the address in your browser
         only and adds it to the link to Google Play.
+      </p>
+
+      <h2>Install source</h2>
+      <p>
+        On its first start the app reads, on the device, the install source
+        Google Play hands it (see "Inviting friends"). From it the app sends our
+        server the three campaign values of the link it was installed through
+        (source, medium and campaign, for example "website", "web" and
+        "site_en" for a button on this website, or "google-play" and "organic"
+        for a find in the store), and whether the install came from a click on
+        an ad. The ad's click id never leaves the device. The server stores
+        this once with the account, and only while the account is less than a
+        week old. The only purpose is to see which ways bring players and
+        whether they stay, so our advertising money goes where it works
+        (Art. 6 (1)(f) GDPR). It is deleted with the account (see "Deleting
+        your account").
       </p>
 
       <h2>Purchases</h2>
@@ -272,7 +291,8 @@
         notifications), receiving messages through Firebase Cloud Messaging,
         Google Play Billing and the binding to Google Play's install service.
         The app reads the install source through it on first start (see
-        "Inviting friends"), and the Analytics SDK uses it too. No
+        "Inviting friends" and "Install source"), and the Analytics SDK uses it
+        too. No
         advertising-id permission is in the package.
       </p>
 
@@ -328,7 +348,8 @@
         app's settings. This removes the save, the
         ledger, the Arena entry (your seat goes to a bot and your chosen name is
         replaced), Hollow runs, the Google Play Games link, the device tokens for
-        push notifications and the technical account from the server. Attacks that point at your entry and the weekly results stay,
+        push notifications, the install source and the technical account from
+        the server. Attacks that point at your entry and the weekly results stay,
         under the replaced name. Purchase records stay without the account id (see
         "Purchases"). You can also request deletion by email to the address above; name
         your Arena name with its number (shown in the settings). This is
