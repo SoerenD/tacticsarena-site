@@ -1,0 +1,520 @@
+{
+  "version": 1,
+  "directions": {
+    "east": {
+      "contacts": [
+        [
+          341.9045226130653,
+          347.03515625
+        ],
+        [
+          332.2,
+          349.6328125
+        ]
+      ],
+      "frames": [
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_0.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            174.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_1.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            562.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_2.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            942.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_3.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1294.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_4.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            148.0,
+            922.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_5.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            530.0,
+            923.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_6.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            921.0,
+            923.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_east_7.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1280.0,
+            923.0
+          ]
+        }
+      ],
+      "scale": 0.5992217898832685
+    },
+    "northeast": {
+      "contacts": [
+        [
+          312.47916666666663,
+          315.265625
+        ],
+        [
+          305.625,
+          325.65625
+        ]
+      ],
+      "frames": [
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_0.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            170.0,
+            486.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_1.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            560.0,
+            486.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_2.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            948.0,
+            486.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_3.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1295.0,
+            486.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_4.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            165.0,
+            930.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_5.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            546.0,
+            930.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_6.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            896.0,
+            930.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_northeast_7.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1300.0,
+            930.0
+          ]
+        }
+      ],
+      "scale": 0.5202702702702703
+    },
+    "north": {
+      "contacts": [
+        [
+          233.24739583333331,
+          226.4609375
+        ],
+        [
+          240.48958333333331,
+          230.8671875
+        ]
+      ],
+      "frames": [
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_0.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            183.0,
+            470.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_1.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            575.0,
+            470.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_2.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            946.0,
+            470.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_3.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1304.0,
+            470.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_4.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            180.0,
+            924.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_5.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            566.0,
+            924.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_6.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            941.0,
+            924.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_north_7.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1326.0,
+            924.0
+          ]
+        }
+      ],
+      "scale": 0.55
+    },
+    "southeast": {
+      "contacts": [
+        [
+          334.58247422680415,
+          352.83984375
+        ],
+        [
+          329.0153846153846,
+          352.83984375
+        ]
+      ],
+      "frames": [
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_0.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            174.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_1.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            565.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_2.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            946.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_3.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1310.0,
+            477.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_4.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            148.0,
+            923.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_5.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            547.0,
+            923.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_6.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            920.0,
+            923.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_southeast_7.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1300.0,
+            923.0
+          ]
+        }
+      ],
+      "scale": 0.5923076923076923
+    },
+    "south": {
+      "contacts": [
+        [
+          252.1875,
+          363.573673870334
+        ],
+        [
+          242.96875,
+          357.74656188605104
+        ]
+      ],
+      "frames": [
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_0.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            193.0,
+            507.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_1.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            593.0,
+            505.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_2.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            959.0,
+            506.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_3.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1330.0,
+            507.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_4.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            199.0,
+            926.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_5.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            595.0,
+            928.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_6.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            959.0,
+            928.0
+          ]
+        },
+        {
+          "file": "assets/characters/guardian/anim/attack_aim_south_7.png",
+          "foot": [
+            224,
+            339.2
+          ],
+          "sourceFoot": [
+            1338.0,
+            927.0
+          ]
+        }
+      ],
+      "scale": 0.5365853658536586
+    }
+  }
+}

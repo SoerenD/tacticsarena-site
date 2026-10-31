@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Replaced by flutter build web --base-href (tool/build_web_demo.dart
+       passes /play/, where the demo lives on tactics-arena.xyz). -->
+  <base href="/play/">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Tactics Arena im Browser: die ersten Kämpfe der Kampagne, ohne Konto und ohne Download.">
+  <meta name="theme-color" content="#10151E">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Tactics Arena">
+  <link rel="apple-touch-icon" href="icons/Icon-180.png">
+  <link rel="icon" type="image/png" href="favicon.png">
+
+  <title>Tactics Arena: Demo</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #10151E;
+      color: #F0E6CD;
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    body {
+      display: flex;
+      flex-direction: column;
+      height: 100dvh;
+    }
+    /* The game is a portrait phone game: on a wide screen it gets a phone
+       column, on a phone the whole width. */
+    #app {
+      position: relative;
+      flex: 1;
+      width: min(100vw, 480px);
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    footer {
+      flex: none;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+      padding: 6px 12px calc(6px + env(safe-area-inset-bottom));
+      font-size: 13px;
+    }
+    footer a { color: #E9C978; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+    #too-old {
+      max-width: 420px;
+      margin: auto;
+      padding: 32px 20px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    #too-old h1 { color: #E9C978; font-size: 22px; font-weight: normal; }
+    #too-old a { color: #E9C978; }
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+  <div id="app"></div>
+
+  <!-- Shown instead of the game when the browser cannot run its wasm build
+       (flutter_bootstrap.js decides). The JavaScript build would roll the
+       dice differently, so it is never loaded. -->
+  <div id="too-old" hidden>
+    <div lang="de">
+      <h1>Dein Browser ist zu alt für die Demo.</h1>
+      <p>Tactics Arena läuft ab Chrome 119, Firefox 120 und Safari 18.2.
+        Auf Android spielst du gleich in der App.</p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_demo%26utm_campaign%3Ddemo_de">Bei Google Play laden</a></p>
+    </div>
+    <div lang="en" hidden>
+      <h1>Your browser is too old for the demo.</h1>
+      <p>Tactics Arena runs in Chrome 119, Firefox 120 and Safari 18.2 or
+        newer. On Android you can play in the app right away.</p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_demo%26utm_campaign%3Ddemo_en">Get it on Google Play</a></p>
+    </div>
+  </div>
+
+  <footer>
+    <a id="link-imprint" href="/impressum.html">Impressum</a>
+    <a id="link-privacy" href="/privacy.html#deutsch">Datenschutz</a>
+    <a id="link-home" href="/">tactics-arena.xyz</a>
+  </footer>
+
+  <script>
+    // German visitors keep the German page; everyone else gets English, the
+    // way the app itself picks its language.
+    if (!(navigator.language || 'en').toLowerCase().startsWith('de')) {
+      document.documentElement.lang = 'en';
+      document.querySelector('#too-old [lang="de"]').hidden = true;
+      document.querySelector('#too-old [lang="en"]').hidden = false;
+      document.getElementById('link-imprint').href = '/en/impressum.html';
+      document.getElementById('link-imprint').textContent = 'Imprint';
+      document.getElementById('link-privacy').href = '/privacy.html#english';
+      document.getElementById('link-privacy').textContent = 'Privacy';
+    }
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
