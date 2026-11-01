@@ -5,7 +5,7 @@
   "display": "standalone",
   "background_color": "#10151E",
   "theme_color": "#10151E",
-  "description": "Tactics Arena im Browser: die ersten Kämpfe der Kampagne.",
+  "description": "Tactics Arena im Browser: das ganze Spiel, ohne Anmeldung.",
   "orientation": "portrait-primary",
   "prefer_related_applications": true,
   "related_applications": [

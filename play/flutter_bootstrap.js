@@ -62,10 +62,11 @@ _flutter.buildConfig = {"engineRevision":"a804b261645ef8c13eb3d5c44a5c2fb0340c55
     (build) => build.compileTarget === 'dart2wasm',
   );
   const app = document.getElementById('app');
-  const tooOld = () => {
+  const show = (card) => {
     app.hidden = true;
-    document.getElementById('too-old').hidden = false;
+    document.getElementById(card).hidden = false;
   };
+  const tooOld = () => show('too-old');
   if (!wasmGc || builds.length === 0) {
     tooOld();
     return;
@@ -88,6 +89,14 @@ _flutter.buildConfig = {"engineRevision":"a804b261645ef8c13eb3d5c44a5c2fb0340c55
     })
     .catch((error) => {
       console.error(error);
-      tooOld();
+      // Only a browser no build fits is too old (no WebGL, say). Anything
+      // else is a file that did not load: a dropped connection, or the
+      // minute in which GitHub Pages switches to a new build, when the
+      // loader can fetch a file that the edge no longer has. A reload
+      // fixes those, so the card says so instead of blaming the browser.
+      const noBuild = String(error?.message ?? error).includes(
+        'could not find a build compatible',
+      );
+      show(noBuild ? 'too-old' : 'load-failed');
     });
 })();

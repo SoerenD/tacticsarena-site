@@ -2,12 +2,12 @@
 <html lang="de">
 <head>
   <!-- Replaced by flutter build web --base-href (tool/build_web_demo.dart
-       passes /play/, where the demo lives on tactics-arena.xyz). -->
+       passes /play/, where the game lives on tactics-arena.xyz). -->
   <base href="/play/">
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="Tactics Arena im Browser: die ersten Kämpfe der Kampagne, ohne Konto und ohne Download.">
+  <meta name="description" content="Tactics Arena im Browser: das ganze Spiel, ohne Download und ohne Anmeldung.">
   <meta name="theme-color" content="#10151E">
 
   <meta name="mobile-web-app-capable" content="yes">
@@ -16,7 +16,7 @@
   <link rel="apple-touch-icon" href="icons/Icon-180.png">
   <link rel="icon" type="image/png" href="favicon.png">
 
-  <title>Tactics Arena: Demo</title>
+  <title>Tactics Arena</title>
   <link rel="manifest" href="manifest.json">
 
   <style>
@@ -51,15 +51,15 @@
     }
     footer a { color: #E9C978; text-decoration: none; }
     footer a:hover { text-decoration: underline; }
-    #too-old {
+    .card {
       max-width: 420px;
       margin: auto;
       padding: 32px 20px;
       text-align: center;
       line-height: 1.5;
     }
-    #too-old h1 { color: #E9C978; font-size: 22px; font-weight: normal; }
-    #too-old a { color: #E9C978; }
+    .card h1 { color: #E9C978; font-size: 22px; font-weight: normal; }
+    .card a { color: #E9C978; }
     [hidden] { display: none !important; }
   </style>
 </head>
@@ -69,18 +69,36 @@
   <!-- Shown instead of the game when the browser cannot run its wasm build
        (flutter_bootstrap.js decides). The JavaScript build would roll the
        dice differently, so it is never loaded. -->
-  <div id="too-old" hidden>
+  <div id="too-old" class="card" hidden>
     <div lang="de">
-      <h1>Dein Browser ist zu alt für die Demo.</h1>
+      <h1>Dein Browser ist zu alt für Tactics Arena.</h1>
       <p>Tactics Arena läuft ab Chrome 119, Firefox 120 und Safari 18.2.
         Auf Android spielst du gleich in der App.</p>
-      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_demo%26utm_campaign%3Ddemo_de">Bei Google Play laden</a></p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_game%26utm_campaign%3Dgame_de">Bei Google Play laden</a></p>
     </div>
     <div lang="en" hidden>
-      <h1>Your browser is too old for the demo.</h1>
+      <h1>Your browser is too old for Tactics Arena.</h1>
       <p>Tactics Arena runs in Chrome 119, Firefox 120 and Safari 18.2 or
         newer. On Android you can play in the app right away.</p>
-      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_demo%26utm_campaign%3Ddemo_en">Get it on Google Play</a></p>
+      <p><a href="https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena&amp;referrer=utm_source%3Dwebsite%26utm_medium%3Dweb_game%26utm_campaign%3Dgame_en">Get it on Google Play</a></p>
+    </div>
+  </div>
+
+  <!-- Shown when a file of the game did not load (flutter_bootstrap.js):
+       a dropped connection, or the minute in which GitHub Pages switches
+       to a new build. -->
+  <div id="load-failed" class="card" hidden>
+    <div lang="de">
+      <h1>Das Spiel hat nicht geladen.</h1>
+      <p>Die Verbindung ist abgebrochen, oder gerade geht eine neue Version
+        online. Lade die Seite in einer Minute neu.</p>
+      <p><a href="">Neu laden</a></p>
+    </div>
+    <div lang="en" hidden>
+      <h1>The game did not load.</h1>
+      <p>The connection dropped, or a new version is going live right now.
+        Reload the page in a minute.</p>
+      <p><a href="">Reload</a></p>
     </div>
   </div>
 
@@ -95,8 +113,10 @@
     // way the app itself picks its language.
     if (!(navigator.language || 'en').toLowerCase().startsWith('de')) {
       document.documentElement.lang = 'en';
-      document.querySelector('#too-old [lang="de"]').hidden = true;
-      document.querySelector('#too-old [lang="en"]').hidden = false;
+      for (const card of ['#too-old', '#load-failed']) {
+        document.querySelector(`${card} [lang="de"]`).hidden = true;
+        document.querySelector(`${card} [lang="en"]`).hidden = false;
+      }
       document.getElementById('link-imprint').href = '/en/impressum.html';
       document.getElementById('link-imprint').textContent = 'Imprint';
       document.getElementById('link-privacy').href = '/privacy.html#english';
