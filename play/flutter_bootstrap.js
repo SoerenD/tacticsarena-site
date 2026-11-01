@@ -78,6 +78,12 @@ _flutter.buildConfig = {"engineRevision":"a804b261645ef8c13eb3d5c44a5c2fb0340c55
         // GitHub Pages sends no cross-origin isolation headers, so the
         // renderer runs on one thread; that is expected, not a fault.
         suppressMultithreadingWarning: true,
+        // The loader runs skwasm only on Blink unless told otherwise. With
+        // the JS build gone, Safari, every browser on iOS (all WebKit) and
+        // Firefox had no build left and got the card, WasmGC or not. The
+        // build ships skwasm_heavy for them, with its own ICU data and
+        // image codecs, and the loader picks it there by itself.
+        wasmAllowList: { blink: true, gecko: true, webkit: true, unknown: true },
       },
     })
     .catch((error) => {
