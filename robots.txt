@@ -4,4 +4,4 @@ Allow: /
 # Both languages are listed in the sitemap.
 Allow: /en/
 
-Sitemap: https://tactics-arena.xyz/sitemap.xml
+Sitemap: https://legiontactics.com/sitemap.xml
