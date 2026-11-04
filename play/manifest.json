@@ -1,12 +1,12 @@
 {
-  "name": "Tactics Arena",
-  "short_name": "Tactics Arena",
+  "name": "Legion Tactics",
+  "short_name": "Legion Tactics",
   "start_url": ".",
   "display": "fullscreen",
   "display_override": ["fullscreen", "standalone"],
   "background_color": "#10151E",
   "theme_color": "#10151E",
-  "description": "Tactics Arena im Browser: das ganze Spiel, ohne Anmeldung.",
+  "description": "Legion Tactics im Browser: das ganze Spiel, ohne Anmeldung.",
   "orientation": "portrait-primary",
   "prefer_related_applications": true,
   "related_applications": [
