@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Fight me in Legion Tactics</title>
-<meta name="description" content="A friend invited you to Legion Tactics, a 1v1 auto battler for Android. Once you conquer your first territory, you both get 100 gems.">
+<meta name="description" content="A friend invited you to Legion Tactics, a 1v1 auto battler for Android and the browser. Once you conquer your first territory, you both get 100 gems.">
 <link rel="icon" href="/assets/icon-180.png" sizes="180x180">
 <link rel="apple-touch-icon" href="/assets/icon-180.png">
 <meta name="theme-color" content="#070d18">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Legion Tactics">
 <meta property="og:title" content="Fight me in Legion Tactics">
-<meta property="og:description" content="A 1v1 auto battler for Android. Join with my link: once you conquer your first territory, we both get 100 gems.">
+<meta property="og:description" content="A 1v1 auto battler for Android and the browser. Join with my link: once you conquer your first territory, we both get 100 gems.">
 <meta property="og:image" content="https://legiontactics.com/assets/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin>
@@ -39,8 +39,8 @@
 
     <img class="mark" src="/assets/logo.webp" alt="Legion Tactics" width="533" height="560">
     <h1 data-de="Spiel gegen mich in Legion Tactics">Fight me in Legion Tactics</h1>
-    <p data-de="Ein Freund hat dich eingeladen. Hol dir das Spiel über den Knopf unten. Sobald du dein erstes Gebiet eroberst, bekommt ihr beide 100 Edelsteine.">
-      A friend invited you. Get the game with the button below. Once you
+    <p data-de="Ein Freund hat dich eingeladen. Hol dir die App oder spiel im Browser. Sobald du dein erstes Gebiet eroberst, bekommt ihr beide 100 Edelsteine.">
+      A friend invited you. Get the app or play in your browser. Once you
       conquer your first territory, you both get 100 gems.
     </p>
 
@@ -54,15 +54,18 @@
         <img id="badge" src="/assets/play-badge-en.png" alt="Get it on Google Play" width="646" height="250">
       </a>
     </p>
+    <p>
+      <a class="btn btn-slate" id="browser" href="/play/" data-de="Im Browser spielen">Play in your browser</a>
+    </p>
 
     <p class="note" id="code-note" hidden data-de="Findet das Spiel den Code nicht von selbst, tippe auf der Weltkarte oder im Arena-Tab auf EINLADEN und gib ihn unter Code eines Freundes ein. Das geht in deinen ersten 7 Tagen.">
       If the game does not find the code by itself, tap INVITE on the world
       map or the Arena tab and type it under A friend's code. That works in
       your first 7 days.
     </p>
-    <p class="note" data-de="Legion Tactics gibt es vorerst auf den Philippinen, in Malaysia und in Südafrika.">
-      Legion Tactics is available in the Philippines, Malaysia and South Africa
-      for now.
+    <p class="note" data-de="Die App gibt es vorerst auf den Philippinen, in Malaysia und in Südafrika. Im Browser läuft das Spiel überall.">
+      The app is available in the Philippines, Malaysia and South Africa for
+      now. The browser game runs anywhere.
     </p>
 
   </div>
@@ -82,8 +85,10 @@
 <script>
 (function () {
   // The friend's code from ?c=, in the shape the server draws it. With a
-  // good code the button carries it to Play as the install referrer, which
-  // the app reads after the install; without one it is the plain listing.
+  // good code the Play button carries it as the install referrer, which the
+  // app reads after the install, and the browser button carries it in the
+  // address, which the game reads when it opens; without one they lead to
+  // the plain listing and the plain game.
   var STORE = 'https://play.google.com/store/apps/details?id=com.nrgstash.tacticsarena';
   var raw = '';
   try { raw = new URLSearchParams(window.location.search).get('c') || ''; } catch (e) { }
@@ -91,6 +96,7 @@
   if (/^[A-HJ-NP-Z2-9]{6}$/.test(code)) {
     document.getElementById('play').href = STORE + '&referrer=' +
       encodeURIComponent('utm_source=invite&utm_medium=friend&ic=' + code);
+    document.getElementById('browser').href = '/play/?c=' + code;
     document.getElementById('code').textContent = code;
     document.getElementById('code-box').hidden = false;
     document.getElementById('code-note').hidden = false;
