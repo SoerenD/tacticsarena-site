@@ -87,6 +87,34 @@
     }
     .card h1 { color: #E9C978; font-size: 22px; font-weight: normal; }
     .card a { color: #E9C978; }
+    #home-hint {
+      position: fixed;
+      left: 12px;
+      right: 12px;
+      bottom: calc(12px + env(safe-area-inset-bottom));
+      z-index: 1000;
+      padding: 16px;
+      border: 1px solid #E9C978;
+      border-radius: 12px;
+      background: #10151E;
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    #home-hint h1 {
+      margin: 0 0 6px;
+      color: #E9C978;
+      font-size: 18px;
+      font-weight: normal;
+    }
+    #home-hint p { margin: 0 0 12px; }
+    #home-hint button {
+      padding: 10px 18px;
+      border: 1px solid #E9C978;
+      border-radius: 8px;
+      background: transparent;
+      color: #E9C978;
+      font: inherit;
+    }
     [hidden] { display: none !important; }
   </style>
 </head>
@@ -129,6 +157,28 @@
     </div>
   </div>
 
+  <!-- Shown once, only on an iPhone in the browser (script below): the one
+       way to the game without the browser's bars. A button could not do it,
+       an iPhone has no fullscreen for a page. -->
+  <aside id="home-hint" hidden>
+    <div lang="de">
+      <h1>Legion Tactics im Vollbild</h1>
+      <p>Das iPhone erlaubt Webseiten kein Vollbild. Wähl im Menü deines
+        Browsers „Zum Home-Bildschirm“, dann läuft das Spiel von dort ohne
+        Browserleisten. Dort fängst du neu an, dein Spielstand hier bleibt
+        im Browser.</p>
+      <button type="button">Verstanden</button>
+    </div>
+    <div lang="en" hidden>
+      <h1>Legion Tactics fullscreen</h1>
+      <p>iPhones don't let web pages go fullscreen. Pick “Add to Home Screen”
+        in your browser's menu and the game runs from there without the
+        browser's bars. You start over there, your progress here stays in
+        the browser.</p>
+      <button type="button">Got it</button>
+    </div>
+  </aside>
+
   <footer>
     <a id="link-imprint" href="/impressum.html">Impressum</a>
     <a id="link-privacy" href="/privacy.html#deutsch">Datenschutz</a>
@@ -140,7 +190,7 @@
     // way the app itself picks its language.
     if (!(navigator.language || 'en').toLowerCase().startsWith('de')) {
       document.documentElement.lang = 'en';
-      for (const card of ['#too-old', '#load-failed']) {
+      for (const card of ['#too-old', '#load-failed', '#home-hint']) {
         document.querySelector(`${card} [lang="de"]`).hidden = true;
         document.querySelector(`${card} [lang="en"]`).hidden = false;
       }
@@ -155,11 +205,32 @@
     // grants that only from a tap) and again at the next tap after the
     // player left it, so the address bar and the system bars stay out of
     // the way and the screen stays upright. iPhones offer no fullscreen to
-    // a page; there "Add to Home Screen" opens it without Safari's bars.
+    // a page, in any browser; there "Add to Home Screen" opens it without
+    // the bars, and the player hears about it once. If Apple ever adds the
+    // call, enter exists and the hint goes away by itself.
     (function () {
       const root = document.documentElement;
       const enter = root.requestFullscreen || root.webkitRequestFullscreen;
-      if (!enter || !matchMedia('(pointer: coarse)').matches) return;
+      if (!matchMedia('(pointer: coarse)').matches) return;
+      if (!enter) {
+        const installed = navigator.standalone ||
+          matchMedia('(display-mode: standalone), (display-mode: fullscreen)').matches;
+        if (installed || !/iPhone|iPod/.test(navigator.userAgent)) return;
+        const seen = 'legion.homeHintSeen';
+        try {
+          if (localStorage.getItem(seen)) return;
+        } catch (_) {}
+        const hint = document.getElementById('home-hint');
+        hint.hidden = false;
+        hint.addEventListener('click', (event) => {
+          if (event.target.tagName !== 'BUTTON') return;
+          hint.hidden = true;
+          try {
+            localStorage.setItem(seen, '1');
+          } catch (_) {}
+        });
+        return;
+      }
       document.addEventListener('pointerup', () => {
         if (document.fullscreenElement || document.webkitFullscreenElement) {
           return;
