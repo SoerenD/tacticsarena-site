@@ -409,6 +409,16 @@ section + section::before {
   #units .grid-3 > .unit:last-child:nth-child(3n + 1) { grid-column: 2; }
 }
 
+/* Which pick when: the rows of round one and the counters from round two. */
+.picks { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+.tag-round { background: var(--gold-dim); color: var(--gold-lit); border-color: rgba(224, 165, 42, 0.55); }
+.pick-rows { list-style: none; margin: 0.9rem 0 0; padding: 0; display: grid; gap: 1rem; }
+.pick-rows li { display: flex; align-items: center; gap: 0.9rem; color: var(--muted); font-size: 0.95rem; }
+.pick-rows b { color: var(--text); font-weight: 600; }
+.pick-units { display: flex; align-items: center; flex: none; width: 152px; }
+.pick-units img { width: 46px; height: 46px; margin-right: 2px; }
+.pick-arrow { color: var(--gold); font-size: 1.3rem; line-height: 1; margin: 0 4px 0 2px; }
+
 .unit { text-align: center; }
 .unit img { width: 142px; margin: 0 auto 0.6rem; }
 .tag {
@@ -508,6 +518,7 @@ section + section::before {
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 @media (min-width: 880px) { .arena-notes { grid-template-columns: repeat(2, 1fr); } }
+.arena-notes li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .arena-notes li {
   display: grid; grid-template-columns: auto 1fr; gap: 0 0.8rem;
   align-items: start;
