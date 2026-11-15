@@ -171,6 +171,12 @@ p:last-child { margin-bottom: 0; }
 .badge-play { display: inline-block; line-height: 0; transition: transform 0.14s ease; }
 .badge-play img { height: 56px; width: auto; }
 .badge-play:hover { transform: translateY(-2px); }
+/* Google's pre-register badge is cropped to the badge itself, the "Get it"
+   badge carries transparent padding, so the same visible size needs a
+   lower height. Google's minimum is 28px. */
+.badge-play img.prereg { height: 44px; }
+.prereg-note { margin-top: 1rem; color: var(--muted); font-size: 0.95rem; }
+.prereg-note a { color: var(--gold-lit); }
 
 .cta-row {
   display: flex; gap: 1rem; flex-wrap: wrap;
@@ -207,6 +213,7 @@ p:last-child { margin-bottom: 0; }
 }
 .topbar nav a:hover { color: var(--gold-lit); border-bottom-color: var(--gold-dim); }
 .topbar .badge-play img { height: 38px; }
+.topbar .badge-play img.prereg { height: 28px; }
 
 /* The EN/DE link in the top bar. The second selector outweighs the plain
    nav link rule above, which would otherwise take the border and padding. */
